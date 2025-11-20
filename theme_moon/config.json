@@ -1,0 +1,34 @@
+{
+  "framework": "moon",
+  "regions": [
+    "side-pre",
+    "side-post",
+    "main-top",
+    "main-bottom",
+    "left-sidebar",
+    "right-sidebar",
+    "bottom-1",
+    "bottom-2",
+    "bottom-3",
+    "bottom-4",
+    "footer"
+  ],
+  "defaultregion": "side-pre",
+  "layouts": {
+    "frontpage": {
+      "regions": [
+        "side-pre",
+        "side-post",
+        "main-top",
+        "main-bottom",
+        "right-sidebar",
+        "bottom-1",
+        "bottom-2",
+        "bottom-3",
+        "bottom-4",
+        "footer"
+      ],
+      "defaultregion": "side-pre"
+    }
+  }
+}

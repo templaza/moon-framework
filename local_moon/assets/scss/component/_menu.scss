@@ -1,0 +1,12 @@
+.primary-navigation .navigation .nav-link {
+  color: var(--mf-main-menu-link-color);
+  background-color: var(--mf-main-menu-link-background);
+  &.active {
+    color: var(--mf-main-menu-link-active-color);
+    background-color: var(--mf-main-menu-active-background);
+  }
+  &:hover {
+    color: var(--mf-main-menu-link-hover-color);
+    background-color: var(--mf-main-menu-hover-background);
+  }
+}

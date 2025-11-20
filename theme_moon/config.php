@@ -1,0 +1,19 @@
+<?php
+defined('MOODLE_INTERNAL') || die();
+use local_moon\library\Helper\Utilities;
+global $CFG;
+$THEME->name = 'moon';
+$THEME->sheets = [];
+$THEME->editor_sheets = [];
+$THEME->parents = ['boost'];
+$THEME->enable_dock = false;
+$THEME->yuicssmodules = array();
+$THEME->extrascsscallback = 'theme_moon_get_extra_scss';
+$THEME->prescsscallback = 'theme_moon_get_pre_scss';
+$THEME->requiredblocks = '';
+$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';
+$THEME->scss = function($theme) {
+    return theme_moon_get_main_scss_content($theme);
+};
+$THEME->layouts = Utilities::getLayouts($THEME->name);

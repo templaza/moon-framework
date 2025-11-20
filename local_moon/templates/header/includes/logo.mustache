@@ -1,0 +1,10 @@
+<div class="logo-wrapper moon-logo">
+    <a href="{{{ config.homeurl }}}" class="moon-logo moon-logo-image navbar-brand d-flex align-items-center">
+        {{# output.should_display_navbar_logo }}
+            <img src="{{output.get_compact_logo_url}}" class="logo" alt="{{sitename}}">
+        {{/ output.should_display_navbar_logo }}
+        {{^ output.should_display_navbar_logo }}
+            {{{ sitename }}}
+        {{/ output.should_display_navbar_logo }}
+    </a>
+</div>

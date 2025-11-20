@@ -1,0 +1,39 @@
+.moon-layout {
+  #page.drawers {
+    margin-top: 0;
+  }
+  .drawer-left, .drawer-right {
+    top: 0;
+    height: 100vh;
+  }
+  .moon-content {
+    #region-main {
+      background-color: transparent;
+    }
+    .moremenu .nav-tabs {
+      background-color: transparent;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .header-maxwidth {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    div[role="main"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .activity-header {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .secondary-navigation .navigation {
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

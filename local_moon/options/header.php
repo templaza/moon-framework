@@ -143,6 +143,105 @@ Framework::getTheme()->addFields(
                 ],
                 "conditions" => "[header]==true AND [header_mode]=='stacked' AND [header_stacked_menu_mode]=='seperated'",
             ],
+
+            'header_block_1_type' => [
+                'group' => 'header_element',
+                'type' => 'list',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_1_TYPE_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_1_TYPE_DESC',
+                'default' => 'blank',
+                'conditions' => "[header]==true",
+                'options' => [
+                    'blank'   => 'TPL_ASTROID_BLANK_OPTIONS',
+                    'position'=> 'TPL_ASTROID_MODULE_POSITION_LABEL',
+                    'custom'  => 'TPL_ASTROID_CUSTOM_HTML_OPTIONS',
+                ],
+            ],
+
+            'header_block_1_position' => [
+                'group' => 'header_element',
+                'type' => 'regions',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_1_POSITION_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_1_POSITION_DESC',
+                'conditions' => "[header]==true AND [header_block_1_type]=='position'",
+            ],
+
+            'header_block_1_custom' => [
+                'group' => 'header_element',
+                'type' => 'textarea',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_1_CUSTOM_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_1_CUSTOM_DESC',
+                "attributes" => [
+                    'filter' => 'raw',
+                ],
+                'conditions' => "[header]==true AND [header_block_1_type]=='custom'",
+            ],
+
+            'header_block_2_type' => [
+                'group' => 'header_element',
+                'type' => 'list',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_2_TYPE_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_2_TYPE_DESC',
+                'default' => 'blank',
+                'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]!='center') OR ([header_mode]=='horizontal') OR ([header_mode]=='sidebar'))",
+                'options' => [
+                    'blank'    => 'TPL_ASTROID_BLANK_OPTIONS',
+                    'position' => 'TPL_ASTROID_MODULE_POSITION_LABEL',
+                    'custom'   => 'TPL_ASTROID_CUSTOM_HTML_OPTIONS',
+                ],
+            ],
+
+            'header_block_2_position' => [
+                'group' => 'header_element',
+                'type' => 'regions',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_2_POSITION_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_2_POSITION_DESC',
+                'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]!='center') OR ([header_mode]=='horizontal') OR ([header_mode]=='sidebar')) AND [header_block_2_type]=='position'",
+            ],
+
+            'header_block_2_custom' => [
+                'group' => 'header_element',
+                'type' => 'textarea',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_2_CUSTOM_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_2_CUSTOM_DESC',
+                "attributes" => [
+                    'filter' => 'raw',
+                ],
+                'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]!='center') OR ([header_mode]=='horizontal') OR ([header_mode]=='sidebar')) AND [header_block_2_type]=='custom'",
+            ],
+
+            'header_block_3_type' => [
+                'group' => 'header_element',
+                'type' => 'list',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_3_TYPE_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_3_TYPE_DESC',
+                'default' => 'blank',
+                'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]=='divided-logo-left') OR ([header_mode]=='sidebar' AND [header_sidebar_menu_mode]=='topbar'))",
+                'options' => [
+                    'blank'    => 'TPL_ASTROID_BLANK_OPTIONS',
+                    'position' => 'TPL_ASTROID_MODULE_POSITION_LABEL',
+                    'custom'   => 'TPL_ASTROID_CUSTOM_HTML_OPTIONS',
+                ],
+            ],
+
+            'header_block_3_position' => [
+                'group' => 'header_element',
+                'type' => 'regions',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_3_POSITION_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_3_POSITION_DESC',
+                'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]=='divided-logo-left') OR ([header_mode]=='sidebar' AND [header_sidebar_menu_mode]=='topbar')) AND [header_block_3_type]=='position'",
+            ],
+
+            'header_block_3_custom' => [
+                'group' => 'header_element',
+                'type' => 'textarea',
+                'label' => 'TPL_ASTROID_HEADER_BLOCK_3_CUSTOM_LABEL',
+                'description' => 'TPL_ASTROID_HEADER_BLOCK_3_CUSTOM_DESC',
+                "attributes" => [
+                    'filter' => 'raw',
+                ],
+                'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]=='divided-logo-left') OR ([header_mode]=='sidebar' AND [header_sidebar_menu_mode]=='topbar')) AND [header_block_3_type]=='custom'",
+            ],
         ]
     ]
 );

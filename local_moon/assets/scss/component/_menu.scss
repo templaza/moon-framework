@@ -10,3 +10,12 @@
     background-color: var(--mf-main-menu-hover-background);
   }
 }
+#moon-header {
+  #usernavigation {
+    .nav-link {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+  }
+}

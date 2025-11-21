@@ -692,4 +692,20 @@ class Utilities
         // Return null if the string is not in the correct format
         return null;
     }
+
+    public static function loadRegion($region, $classes = [], $tag = 'aside', $fakeblocksonly = false): string
+    {
+        global $OUTPUT;
+        if (empty($region)) {
+            return '';
+        }
+        $addblockbutton = $OUTPUT->addblockbutton($region);
+        $blockshtml = $OUTPUT->blocks($region, $classes, $tag, $fakeblocksonly);
+        $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
+        $content = '';
+        if ($hasblocks) {
+            $content = $addblockbutton . $blockshtml;
+        }
+        return $content;
+    }
 }

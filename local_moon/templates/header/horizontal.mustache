@@ -3,6 +3,7 @@
         {{> local_moon/header/includes/burger }}
         <div class="header-left-section as-gutter-x-xl@lg d-flex justify-content-start{{#header.is_left}} flex-{{header.header_breakpoint}}-grow-1{{/header.is_left}}">
             {{> local_moon/header/includes/logo }}
+            {{{ header.block_2 }}}
             {{#header.is_left}}
                 {{> local_moon/header/includes/primary_menu }}
             {{/header.is_left}}
@@ -20,6 +21,7 @@
                 <!-- page_heading_menu -->
                 {{{ output.page_heading_menu }}}
             </ul>
+            {{{ header.block_1 }}}
             <div id="usernavigation" class="navbar-nav h-100">
                 {{# output.search_box }}
                     {{{ output.search_box }}}

@@ -498,4 +498,7 @@ $string['TPL_ASTROID_SELECT_VIDEO'] = 'Select Video';
 $string['TPL_ASTROID_CHANGE_VIDEOS'] = 'Change Video';
 $string['TPL_ASTROID_CHANGE_VIDEO'] = 'Change Video';
 
-// Text Widget
+// Contact information
+$string['miscellaneous'] = 'Miscellaneous';
+$string['contact_info'] = 'Contact Information';
+$string['contact_info_desc'] = 'These settings control the contact information.';

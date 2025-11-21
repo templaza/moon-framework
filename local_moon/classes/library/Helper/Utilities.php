@@ -702,10 +702,11 @@ class Utilities
         $addblockbutton = $OUTPUT->addblockbutton($region);
         $blockshtml = $OUTPUT->blocks($region, $classes, $tag, $fakeblocksonly);
         $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
-        $content = '';
+        $content = Framework::getDocument()->_positionContent($region, 'before');
         if ($hasblocks) {
-            $content = $addblockbutton . $blockshtml;
+            $content .= $addblockbutton . $blockshtml;
         }
+        $content .= Framework::getDocument()->_positionContent($region, 'after');
         return $content;
     }
 }

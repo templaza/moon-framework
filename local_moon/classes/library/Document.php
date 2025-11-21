@@ -30,7 +30,7 @@ class Document {
 
     public function __construct() {
         global $CFG;
-        $this->addLayoutPath($CFG->dirroot . '/theme/'.Framework::getTheme()->name.'/html/frontend/');
+        $this->addLayoutPath($CFG->dirroot . '/theme/'.Framework::getTheme()->name.'/layout/');
     }
 
     public function getStyles() : void
@@ -288,6 +288,72 @@ class Document {
     {
         $out = array_splice($array, $a, 1);
         array_splice($array, $b, 0, $out);
+    }
+
+    public function include($section, $displayData = [], $return = false) : string
+    {
+        global $CFG;
+        $path = null;
+        $name = str_replace('.', '/', $section);
+        $layout_paths = self::$_layout_paths;
+
+        $layout_paths[] = $CFG -> dirroot . '/local/moon/layout/';
+        foreach ($layout_paths as $layout_path) {
+            $layout_path = substr($layout_path, -1) == '/' ? $layout_path : $layout_path . '/';
+            if (file_exists($layout_path . $name . '.php')) {
+                $path = $layout_path . $name . '.php';
+                break;
+            }
+        }
+
+        if ($path === null) {
+            return '';
+        }
+
+        ob_start();
+        include $path;
+        $content = ob_get_clean();
+
+        if ($return) {
+            return trim($content);
+        }
+        echo trim($content);
+        return '';
+    }
+
+    private function _positionLayouts(): array
+    {
+        $params = Framework::getTheme()->getParams();
+        $astroidcontentlayouts = $params->get('astroidcontentlayouts', '');
+        $return = [];
+        if (!empty($astroidcontentlayouts)) {
+            $astroidcontentlayouts = explode(',', $astroidcontentlayouts);
+            foreach ($astroidcontentlayouts as $astroidcontentlayout) {
+                $astroidcontentlayout = explode(':', $astroidcontentlayout);
+                if (isset($return[$astroidcontentlayout[1]])) {
+                    $return[$astroidcontentlayout[1]][] = $astroidcontentlayout[0] . ':' . $astroidcontentlayout[2];
+                } else {
+                    $return[$astroidcontentlayout[1]] = [];
+                    $return[$astroidcontentlayout[1]][] = $astroidcontentlayout[0] . ':' . $astroidcontentlayout[2];
+                }
+            }
+        }
+        return $return;
+    }
+
+    public function _positionContent($position, $load = 'after'): string
+    {
+        $contents = $this->_positionLayouts();
+        $return = '';
+        if (!empty($contents[$position])) {
+            foreach ($contents[$position] as $layout) {
+                $layout = explode(':', $layout);
+                if ($layout[1] == $load) {
+                    $return .= $this->include($layout[0], [], true);
+                }
+            }
+        }
+        return $return;
     }
 
     public function loadAnimation(): void

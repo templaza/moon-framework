@@ -7,6 +7,7 @@
  */
 namespace local_moon\library\Element;
 use local_moon\library\Framework;
+use local_moon\library\Helper\Utilities;
 
 defined('MOODLE_INTERNAL') || die;
 

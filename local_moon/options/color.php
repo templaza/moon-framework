@@ -8,7 +8,6 @@
 defined('MOODLE_INTERNAL') || die;
 
 use local_moon\library\Framework;
-use local_moon\library\Helper\Font;
 
 Framework::getTheme()->addFields(
     'colours',

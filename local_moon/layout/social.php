@@ -42,3 +42,22 @@ if (!empty($social_icon_color_hover) && $style == 1) {
 }
 $social_style->render();
 $social_style_dark->render();
+$output = '';
+foreach ($social_profiles as $social_profile) {
+    switch ($social_profile->title) {
+        case 'WhatsApp':
+            $social_profile_link = 'https://wa.me/' . $social_profile->link;
+            break;
+        case 'Telegram':
+            $social_profile_link = 'https://t.me/' . $social_profile->link;
+            break;
+        default:
+            $social_profile_link = $social_profile->link;
+            break;
+    }
+    $output .= '<div class="col"><a title="' . ($social_profile->title ? $social_profile->title : 'Social Icon') . '" ' . ($style != 1 ? ' aria-label="' . $social_profile->title . '" style="color:' . $social_profile->color . '"' : '') . ' href="' . $social_profile_link . '" target="_blank" rel="noopener"><i class="' . $social_profile->icon . '"></i></a></div>';
+}
+if (!empty($output)) {
+    $output = '<div class="moon-social-icons row'.(!empty($class) ? ' ' . $class : '').'">' . $output . '</div>';
+}
+echo $output;

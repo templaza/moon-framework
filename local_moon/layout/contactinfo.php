@@ -22,14 +22,14 @@ $address = $params->get('contact_address', '');
 $contact_display = $params->get('contact_display', 'icons');
 $output = '';
 if (!empty($address)) {
-    $output .= '<span class="astroid-contact-address">';
+    $output .= '<span class="moon-contact-address">';
     if ($contact_display === 'icons') $output .= '<i class="fas fa-map-marker-alt"></i>';
     if ($contact_display === 'text') $output .= Text::_('TPL_ASTROID_ADDRESS_LABEL') . ':';
     $output .= htmlspecialchars($address, ENT_QUOTES, 'UTF-8');
     $output .= '</span>';
 }
 if (!empty($phone)) {
-    $output .= '<span class="astroid-contact-phone">';
+    $output .= '<span class="moon-contact-phone">';
     if ($contact_display === 'icons') $output .= '<i class="fas fa-phone-alt"></i>';
     if ($contact_display === 'text') $output .= Text::_('TPL_ASTROID_PHONE_LABEL') . ':';
     $telHref = 'tel:' . preg_replace('/\s+/', '', $phone);
@@ -37,7 +37,7 @@ if (!empty($phone)) {
     $output .= '</span>';
 }
 if (!empty($mobile)) {
-    $output .= '<span class="astroid-contact-mobile">';
+    $output .= '<span class="moon-contact-mobile">';
     if ($contact_display === 'icons') $output .= '<i class="fas fa-mobile-alt"></i>';
     if ($contact_display === 'text') $output .= Text::_('TPL_ASTROID_MOBILE_LABEL') . ':';
     $mobileHref = 'tel:' . preg_replace('/\s+/', '', $mobile);
@@ -45,14 +45,14 @@ if (!empty($mobile)) {
     $output .= '</span>';
 }
 if (!empty($email)) {
-    $output .= '<span class="astroid-contact-email">';
+    $output .= '<span class="moon-contact-email">';
     if ($contact_display === 'icons') $output .= '<i class="far fa-envelope"></i>';
     if ($contact_display === 'text') $output .= Text::_('JGLOBAL_EMAIL') . ':';
     $output .= '<a href="mailto:' . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . '</a>';
     $output .= '</span>';
 }
 if (!empty($openhours)) {
-    $output .= '<span class="astroid-contact-openhours">';
+    $output .= '<span class="moon-contact-openhours">';
     if ($contact_display === 'icons') $output .= '<i class="far fa-clock"></i>';
     if ($contact_display === 'text') $output .= Text::_('TPL_ASTROID_OPENHOURS_LABEL');
     $output .= htmlspecialchars($openhours, ENT_QUOTES, 'UTF-8');

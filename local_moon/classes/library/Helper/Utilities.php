@@ -11,6 +11,7 @@ defined('MOODLE_INTERNAL') || die;
 use context_system;
 use local_moon\library\Framework;
 use local_moon\library\Helper\Form;
+use local_moon\library\Helper\Registry;
 class Utilities
 {
     public static function getThemeConfigs($theme = ''): array|null
@@ -708,5 +709,22 @@ class Utilities
         }
         $content .= Framework::getDocument()->_positionContent($region, 'after');
         return $content;
+    }
+
+    public static function loadParams($data): Registry
+    {
+        $params_data   = new Registry();
+        if (isset($data) && !empty($data)) {
+            $params = [];
+            foreach ($data as $param) {
+                if (is_array($param)) {
+                    $params[$param['name']] = $param['value'];
+                } elseif (is_object($param)) {
+                    $params[$param->name] = $param->value;
+                }
+            }
+            $params_data->loadArray($params);
+        }
+        return $params_data;
     }
 }

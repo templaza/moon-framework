@@ -890,6 +890,37 @@ class Constants
         ],
     ];
 
+    public static array $hover_transition = [
+        ""                   => "TPL_ASTROID_DEFAULT",
+        "scale-up"           => "ASTROID_WIDGET_TRANSITION_SCALE_UP",
+        "scale-down"         => "ASTROID_WIDGET_TRANSITION_SCALE_DOWN",
+        "bob"                => "ASTROID_WIDGET_TRANSITION_BOB",
+        "pulse"              => "ASTROID_WIDGET_TRANSITION_PULSE",
+        "pulse-grow"         => "ASTROID_WIDGET_TRANSITION_PULSE_GROW",
+        "pulse-shrink"       => "ASTROID_WIDGET_TRANSITION_PULSE_SHRINK",
+        "push"               => "ASTROID_WIDGET_TRANSITION_PUSH",
+        "pop"                => "ASTROID_WIDGET_TRANSITION_POP",
+        "bounce-in"          => "ASTROID_WIDGET_TRANSITION_BOUNCE_IN",
+        "bounce-out"         => "ASTROID_WIDGET_TRANSITION_BOUNCE_OUT",
+        "rotate"             => "ASTROID_WIDGET_TRANSITION_ROTATE",
+        "grow-rotate"        => "ASTROID_WIDGET_TRANSITION_GROW_ROTATE",
+        "float"              => "ASTROID_WIDGET_TRANSITION_FLOAT",
+        "sink"               => "ASTROID_WIDGET_TRANSITION_SINK",
+        "hang"               => "ASTROID_WIDGET_TRANSITION_HANG",
+        "skew"               => "ASTROID_WIDGET_TRANSITION_SKEW",
+        "skew-forward"       => "ASTROID_WIDGET_TRANSITION_SKEW_FORWARD",
+        "skew-backward"      => "ASTROID_WIDGET_TRANSITION_SKEW_BACKWARD",
+        "wobble-vertical"    => "ASTROID_WIDGET_TRANSITION_WOBBLE_VERTICAL",
+        "wobble-horizontal"  => "ASTROID_WIDGET_TRANSITION_WOBBLE_HORIZONTAL",
+        "wobble-to-bottom-right" => "ASTROID_WIDGET_TRANSITION_WOBBLE_TO_BOTTOM_RIGHT",
+        "wobble-to-top-right"    => "ASTROID_WIDGET_TRANSITION_WOBBLE_TO_TOP_RIGHT",
+        "wobble-top"         => "ASTROID_WIDGET_TRANSITION_WOBBLE_TOP",
+        "wobble-bottom"      => "ASTROID_WIDGET_TRANSITION_WOBBLE_BOTTOM",
+        "wobble-skew"        => "ASTROID_WIDGET_TRANSITION_WOBBLE_SKEW",
+        "buzz"               => "ASTROID_WIDGET_TRANSITION_BUZZ",
+        "buzz-out"           => "ASTROID_WIDGET_TRANSITION_BUZZ_OUT",
+    ];
+
     public static $icons = [
         [
             'fas fa-long-arrow-alt-up' => 'Alternate Long Arrow Up',

@@ -19,7 +19,7 @@ class MoonElementText extends MoonElement {
 
         $this->addField('content_options',  [
             "type" => "group",
-            "title" => "content_options",
+            "label" => "content_options",
         ]);
 
         $this->addField('heading',  [

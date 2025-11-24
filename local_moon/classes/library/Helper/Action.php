@@ -241,4 +241,18 @@ class Action extends Client {
         $this->format = 'html';
         $this->response(Font::getAllFonts());
     }
+
+    public function getIcons() : void
+    {
+        $this->format = 'html';
+        $source       = optional_param('source', '', PARAM_ALPHANUMEXT);
+        $return = ['success' => true];
+        if ($source === 'astroid') {
+            $return['results'] = Font::fontAstroidIcons();
+        } else {
+            $return['results'] = Font::fontAwesomeIcons(true);
+        }
+
+        $this->response(json_encode($return), true);
+    }
 }

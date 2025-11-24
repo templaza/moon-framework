@@ -26,7 +26,7 @@ class Document {
     protected array $_metas = [], $_links = [];
     protected static array $_layout_paths = [];
     protected array $scriptOptions = [];
-    protected bool $_animation = false;
+    protected array $_is_loaded = [];
 
     public function __construct() {
         global $CFG;
@@ -358,11 +358,11 @@ class Document {
 
     public function loadAnimation(): void
     {
-        if (!$this->_animation) {
+        if (!isset($this->_is_loaded['animation'])) {
             global $PAGE;
             $PAGE->requires->css('/local/moon/assets/animate/animate.min.css');
             $PAGE->requires->js('/local/moon/assets/animate/animate.min.js');
-            $this->_animation = true;
+            $this->_is_loaded['animation'] = true;
         }
     }
 
@@ -471,5 +471,38 @@ class Document {
         ]);
 
         return '<div id="moon-preloader" class="d-flex align-items-center justify-content-center position-fixed top-0 start-0 bottom-0 end-0">' . $preloaderHTML . '</div>';
+    }
+
+    public function loadASIcon(): void
+    {
+        if (!isset($this->_is_loaded['asicon'])) {
+            global $PAGE;
+            $PAGE->requires->css('/local/moon/assets/linearicons/font.min.css');
+            $this->_is_loaded['asicon'] = true;
+        }
+    }
+
+    public function loadGSAP($plugin = ''): void
+    {
+        global $PAGE;
+        if (!isset($this->_is_loaded['gsap'])) {
+            $PAGE->requires->js('/local/moon/assets/gsap/gsap.min.js', true);
+            $this->_is_loaded['gsap'] = [];
+        }
+
+        if (!empty($plugin) && !in_array($plugin, $this->_is_loaded['gsap'])) {
+            $PAGE->requires->js('/local/moon/assets/gsap/'.$plugin.'.min.js', true);
+            $this->_is_loaded['gsap'][] = $plugin;
+        }
+    }
+
+    public function loadArtSlider(): void
+    {
+        if (!isset($this->_is_loaded['art_slider'])) {
+            global $PAGE;
+            $PAGE->requires->css('/local/moon/assets/art_slider/css/base.min.css');
+            $PAGE->requires->js('/local/moon/assets/art_slider/js/index.min.js');
+            $this->_is_loaded['art_slider'] = true;
+        }
     }
 }

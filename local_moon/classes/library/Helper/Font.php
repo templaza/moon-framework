@@ -218,17 +218,17 @@ class Font
 
     public static function _getASIcons()
     {
-        $cache  =   Path::clean(JPATH_ROOT . '/cache/astroid/asicon/asicon.json');
-        if (file_exists($cache)) {
-            return json_decode(file_get_contents($cache), true);
+        global $CFG;
+        if (Media::exists('asicon.json' ,'/', 'astroid_icon')) {
+            return json_decode(Media::data('asicon.json' ,'/', 'astroid_icon'), true);
         }
-        $json = file_get_contents(ASTROID_MEDIA . '/vendor/linearicons/Linearicons.json');
+        $json = file_get_contents($CFG -> dirroot . '/local/moon/assets/linearicons/Linearicons.json');
         $json = \json_decode($json, true);
         $icons = [];
         foreach ($json['selection'] as $icon) {
             $icons[] = ['value' => 'as-icon as-icon-' . $icon['name'], 'name' => $icon['name'], 'type' => 'as-icon'];
         }
-        Helper::putContents($cache, json_encode($icons));
+        Media::create_from_string(json_encode($icons), 'asicon.json' ,'/', 'astroid_icon');
         return $icons;
     }
 
@@ -248,12 +248,12 @@ class Font
 
     public static function _getFAIcons()
     {
-        $version = Constants::$fontawesome_version;
-        if (file_exists(JPATH_ROOT . '/cache/astroid/fontawesome/free-' . $version . '-.json')) {
-            return json_decode(file_get_contents(JPATH_ROOT . '/cache/astroid/fontawesome/free-' . $version . '-.json'), true);
+        global $CFG;
+        if (Media::exists('fontawesome.json' ,'/', 'fontawesome_icon')) {
+            return json_decode(Media::data('fontawesome.json' ,'/', 'fontawesome_icon'), true);
         }
 
-        $json = file_get_contents(ASTROID_MEDIA . '/vendor/fontawesome/metadata/icons.json');
+        $json = file_get_contents($CFG -> dirroot . '/local/moon/assets/fontawesome/metadata/icons.json');
         $json = \json_decode($json, true);
 
         $icons = [];
@@ -262,7 +262,7 @@ class Font
                 $icons[] = ['value' => 'fa' . substr($style, 0, 1) . ' fa-' . $icon, 'name' => $info['label'], 'type' => $style];
             }
         }
-        Helper::putContents(JPATH_ROOT . '/cache/astroid/fontawesome/free-' . $version . '-.json', json_encode($icons));
+        Media::create_from_string(json_encode($icons), 'fontawesome.json' ,'/', 'fontawesome_icon');
         return $icons;
     }
 
@@ -376,11 +376,5 @@ class Font
                 }
                 break;
         }
-    }
-
-    public static function loadASIcon(): void
-    {
-        $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
-        $wa->registerAndUseStyle('linearicons', 'media/astroid/assets/vendor/linearicons/font.min.css');
     }
 }

@@ -134,6 +134,8 @@ $string['before_title'] = 'Before Title';
 $string['after_title'] = 'After Title';
 $string['readmore'] = 'Read More';
 $string['description'] = 'Description';
+$string['gutter'] = 'Gutter';
+$string['gutter_desc'] = 'Set the gutter between the elements.';
 
 // Design Options
 $string['spacing_settings'] = 'Spacing';
@@ -227,6 +229,11 @@ $string['overlay_position'] = 'Overlay Position';
 $string['overlay_text_color'] = 'Overlay Text Color';
 $string['overlay_padding'] = 'Overlay Padding';
 $string['pill'] = 'Pill';
+$string['brand_color'] = 'Brand Color';
+$string['style'] = 'Style';
+$string['style_desc'] = 'Select the style for the element.';
+$string['color_hover'] = 'Color Hover';
+$string['color_hover_desc'] = 'Select the hover color for the element.';
 
 // Font family
 $string['font_family'] = 'Font Family';
@@ -561,6 +568,11 @@ $string['social_profiles'] = 'Social Profiles';
 $string['social_profiles_desc'] = 'These settings control the social profiles.';
 $string['enable_social_profiles'] = 'Enable Social Profiles';
 $string['enable_social_profiles_desc'] = 'Enable or disable to add or hide social profiles.';
+$string['social_brands'] = 'Social Brands';
+$string['social_search'] = 'Search Brand';
+$string['add_profile'] = 'Add Profile';
+$string['add_custom_profile'] = 'Add Custom Profile';
+
 
 // Slideshow
 $string['slideshow'] = 'Slideshow';

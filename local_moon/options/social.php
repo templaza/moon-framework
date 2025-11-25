@@ -9,7 +9,7 @@ Framework::getTheme()->addFields(
         'icon' => 'as-icon as-icon-palette',
         'order' => 6,
         'fields' => [
-            'social_profile' => ["type" => "group", "label" => "social_profiles", "description" => "social_profile_desc"],
+            'social_profile' => ["type" => "group", "label" => "social_profiles", "description" => "social_profiles_desc"],
             'enable_social_profiler' => [
                 'group' => 'social_profile',
                 'type' => 'radio',
@@ -24,8 +24,8 @@ Framework::getTheme()->addFields(
             'social_profiles_position' => [
                 'group' => 'social_profile',
                 'type' => 'regions',
-                'label' => 'TPL_ASTROID_MODULE_POSITION_LABEL',
-                'description' => 'TPL_ASTROID_MODULE_POSITION_DESC',
+                'label' => 'select_region',
+                'description' => 'select_region_desc',
                 'attributes' => [
                     'astroid_content_layout' => 'social',
                 ],
@@ -35,15 +35,15 @@ Framework::getTheme()->addFields(
             'social_profiles_load_position' => [
                 'group' => 'social_profile',
                 'type' => 'list',
-                'label' => 'TPL_ASTROID_FEATURE_LOAD_POSITION_LABEL',
-                'description' => 'TPL_ASTROID_FEATURE_LOAD_POSITION_DESC',
+                'label' => 'feature_load_region',
+                'description' => 'feature_load_region_desc',
                 'default' => 'after',
                 'attributes' => [
                     'astroid_content_layout_load' => 'social_profiles_position',
                 ],
                 'options' => [
-                    'after' => 'TPL_ASTROID_AFTER_MODULE',
-                    'before' => 'TPL_ASTROID_BEFORE_MODULE',
+                    'after' => 'after_region',
+                    'before' => 'before_region',
                 ],
                 'conditions' => "[enable_social_profiler]==true",
             ],
@@ -51,12 +51,12 @@ Framework::getTheme()->addFields(
             'social_profiles_gutter' => [
                 'group' => 'social_profile',
                 'type' => 'list',
-                'label' => 'TPL_ASTROID_SOCIAL_GUTTER',
-                'description' => 'TPL_ASTROID_SOCIAL_GUTTER_DESC',
+                'label' => 'gutter',
+                'description' => 'gutter_desc',
                 'default' => '',
                 'conditions' => "[enable_social_profiler]==true",
                 'options' => [
-                    ''  => 'Default',
+                    ''  => 'default',
                     '1' => 'X-Small',
                     '2' => 'Small',
                     '3' => 'Medium',
@@ -68,7 +68,7 @@ Framework::getTheme()->addFields(
             'social_profiles_fontsize' => [
                 'group' => 'social_profile',
                 'type' => 'text',
-                'label' => 'TPL_ASTROID_SOCIAL_FONTSIZE',
+                'label' => 'font_size',
                 'attributes' => [
                     'hint'  => '16px',
                 ],
@@ -78,12 +78,12 @@ Framework::getTheme()->addFields(
             'social_profiles_style' => [
                 'group' => 'social_profile',
                 'type' => 'list',
-                'label' => 'TPL_ASTROID_SOCIAL_STYLE',
-                'description' => 'TPL_ASTROID_SOCIAL_STYLE_DESC',
+                'label' => 'style',
+                'description' => 'style_desc',
                 'default' => '1',
                 'options' => [
-                    '1' => 'TPL_ASTROID_SOCIAL_STYLE_OPTIONS_INHERIT_COLOR',
-                    '2' => 'TPL_ASTROID_SOCIAL_STYLE_OPTIONS_BRAND_COLOR',
+                    '1' => 'inherit',
+                    '2' => 'brand_color',
                 ],
                 'conditions' => "[enable_social_profiler]==true",
             ],
@@ -91,16 +91,16 @@ Framework::getTheme()->addFields(
             'social_icon_color' => [
                 'group' => 'social_profile',
                 'type' => 'color',
-                'label' => 'TPL_ASTROID_SOCIAL_COLOR_LABEL',
-                'description' => 'TPL_ASTROID_SOCIAL_COLOR_DESC',
+                'label' => 'color',
+                'description' => 'color_desc',
                 'conditions' => "[enable_social_profiler]==true AND [social_profiles_style]=='1'",
             ],
 
             'social_icon_color_hover' => [
                 'group' => 'social_profile',
                 'type' => 'color',
-                'label' => 'TPL_ASTROID_SOCIAL_COLOR_HOVER_LABEL',
-                'description' => 'TPL_ASTROID_SOCIAL_COLOR_HOVER_DESC',
+                'label' => 'color_hover',
+                'description' => 'color_hover_desc',
                 'conditions' => "[enable_social_profiler]==true AND [social_profiles_style]=='1'",
             ],
 
@@ -111,22 +111,22 @@ Framework::getTheme()->addFields(
                 'attributes' => [
                     'options' =>  Constants::$social_profiles,
                     'lang'   => [
-                        'social_brands'  => Text::_('TPL_ASTROID_SOCIAL_BRANDS'),
-                        'social_search'  => Text::_('TPL_ASTROID_SOCIAL_SEARCH_LABEL'),
-                        'add_profile'  => Text::_('TPL_ASTROID_ADD_PROFILE'),
-                        'add_custom_social_label'  => Text::_('TPL_ASTROID_ADD_CUSTOM_SOCIAL_LABEL'),
-                        'astroid_color'  => Text::_('TPL_ASTROID_COLOR'),
-                        'astroid_icon'  => Text::_('TPL_ASTROID_ICON'),
-                        'astroid_title'  => Text::_('TPL_ASTROID_TITLE'),
-                        'astroid_icon_class'  => Text::_('TPL_ASTROID_ICON_CLASS'),
-                        'astroid_link'  => Text::_('TPL_ASTROID_LINK'),
-                        'astroid_mobile_number'  => Text::_('TPL_ASTROID_MOBILE_NUMBER'),
-                        'astroid_skype_id'  => Text::_('TPL_ASTROID_SKYPE_ID'),
-                        'astroid_username'  => Text::_('TPL_ASTROID_MOBILE_USERNAME'),
-                        'astroid_social_link_placeholder'  => Text::_('TPL_ASTROID_SOCIAL_LINK_PLACEHOLDER'),
-                        'astroid_social_whatsapp_placeholder'  => Text::_('TPL_ASTROID_SOCIAL_WHATSAPP_PLACEHOLDER'),
-                        'astroid_social_telegram_placeholder'  => Text::_('TPL_ASTROID_SOCIAL_TELEGRAM_PLACEHOLDER'),
-                        'astroid_social_skype_placeholder'  => Text::_('TPL_ASTROID_SOCIAL_SKYPE_PLACEHOLDER'),
+                        'social_brands'  => Text::_('social_brands'),
+                        'social_search'  => Text::_('social_search'),
+                        'add_profile'  => Text::_('add_profile'),
+                        'add_custom_social_label'  => Text::_('add_custom_profile'),
+                        'astroid_color'  => Text::_('color'),
+                        'astroid_icon'  => Text::_('icon'),
+                        'astroid_title'  => Text::_('title'),
+                        'astroid_icon_class'  => Text::_('icon_class'),
+                        'astroid_link'  => Text::_('link_url'),
+                        'astroid_mobile_number'  => Text::_('mobile_number'),
+                        'astroid_skype_id'  => Text::_('skype_id'),
+                        'astroid_username'  => Text::_('username'),
+                        'astroid_social_link_placeholder'  => Text::_('social_link_placeholder'),
+                        'astroid_social_whatsapp_placeholder'  => Text::_('social_whatsapp_placeholder'),
+                        'astroid_social_telegram_placeholder'  => Text::_('social_telegram_placeholder'),
+                        'astroid_social_skype_placeholder'  => Text::_('social_skype_placeholder'),
                     ]
                 ],
             ],

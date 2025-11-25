@@ -51,20 +51,20 @@ $box_shadow_hover   =   $box_shadow_hover ? ' ' . $box_shadow_hover : '';
 $title_html_element =   $params->get('title_html_element', 'h3');
 $title_font_style   =   $params->get('title_font_style');
 if (!empty($title_font_style)) {
-    Style::renderTypography('#'.$element->id.' .astroid-heading', $title_font_style, null, $element->isRoot);
+    Style::renderTypography('#'.$element->id.' .moon-heading', $title_font_style, null, $element->isRoot);
 }
 $title_heading_margin=  $params->get('title_heading_margin', '');
 
 $meta_font_style    =   $params->get('meta_font_style');
 if (!empty($meta_font_style)) {
-    Style::renderTypography('#'.$element->id.' .astroid-meta', $meta_font_style, null, $element->isRoot);
+    Style::renderTypography('#'.$element->id.' .moon-meta', $meta_font_style, null, $element->isRoot);
 }
 $meta_position      =   $params->get('meta_position', 'before');
 $meta_heading_margin=   $params->get('meta_heading_margin', '');
 
 $content_font_style =   $params->get('content_font_style');
 if (!empty($content_font_style)) {
-    Style::renderTypography('#'.$element->id.' .astroid-text', $content_font_style, null, $element->isRoot);
+    Style::renderTypography('#'.$element->id.' .moon-text', $content_font_style, null, $element->isRoot);
 }
 $button_size        =   $params->get('button_size', '');
 $button_size        =   $button_size ? ' '. $button_size : '';
@@ -76,22 +76,22 @@ echo '<div class="as-art-slides-inner overflow-hidden'.$bd_radius.'">';
 foreach ($slides->getData() as $key => $slide) {
     echo '<div class="as-art-slide">';
     echo '<div class="as-art-slide__img"><div class="as-art-slide-img-inner position-absolute w-100 h-100"><img src="'. $slide->params->get('image') .'" class="object-fit-cover w-100 h-100" alt="'.$slide->params->get('title').'"></div></div>';
-    echo '<div class="d-flex card-img-overlay'.$overlay_position.'"><div class="astroid-text-container overlay-inner'.$overlay_max_width.'">';
+    echo '<div class="d-flex card-img-overlay'.$overlay_position.'"><div class="moon-text-container overlay-inner'.$overlay_max_width.'">';
     if (!empty($slide->params->get('meta')) && $meta_position == 'before') {
-        echo '<div class="astroid-meta">' . $slide->params->get('meta') . '</div>';
+        echo '<div class="moon-meta">' . $slide->params->get('meta') . '</div>';
     }
     if (!empty($slide->params->get('title'))) {
-        echo '<'.$title_html_element.' class="astroid-heading">'. $slide->params->get('title') . '</'.$title_html_element.'>';
+        echo '<'.$title_html_element.' class="moon-heading">'. $slide->params->get('title') . '</'.$title_html_element.'>';
     }
     if (!empty($slide->params->get('meta')) && $meta_position == 'after') {
-        echo '<div class="astroid-meta">' . $slide->params->get('meta') . '</div>';
+        echo '<div class="moon-meta">' . $slide->params->get('meta') . '</div>';
     }
     if (!empty($slide->params->get('description'))) {
-        echo '<div class="astroid-text">' . $slide->params->get('description') . '</div>';
+        echo '<div class="moon-text">' . $slide->params->get('description') . '</div>';
     }
     $target = !empty($slide->params->get('link_target')) ? ' target="'.$slide->params->get('link_target').'"' : '';
     if (!empty($slide->params->get('link'))) {
-        echo '<div class="astroid-button mt-5"><a class="btn btn-' .(intval($params->get('button_outline', 0)) ? 'outline-' : ''). $params->get('button_style', '') . $button_size . $btn_radius . '" href="' . $slide->params->get('link') . '"'.$target.'>' . $slide->params->get('link_title') . '</a></div>';
+        echo '<div class="moon-button mt-5"><a class="btn btn-' .(intval($params->get('button_outline', 0)) ? 'outline-' : ''). $params->get('button_style', '') . $button_size . $btn_radius . '" href="' . $slide->params->get('link') . '"'.$target.'>' . $slide->params->get('link_title') . '</a></div>';
     }
     echo '</div></div>';
     echo '</div>';
@@ -138,10 +138,10 @@ if ($params->get('card_size', '') == 'custom') {
     }
 }
 if (!empty($title_heading_margin)) {
-    Style::setSpacingStyle($element->style->child('.astroid-heading'), $title_heading_margin, 'margin');
+    Style::setSpacingStyle($element->style->child('.moon-heading'), $title_heading_margin, 'margin');
 }
 if (!empty($meta_heading_margin)) {
-    Style::setSpacingStyle($element->style->child('.astroid-meta'), $meta_heading_margin, 'margin');
+    Style::setSpacingStyle($element->style->child('.moon-meta'), $meta_heading_margin, 'margin');
 }
 $style->child('.deco--3')->addCss('background-color', $main_color['light']);
 $style_dark->child('.deco--3')->addCss('background-color', $main_color['dark']);

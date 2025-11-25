@@ -111,6 +111,29 @@ $string['primary'] = 'Primary';
 $string['secondary'] = 'Secondary';
 $string['enable_heading_title'] = 'Enable Heading Title';
 $string['enable_heading_title_desc'] = 'Enable or disable the heading title.';
+$string['display'] = 'Display';
+$string['icon_color'] = 'Icon Color';
+$string['icon_color_desc'] = 'Select the icon color.';
+$string['text'] = 'Text';
+$string['icons'] = 'Icons';
+$string['meta'] = 'Meta';
+$string['link'] = 'Link';
+$string['link_text'] = 'Link Text';
+$string['link_url'] = 'Link URL';
+$string['link_target'] = 'Link Target';
+$string['link_target_desc'] = 'Select the link target.';
+$string['link_open_in_new_tab'] = 'Open Link in New Tab';
+$string['link_open_in_new_tab_desc'] = 'Enable or disable the link open in new tab.';
+$string['link_icon'] = 'Link Icon';
+$string['link_icon_desc'] = 'Select the link icon.';
+$string['link_icon_size'] = 'Link Icon Size';
+$string['link_icon_size_desc'] = 'Set size for the Icon, set a value by moving an indicator in a horizontal fashion.';
+$string['effect_type'] = 'Effect Type';
+$string['meta_position'] = 'Meta Position';
+$string['before_title'] = 'Before Title';
+$string['after_title'] = 'After Title';
+$string['readmore'] = 'Read More';
+$string['description'] = 'Description';
 
 // Design Options
 $string['spacing_settings'] = 'Spacing';
@@ -171,6 +194,7 @@ $string['sticky_effect_offset_breakpoint_desc'] = 'Define the device width from 
 $string['animation_background_type'] = 'Animation Background Type';
 $string['width'] = 'Width';
 $string['height'] = 'Height';
+$string['min_height'] = 'Min Height';
 $string['width_animation'] = 'Width of Animation';
 $string['height_animation'] = 'Height of Animation';
 $string['first_color'] = 'First Color';
@@ -191,6 +215,18 @@ $string['extra_large_devices'] = 'Hide on Extra Large Devices';
 $string['extra_large_devices_desc'] = 'Enable to hide this element on Extra Large Devices.';
 $string['extra_extra_large_devices'] = 'Hide on Extra-Extra-Large Devices';
 $string['extra_extra_large_devices_desc'] = 'Enable to hide this element on Extra-Extra-Large Devices.';
+$string['image_effect'] = 'Image Effect';
+$string['zoom_in'] = 'Zoom In';
+$string['rounded_size'] = 'Rounded Size';
+$string['box_shadow'] = 'Box Shadow';
+$string['box_shadow_desc'] = 'Add a box shadow to the element.';
+$string['box_shadow_hover'] = 'Box Shadow Hover';
+$string['box_shadow_hover_desc'] = 'Add a box shadow on hover to the element.';
+$string['overlay'] = 'Overlay';
+$string['overlay_position'] = 'Overlay Position';
+$string['overlay_text_color'] = 'Overlay Text Color';
+$string['overlay_padding'] = 'Overlay Padding';
+$string['pill'] = 'Pill';
 
 // Font family
 $string['font_family'] = 'Font Family';
@@ -208,6 +244,10 @@ $string['preview'] = 'Preview';
 $string['regions'] = 'Regions';
 $string['select_region'] = 'Select Region';
 $string['select_region_desc'] = 'Select the region to display the block.';
+$string['feature_load_region'] = 'Feature Load Region';
+$string['feature_load_region_desc'] = 'If there are other region(s) published to this region, you can select to display the content of this feature either below or after the region(s) published to this region.';
+$string['after_region'] = 'After Region';
+$string['before_region'] = 'Before Region';
 
 // Heading
 $string['header'] = 'Header';
@@ -502,3 +542,29 @@ $string['TPL_ASTROID_CHANGE_VIDEO'] = 'Change Video';
 $string['miscellaneous'] = 'Miscellaneous';
 $string['contact_info'] = 'Contact Information';
 $string['contact_info_desc'] = 'These settings control the contact information.';
+$string['contact_details'] = 'Contact Details';
+$string['contact_details_desc'] = 'Enable or disable to add or hide contact information.';
+$string['address'] = 'Address';
+$string['address_desc'] = 'Enter the address.';
+$string['phone_number'] = 'Phone Number';
+$string['phone_number_desc'] = 'Enter the phone number.';
+$string['email'] = 'Email';
+$string['email_desc'] = 'Enter the email address.';
+$string['mobile_number'] = 'Mobile Number';
+$string['mobile_number_desc'] = 'Enter the mobile number.';
+$string['open_hours'] = 'Open Hours';
+$string['open_hours_desc'] = 'Enter the opening hours.';
+$string['display_type_desc'] = 'Select whether you need to have icons or text before each contact item.';
+
+// Social Profiler
+$string['social_profiles'] = 'Social Profiles';
+$string['social_profiles_desc'] = 'These settings control the social profiles.';
+$string['enable_social_profiles'] = 'Enable Social Profiles';
+$string['enable_social_profiles_desc'] = 'Enable or disable to add or hide social profiles.';
+
+// Slideshow
+$string['slideshow'] = 'Slideshow';
+$string['autoplay'] = 'Autoplay';
+$string['controls'] = 'Controls';
+$string['interval'] = 'Interval';
+$string['indicators'] = 'Indicators';

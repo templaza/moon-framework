@@ -59,22 +59,22 @@ class MoonElementArt_Slider extends MoonElement {
                     ],
                     'title' => [
                         'type'    => 'text',
-                        'label'   => 'JGLOBAL_TITLE',
+                        'label'   => 'title',
                         'dynamic' => true,
                     ],
                     'meta' => [
                         'type'    => 'text',
-                        'label'   => 'ASTROID_WIDGET_META',
+                        'label'   => 'meta',
                         'dynamic' => true,
                     ],
                     'description' => [
                         'type'    => 'editor',
-                        'label'   => 'ASTROID_SHORTCUT_DESCRIPTION_LABEL',
+                        'label'   => 'description',
                         'dynamic' => true,
                     ],
                     'link' => [
                         'type'    => 'text',
-                        'label'   => 'ASTROID_WIDGET_LINK_LABEL',
+                        'label'   => 'link_url',
                         "attributes" => [
                             'hint'    => 'https://moonframe.work',
                             'dynamic' => true,
@@ -82,7 +82,7 @@ class MoonElementArt_Slider extends MoonElement {
                     ],
                     'link_title' => [
                         'type'       => 'text',
-                        'label'      => 'ASTROID_WIDGET_LINK_TEXT_LABEL',
+                        'label'      => 'link_text',
                         "attributes" => [
                             'hint'       => 'View More',
                             'dynamic' => true,
@@ -91,7 +91,7 @@ class MoonElementArt_Slider extends MoonElement {
                     ],
                     'link_target' => [
                         'type'       => 'list',
-                        'label'      => 'ASTROID_WIDGET_LINK_TARGET_LABEL',
+                        'label'      => 'link_target',
                         'default'    => '',
                         'conditions' => "[link]!==''",
                         'options'    => [
@@ -117,11 +117,11 @@ class MoonElementArt_Slider extends MoonElement {
         $this->addField('slider_height', [
             'group'      => 'slideshow_options',
             'type'       => 'range',
+            'label'      => 'height',
             "attributes" => [
                 'min'        => 1,
                 'max'        => 1200,
                 'step'       => 1,
-                'label'      => 'ASTROID_WIDGET_HEIGHT_LABEL',
                 'responsive' => true,
                 'postfix'    => 'vh|px',
             ],
@@ -131,11 +131,12 @@ class MoonElementArt_Slider extends MoonElement {
         $this->addField('min_height', [
             'group'   => 'slideshow_options',
             'type'    => 'range',
+            'label'      => 'min_height',
             "attributes" => [
                 'min'        => 1,
                 'max'        => 1200,
                 'step'       => 1,
-                'label'      => 'ASTROID_WIDGET_MIN_HEIGHT',
+
                 'responsive' => true,
                 'postfix' => 'px',
             ],
@@ -146,7 +147,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'slideshow_options',
             'type'    => 'list',
             'name'    => 'effect_type',
-            'label'   => 'ASTROID_WIDGET_EFFECT_TYPE',
+            'label'   => 'effect_type',
             'default' => 'theater',
             'options' => [
                 'theater'               => 'Theater',
@@ -171,7 +172,7 @@ class MoonElementArt_Slider extends MoonElement {
         $this->addField('main_color', [
             'group' => 'slideshow_options',
             'type'  => 'color',
-            'label' => 'ASTROID_WIDGET_MAIN_COLOR',
+            'label' => 'color',
         ]);
 
         $this->addField('autoplay', [
@@ -181,17 +182,17 @@ class MoonElementArt_Slider extends MoonElement {
                 "role" => "switch"
             ],
             'default' => '0',
-            'label'   => 'ASTROID_WIDGET_AUTOPLAY',
+            'label'   => 'autoplay',
         ]);
 
         $this->addField('interval', [
             'group'      => 'slideshow_options',
             'type'       => 'range',
+            'label'      => 'interval',
             "attributes" => [
                 'min'        => 1,
                 'max'        => 10,
                 'step'       => 1,
-                'label'      => 'ASTROID_WIDGET_INTERVAL',
                 'postfix'    => 'seconds',
             ],
             'default'    => 3,
@@ -205,7 +206,7 @@ class MoonElementArt_Slider extends MoonElement {
                 "role" => "switch"
             ],
             'default' => '1',
-            'label'   => 'ASTROID_WIDGET_CONTROLS',
+            'label'   => 'controls',
         ]);
 
         $this->addField('indicators', [
@@ -215,18 +216,18 @@ class MoonElementArt_Slider extends MoonElement {
                 "role" => "switch"
             ],
             'default' => '1',
-            'label'   => 'ASTROID_WIDGET_INDICATORS',
+            'label'   => 'indicators',
         ]);
 
         $this->addField('image_effect', [
             'group'   => 'slideshow_options',
             'type'    => 'list',
             'name'    => 'image_effect',
-            'label'   => 'ASTROID_WIDGET_IMAGE_EFFECT',
+            'label'   => 'image_effect',
             'default' => '',
             'options' => [
-                ''           => 'JNONE',
-                'zoom_image' => 'TPL_ASTROID_ZOOM_IN',
+                ''           => 'none',
+                'zoom_image' => 'zoom_in',
             ],
         ]);
 
@@ -234,13 +235,13 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'slideshow_options',
             'type'    => 'list',
             'name'    => 'slide_border_radius',
-            'label'   => 'ASTROID_WIDGET_BORDER_RADIUS_LABEL',
+            'label'   => 'border_radius',
             'default' => '',
             'options' => [
-                ''       => 'TPL_ASTROID_ICON_STYLE_ROUNDED',
-                '0'      => 'TPL_ASTROID_ICON_STYLE_SQUARE',
-                'circle' => 'TPL_ASTROID_ICON_STYLE_CIRCLE',
-                'pill'   => 'TPL_ASTROID_ICON_STYLE_PILL',
+                ''       => 'rounded',
+                '0'      => 'square',
+                'circle' => 'circle',
+                'pill'   => 'pill',
             ],
         ]);
 
@@ -248,7 +249,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'      => 'slideshow_options',
             'type'       => 'list',
             'name'       => 'slide_rounded_size',
-            'label'      => 'ASTROID_WIDGET_ROUNDED_SIZE_LABEL',
+            'label'      => 'rounded_size',
             'default'    => '3',
             'conditions' => "[slide_border_radius]==''",
             'options'    => [
@@ -264,14 +265,15 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'slideshow_options',
             'type'    => 'list',
             'name'    => 'box_shadow',
-            'label'   => 'ASTROID_WIDGET_BOX_SHADOW_LABEL',
+            'label'   => 'box_shadow',
+            'description' => 'box_shadow_desc',
             'default' => '',
             'options' => [
-                ''            => 'TPL_ASTROID_DEFAULT',
-                'shadow-none' => 'ASTROID_WIDGET_SHADOW_NONE',
-                'shadow-sm'   => 'ASTROID_WIDGET_SHADOW_SMALL',
-                'shadow'      => 'ASTROID_WIDGET_SHADOW_REGULAR',
-                'shadow-lg'   => 'ASTROID_WIDGET_SHADOW_LARGE',
+                ''            => 'default',
+                'shadow-none' => 'none',
+                'shadow-sm'   => 'small',
+                'shadow'      => 'regular',
+                'shadow-lg'   => 'large',
             ],
         ]);
 
@@ -279,14 +281,15 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'slideshow_options',
             'type'    => 'list',
             'name'    => 'box_shadow_hover',
-            'label'   => 'ASTROID_WIDGET_BOX_SHADOW_HOVER_LABEL',
+            'label'   => 'box_shadow_hover',
+            'description' => 'box_shadow_hover_desc',
             'default' => '',
             'options' => [
-                ''                   => 'TPL_ASTROID_DEFAULT',
-                'shadow-hover-none'  => 'ASTROID_WIDGET_SHADOW_NONE',
-                'shadow-hover-sm'    => 'ASTROID_WIDGET_SHADOW_SMALL',
-                'shadow-hover'       => 'ASTROID_WIDGET_SHADOW_REGULAR',
-                'shadow-hover-lg'    => 'ASTROID_WIDGET_SHADOW_LARGE',
+                ''                   => 'default',
+                'shadow-hover-none'  => 'none',
+                'shadow-hover-sm'    => 'small',
+                'shadow-hover'       => 'regular',
+                'shadow-hover-lg'    => 'large',
             ],
         ]);
 
@@ -294,18 +297,18 @@ class MoonElementArt_Slider extends MoonElement {
             'group'       => 'overlay_options',
             'type'        => 'list',
             'name'        => 'overlay_max_width',
-            'label'       => 'ASTROID_WIDGET_MAX_WIDTH_LABEL',
-            'description' => 'ASTROID_WIDGET_MAX_WIDTH_DESC',
+            'label'       => 'max_width',
+            'description' => 'max_width_desc',
             'default'     => '',
             'options'     => [
-                ''        => 'JGLOBAL_INHERIT',
-                'xxsmall' => 'ASTROID_XXS',
-                'xsmall'  => 'ASTROID_XS',
-                'small'   => 'ASTROID_SM',
-                'medium'  => 'ASTROID_MD',
-                'large'   => 'ASTROID_LG',
-                'xlarge'  => 'ASTROID_XL',
-                'xxlarge' => 'ASTROID_XXL',
+                ''        => 'inherit',
+                'xxsmall' => 'xxsmall',
+                'xsmall'  => 'xsmall',
+                'small'   => 'small',
+                'medium'  => 'medium',
+                'large'   => 'large',
+                'xlarge'  => 'xlarge',
+                'xxlarge' => 'xxlarge',
             ],
         ]);
 
@@ -313,18 +316,18 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'overlay_options',
             'type'    => 'list',
             'name'    => 'overlay_position',
-            'label'   => 'ASTROID_WIDGET_OVERLAY_POSITION_LABEL',
+            'label'   => 'overlay_position',
             'default' => 'justify-content-center align-items-center',
             'options' => [
-                'justify-content-start align-items-start'   => 'ASTROID_WIDGET_TOP_LEFT',
-                'justify-content-center align-items-start'  => 'ASTROID_WIDGET_TOP_CENTER',
-                'justify-content-end align-items-start'     => 'ASTROID_WIDGET_TOP_RIGHT',
-                'justify-content-start align-items-center'  => 'ASTROID_WIDGET_CENTER_LEFT',
-                'justify-content-center align-items-center' => 'ASTROID_WIDGET_CENTER_CENTER',
-                'justify-content-end align-items-center'    => 'ASTROID_WIDGET_CENTER_RIGHT',
-                'justify-content-start align-items-end'     => 'ASTROID_WIDGET_BOTTOM_LEFT',
-                'justify-content-center align-items-end'    => 'ASTROID_WIDGET_BOTTOM_CENTER',
-                'justify-content-end align-items-end'       => 'ASTROID_WIDGET_BOTTOM_RIGHT',
+                'justify-content-start align-items-start'   => 'left_top',
+                'justify-content-center align-items-start'  => 'center_top',
+                'justify-content-end align-items-start'     => 'right_top',
+                'justify-content-start align-items-center'  => 'left_center',
+                'justify-content-center align-items-center' => 'center_center',
+                'justify-content-end align-items-center'    => 'right_center',
+                'justify-content-start align-items-end'     => 'left_bottom',
+                'justify-content-center align-items-end'    => 'center_bottom',
+                'justify-content-end align-items-end'       => 'right_bottom',
             ],
         ]);
 
@@ -332,12 +335,12 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'overlay_options',
             'type'    => 'list',
             'name'    => 'overlay_text_color',
-            'label'   => 'ASTROID_WIDGET_OVERLAY_TEXT_COLOR',
+            'label'   => 'overlay_text_color',
             'default' => '',
             'options' => [
-                ''         => 'JGLOBAL_INHERIT',
-                'as-light' => 'ASTROID_WIDGET_LIGHT_COLOR',
-                'as-dark'  => 'ASTROID_WIDGET_DARK_COLOR',
+                ''         => 'inherit',
+                'as-light' => 'color_mode_light',
+                'as-dark'  => 'color_mode_dark',
             ],
         ]);
 
@@ -350,9 +353,9 @@ class MoonElementArt_Slider extends MoonElement {
             'name'    => 'overlay_type',
             'default' => 'color',
             'options' => [
-                ''                 => 'ASTROID_NONE',
-                'color'            => 'TPL_ASTROID_COLOR',
-                'background-color' => 'TPL_ASTROID_GRADIENT',
+                ''                 => 'none',
+                'color'            => 'color',
+                'background-color' => 'background_color',
             ],
         ]);
 
@@ -360,7 +363,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'      => 'overlay_options',
             'type'       => 'color',
             'name'       => 'overlay_color',
-            'label'      => 'ASTROID_WIDGET_OVERLAY_COLOR',
+            'label'      => 'overlay_color',
             'conditions' => "[overlay_type]=='color'",
         ]);
 
@@ -368,7 +371,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'      => 'overlay_options',
             'type'       => 'gradient',
             'name'       => 'overlay_gradient',
-            'label'      => 'ASTROID_WIDGET_OVERLAY_GRADIENT',
+            'label'      => 'overlay_gradient',
             'conditions' => "[overlay_type]=='background-color'",
         ]);
 
@@ -376,14 +379,14 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'overlay_options',
             'type'    => 'list',
             'name'    => 'overlay_padding',
-            'label'   => 'ASTROID_WIDGET_OVERLAY_PADDING_LABEL',
+            'label'   => 'overlay_padding',
             'default' => '',
             'options' => [
-                'none'   => 'ASTROID_NONE',
-                ''       => 'TPL_ASTROID_DEFAULT',
-                'small'  => 'ASTROID_SMALL',
-                'large'  => 'ASTROID_LARGE',
-                'custom' => 'ASTROID_WIDGET_CUSTOM',
+                'none'   => 'none',
+                ''       => 'default',
+                'small'  => 'small',
+                'large'  => 'large',
+                'custom' => 'custom',
             ],
         ]);
 
@@ -391,7 +394,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'      => 'overlay_options',
             'type'       => 'spacing',
             'name'       => 'overlay_custom_padding',
-            'label'      => 'ASTROID_WIDGET_PADDING_LABEL',
+            'label'      => 'padding',
             'conditions' => "[overlay_padding]=='custom'",
         ]);
 
@@ -399,7 +402,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'title_options',
             'type'    => 'list',
             'name'    => 'title_html_element',
-            'label'   => 'ASTROID_WIDGET_HTML_ELEMENT_LABEL',
+            'label'   => 'html_element',
             'default' => 'h3',
             'options' => [
                 'h1' => 'h1',
@@ -416,10 +419,10 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'title_options',
             'type'    => 'typography',
             'name'    => 'title_font_style',
-            'label'   => 'ASTROID_WIDGET_FONT_STYLES_LABEL',
+            'label'   => 'font_style',
             "attributes" => [
                 'options' => [
-                    "colorpicker" => false,
+                    "colorpicker" => true,
                     'stylepicker' => false,
                     'fontpicker' => true,
                     'sizepicker' => true,
@@ -429,7 +432,7 @@ class MoonElementArt_Slider extends MoonElement {
                     'transformpicker' => true,
                     'columns' => 1,
                     'preview' => false,
-                    'collapse' => false,
+                    'collapse' => true,
                     'system_fonts' => Font::get_system_fonts(),
                     'text_transform_options' => Font::text_transform(),
                     'lang' => Font::font_properties(),
@@ -443,17 +446,17 @@ class MoonElementArt_Slider extends MoonElement {
             'group' => 'title_options',
             'type'  => 'spacing',
             'name'  => 'title_heading_margin',
-            'label' => 'ASTROID_WIDGET_MARGIN_LABEL',
+            'label' => 'margin',
         ]);
 
         $this->addField('meta_font_style', [
             'group'   => 'meta_options',
             'type'    => 'typography',
             'name'    => 'meta_font_style',
-            'label'   => 'ASTROID_WIDGET_FONT_STYLES_LABEL',
+            'label'   => 'font_style',
             "attributes" => [
                 'options' => [
-                    "colorpicker" => false,
+                    "colorpicker" => true,
                     'stylepicker' => false,
                     'fontpicker' => true,
                     'sizepicker' => true,
@@ -463,7 +466,7 @@ class MoonElementArt_Slider extends MoonElement {
                     'transformpicker' => true,
                     'columns' => 1,
                     'preview' => false,
-                    'collapse' => false,
+                    'collapse' => true,
                     'system_fonts' => Font::get_system_fonts(),
                     'text_transform_options' => Font::text_transform(),
                     'lang' => Font::font_properties(),
@@ -477,18 +480,18 @@ class MoonElementArt_Slider extends MoonElement {
             'group' => 'meta_options',
             'type'  => 'spacing',
             'name'  => 'meta_heading_margin',
-            'label' => 'ASTROID_WIDGET_MARGIN_LABEL',
+            'label' => 'margin',
         ]);
 
         $this->addField('meta_position', [
             'group'   => 'meta_options',
             'type'    => 'list',
             'name'    => 'meta_position',
-            'label'   => 'ASTROID_WIDGET_META_POSITION_LABEL',
+            'label'   => 'meta_position',
             'default' => 'before',
             'options' => [
-                'before' => 'ASTROID_BEFORE_TITLE',
-                'after'  => 'ASTROID_AFTER_TITLE',
+                'before' => 'before_title',
+                'after'  => 'after_title',
             ],
         ]);
 
@@ -496,10 +499,10 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'content_options',
             'type'    => 'typography',
             'name'    => 'content_font_style',
-            'label'   => 'ASTROID_WIDGET_FONT_STYLES_LABEL',
+            'label'   => 'font_style',
             "attributes" => [
                 'options' => [
-                    "colorpicker" => false,
+                    "colorpicker" => true,
                     'stylepicker' => false,
                     'fontpicker' => true,
                     'sizepicker' => true,
@@ -509,7 +512,7 @@ class MoonElementArt_Slider extends MoonElement {
                     'transformpicker' => true,
                     'columns' => 1,
                     'preview' => false,
-                    'collapse' => false,
+                    'collapse' => true,
                     'system_fonts' => Font::get_system_fonts(),
                     'text_transform_options' => Font::text_transform(),
                     'lang' => Font::font_properties(),
@@ -523,7 +526,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'readmore_options',
             'type'    => 'list',
             'name'    => 'button_style',
-            'label'   => 'ASTROID_WIDGET_GLOBAL_STYLES_LABEL',
+            'label'   => 'style',
             'default' => 'primary',
             'options' => [
                 'primary'   => 'Primary',
@@ -546,14 +549,14 @@ class MoonElementArt_Slider extends MoonElement {
                 "role" => "switch"
             ],
             'default' => '0',
-            'label'   => 'ASTROID_WIDGET_BUTTON_OUTLINE_LABEL',
+            'label'   => 'button_outline',
         ]);
 
         $this->addField('button_size', [
             'group'   => 'readmore_options',
             'type'    => 'list',
             'name'    => 'button_size',
-            'label'   => 'ASTROID_WIDGET_GLOBAL_STYLES_LABEL',
+            'label'   => 'style',
             'default' => '',
             'options' => [
                 ''       => 'Default',
@@ -566,7 +569,7 @@ class MoonElementArt_Slider extends MoonElement {
             'group'   => 'readmore_options',
             'type'    => 'list',
             'name'    => 'btn_border_radius',
-            'label'   => 'ASTROID_WIDGET_GLOBAL_BORDER_RADIUS_LABEL',
+            'label'   => 'border_radius',
             'default' => '',
             'options' => [
                 ''             => 'Rounded',

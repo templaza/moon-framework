@@ -5,16 +5,16 @@ use local_moon\library\Helper\Text;
 Framework::getTheme()->addFields(
     'social_profile',
     [
-        'label' => 'social_profile',
+        'label' => 'social_profiles',
         'icon' => 'as-icon as-icon-palette',
         'order' => 6,
         'fields' => [
-            'social_profile' => ["type" => "group", "label" => "social_profile", "description" => "social_profile_desc"],
+            'social_profile' => ["type" => "group", "label" => "social_profiles", "description" => "social_profile_desc"],
             'enable_social_profiler' => [
                 'group' => 'social_profile',
                 'type' => 'radio',
-                'label' => 'TPL_ASTROID_SOCIAL_ENABLE_LABEL',
-                'description' => 'TPL_ASTROID_SOCIAL_ENABLE_DESC',
+                'label' => 'enable_social_profiles',
+                'description' => 'enable_social_profiles_desc',
                 'default' => '1',
                 "attributes" => [
                     "role" => "switch"

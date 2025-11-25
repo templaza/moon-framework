@@ -12,8 +12,8 @@ Framework::getTheme()->addFields(
             'contact_details' => [
                 'group' => 'contact_info',
                 'type' => 'radio',
-                'label' => 'TPL_ASTROID_CONTACT_DEATILS_LABEL',
-                'description' => 'TPL_ASTROID_CONTACT_DEATILS_DESC',
+                'label' => 'contact_details',
+                'description' => 'contact_details_desc',
                 'default' => 1,
                 "attributes" => [
                     "role" => "switch"
@@ -23,8 +23,8 @@ Framework::getTheme()->addFields(
             'contact_module_position' => [
                 'group' => 'contact_info',
                 'type' => 'regions',
-                'label' => 'TPL_ASTROID_MODULE_POSITION_LABEL',
-                'description' => 'TPL_ASTROID_MODULE_POSITION_DESC',
+                'label' => 'select_region',
+                'description' => 'select_region_desc',
                 "attributes" => [
                     'astroid_content_layout' => 'contactinfo',
                 ],
@@ -34,24 +34,24 @@ Framework::getTheme()->addFields(
             'contact_feature_load_position' => [
                 'group' => 'contact_info',
                 'type' => 'list',
-                'label' => 'TPL_ASTROID_FEATURE_LOAD_POSITION_LABEL',
-                'description' => 'TPL_ASTROID_FEATURE_LOAD_POSITION_DESC',
+                'label' => 'feature_load_region',
+                'description' => 'feature_load_region_desc',
                 "attributes" => [
                     'astroid_content_layout_load' => 'contact_module_position',
                 ],
                 'default' => 'after',
                 'conditions' => "[contact_details]=='1'",
                 'options' => [
-                    'after' => 'TPL_ASTROID_AFTER_MODULE',
-                    'before' => 'TPL_ASTROID_BEFORE_MODULE',
+                    'after' => 'after_region',
+                    'before' => 'before_region',
                 ],
             ],
 
             'contact_address' => [
                 'group' => 'contact_info',
                 'type' => 'text',
-                'label' => 'TPL_ASTROID_MISCELL_ADDRESS_LABEL',
-                'description' => 'TPL_ASTROID_MISCELL_ADDRESS_DESC',
+                'label' => 'address',
+                'description' => 'address_desc',
                 "attributes" => [
                     'hint' => '15 Barnes Wallis Way, West Road, Chorley, USA',
                 ],
@@ -61,8 +61,8 @@ Framework::getTheme()->addFields(
             'contact_phone_number' => [
                 'group' => 'contact_info',
                 'type' => 'text',
-                'label' => 'TPL_ASTROID_MISCELL_PHONE_NUMBER_LABEL',
-                'description' => 'TPL_ASTROID_MISCELL_PHONE_NUMBER_DESC',
+                'label' => 'phone_number',
+                'description' => 'phone_number_desc',
                 "attributes" => [
                     'hint' => '+1 123 456 7890',
                 ],
@@ -72,8 +72,8 @@ Framework::getTheme()->addFields(
             'contact_mobile_number' => [
                 'group' => 'contact_info',
                 'type' => 'text',
-                'label' => 'TPL_ASTROID_MISCELL_MOBILE_NUMBER_LABEL',
-                'description' => 'TPL_ASTROID_MISCELL_MOBILE_NUMBER_DESC',
+                'label' => 'mobile_number',
+                'description' => 'mobile_number_desc',
                 "attributes" => [
                     'hint' => '+1 123 456 7890',
                 ],
@@ -83,8 +83,8 @@ Framework::getTheme()->addFields(
             'contact_email_address' => [
                 'group' => 'contact_info',
                 'type' => 'text',
-                'label' => 'JGLOBAL_EMAIL',
-                'description' => 'TPL_ASTROID_MISCELL_EMAIL_DESC',
+                'label' => 'email',
+                'description' => 'email_desc',
                 "attributes" => [
                     'hint' => 'email@yourcompany.com',
                 ],
@@ -94,8 +94,8 @@ Framework::getTheme()->addFields(
             'contact_open_hours' => [
                 'group' => 'contact_info',
                 'type' => 'text',
-                'label' => 'TPL_ASTROID_MISCELL_OPEN_HOURS_LABEL',
-                'description' => 'TPL_ASTROID_MISCELL_OPEN_HOURS_DESC',
+                'label' => 'open_hours',
+                'description' => 'open_hours_desc',
                 "attributes" => [
                     'hint' => 'Mon-Fri : 9:00am - 6:00pm',
                 ],
@@ -105,21 +105,21 @@ Framework::getTheme()->addFields(
             'contact_display' => [
                 'group' => 'contact_info',
                 'type' => 'radio',
-                'label' => 'TPL_ASTROID_DISPLAY_LABEL',
-                'description' => 'TPL_ASTROID_DISPLAY_LABEL_DESC',
+                'label' => 'display',
+                'description' => 'display_type_desc',
                 'default' => 'icons',
                 'conditions' => "[contact_details]=='1'",
                 'options' => [
-                    'text' => 'TPL_ASTROID_TEXT',
-                    'icons' => 'TPL_ASTROID_ICONS',
+                    'text' => 'text',
+                    'icons' => 'icons',
                 ],
             ],
 
             'icon_color' => [
                 'group' => 'contact_info',
                 'type' => 'color',
-                'label' => 'TPL_ASTROID_ICON_COLOR_LABEL',
-                'description' => 'TPL_ASTROID_ICON_COLOR_DESC',
+                'label' => 'icon_color',
+                'description' => 'icon_color_desc',
                 'conditions' => "[contact_details]=='1' AND [contact_display]=='icons'",
             ],
         ]

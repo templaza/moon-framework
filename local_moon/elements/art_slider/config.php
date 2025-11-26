@@ -392,7 +392,6 @@ class MoonElementArt_Slider extends MoonElement {
         $this->addField('overlay_custom_padding', [
             'group'      => 'overlay_options',
             'type'       => 'spacing',
-            'name'       => 'overlay_custom_padding',
             'label'      => 'padding',
             'conditions' => "[overlay_padding]=='custom'",
         ]);
@@ -400,7 +399,6 @@ class MoonElementArt_Slider extends MoonElement {
         $this->addField('title_html_element', [
             'group'   => 'title_options',
             'type'    => 'list',
-            'name'    => 'title_html_element',
             'label'   => 'html_element',
             'default' => 'h3',
             'options' => [
@@ -417,7 +415,6 @@ class MoonElementArt_Slider extends MoonElement {
         $this->addField('title_font_style', [
             'group'   => 'title_options',
             'type'    => 'typography',
-            'name'    => 'title_font_style',
             'label'   => 'font_style',
             "attributes" => [
                 'options' => [

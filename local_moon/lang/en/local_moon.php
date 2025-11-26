@@ -671,3 +671,6 @@ $string['indicators'] = 'Indicators';
 
 // Image
 $string['figure_caption'] = 'Figure Caption';
+
+// Button
+$string['buttons'] = 'Buttons';

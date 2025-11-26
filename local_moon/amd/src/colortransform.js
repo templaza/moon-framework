@@ -40,7 +40,7 @@ define([], function() {
              */
             function ensureBodyClass() {
                 if (document.body) {
-                    document.body.classList.add('mf-transition-body');
+                    document.body.classList.add('as-transition-body');
                 }
             }
 

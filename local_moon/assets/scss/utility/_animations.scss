@@ -1,8 +1,8 @@
-.mf-transition-body {
+.as-transition-body {
 	transition: all 300ms;
 }
 
-.mf-loading {
+.as-loading {
 	&::before {
 		content: '';
 		position: absolute;
@@ -124,7 +124,7 @@
 	}
 }
 
-@keyframes mf-transition-bob {
+@keyframes as-transition-bob {
 	0% {
 		transform: translateY(-8px)
 	}
@@ -136,14 +136,14 @@
 	}
 }
 
-@keyframes mf-transition-bob-float {
+@keyframes as-transition-bob-float {
 	100% {
 		transform: translateY(-8px)
 	}
 }
 
-.mf-transition-bob:active, .mf-transition-bob:focus, .mf-transition-bob:hover {
-	animation-name: mf-transition-bob-float, mf-transition-bob;
+.as-transition-bob:active, .as-transition-bob:focus, .as-transition-bob:hover {
+	animation-name: as-transition-bob-float, as-transition-bob;
 	animation-duration: .3s, 1.5s;
 	animation-delay: 0s, .3s;
 	animation-timing-function: ease-out, ease-in-out;
@@ -152,7 +152,7 @@
 	animation-direction: normal, alternate
 }
 
-@keyframes mf-transition-pulse {
+@keyframes as-transition-pulse {
 	25% {
 		transform: scale(1.1)
 	}
@@ -161,42 +161,42 @@
 	}
 }
 
-.mf-transition-pulse:active, .mf-transition-pulse:focus, .mf-transition-pulse:hover {
-	animation-name: mf-transition-pulse;
+.as-transition-pulse:active, .as-transition-pulse:focus, .as-transition-pulse:hover {
+	animation-name: as-transition-pulse;
 	animation-duration: 1s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite
 }
 
-@keyframes mf-transition-pulse-grow {
+@keyframes as-transition-pulse-grow {
 	to {
 		transform: scale(1.1)
 	}
 }
 
-.mf-transition-pulse-grow:active, .mf-transition-pulse-grow:focus, .mf-transition-pulse-grow:hover {
-	animation-name: mf-transition-pulse-grow;
+.as-transition-pulse-grow:active, .as-transition-pulse-grow:focus, .as-transition-pulse-grow:hover {
+	animation-name: as-transition-pulse-grow;
 	animation-duration: .3s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate
 }
 
-@keyframes mf-transition-pulse-shrink {
+@keyframes as-transition-pulse-shrink {
 	to {
 		transform: scale(0.9)
 	}
 }
 
-.mf-transition-pulse-shrink:active, .mf-transition-pulse-shrink:focus, .mf-transition-pulse-shrink:hover {
-	animation-name: mf-transition-pulse-shrink;
+.as-transition-pulse-shrink:active, .as-transition-pulse-shrink:focus, .as-transition-pulse-shrink:hover {
+	animation-name: as-transition-pulse-shrink;
 	animation-duration: .3s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate
 }
 
-@keyframes mf-transition-push {
+@keyframes as-transition-push {
 	50% {
 		transform: scale(0.8)
 	}
@@ -205,83 +205,83 @@
 	}
 }
 
-.mf-transition-push:active, .mf-transition-push:focus, .mf-transition-push:hover {
-	animation-name: mf-transition-push;
+.as-transition-push:active, .as-transition-push:focus, .as-transition-push:hover {
+	animation-name: as-transition-push;
 	animation-duration: .3s;
 	animation-timing-function: linear;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-pop {
+@keyframes as-transition-pop {
 	50% {
 		transform: scale(1.2)
 	}
 }
 
-.mf-transition-pop:active, .mf-transition-pop:focus, .mf-transition-pop:hover {
-	animation-name: mf-transition-pop;
+.as-transition-pop:active, .as-transition-pop:focus, .as-transition-pop:hover {
+	animation-name: as-transition-pop;
 	animation-duration: .3s;
 	animation-timing-function: linear;
 	animation-iteration-count: 1
 }
 
-.mf-transition-bounce-in {
+.as-transition-bounce-in {
 	transition-duration: .5s
 }
 
-.mf-transition-bounce-in:active, .mf-transition-bounce-in:focus, .mf-transition-bounce-in:hover {
+.as-transition-bounce-in:active, .as-transition-bounce-in:focus, .as-transition-bounce-in:hover {
 	transform: scale(1.2);
 	transition-timing-function: cubic-bezier(0.47, 2.02, .31, -.36)
 }
 
-.mf-transition-bounce-out {
+.as-transition-bounce-out {
 	transition-duration: .5s
 }
 
-.mf-transition-bounce-out:active, .mf-transition-bounce-out:focus, .mf-transition-bounce-out:hover {
+.as-transition-bounce-out:active, .as-transition-bounce-out:focus, .as-transition-bounce-out:hover {
 	transform: scale(0.8);
 	transition-timing-function: cubic-bezier(0.47, 2.02, .31, -.36)
 }
 
-.mf-transition-rotate {
+.as-transition-rotate {
 	transition-duration: .3s;
 	transition-property: transform
 }
 
-.mf-transition-rotate:active, .mf-transition-rotate:focus, .mf-transition-rotate:hover {
+.as-transition-rotate:active, .as-transition-rotate:focus, .as-transition-rotate:hover {
 	transform: rotate(4deg)
 }
 
-.mf-transition-grow-rotate {
+.as-transition-grow-rotate {
 	transition-duration: .3s;
 	transition-property: transform
 }
 
-.mf-transition-grow-rotate:active, .mf-transition-grow-rotate:focus, .mf-transition-grow-rotate:hover {
+.as-transition-grow-rotate:active, .as-transition-grow-rotate:focus, .as-transition-grow-rotate:hover {
 	transform: scale(1.1) rotate(4deg)
 }
 
-.mf-transition-float {
+.as-transition-float {
 	transition-duration: .3s;
 	transition-property: transform;
 	transition-timing-function: ease-out
 }
 
-.mf-transition-float:active, .mf-transition-float:focus, .mf-transition-float:hover {
+.as-transition-float:active, .as-transition-float:focus, .as-transition-float:hover {
 	transform: translateY(-8px)
 }
 
-.mf-transition-sink {
+.as-transition-sink {
 	transition-duration: .3s;
 	transition-property: transform;
 	transition-timing-function: ease-out
 }
 
-.mf-transition-sink:active, .mf-transition-sink:focus, .mf-transition-sink:hover {
+.as-transition-sink:active, .as-transition-sink:focus, .as-transition-sink:hover {
 	transform: translateY(8px)
 }
 
-@keyframes mf-transition-hang {
+@keyframes as-transition-hang {
 	0% {
 		transform: translateY(8px)
 	}
@@ -293,14 +293,14 @@
 	}
 }
 
-@keyframes mf-transition-hang-sink {
+@keyframes as-transition-hang-sink {
 	100% {
 		transform: translateY(8px)
 	}
 }
 
-.mf-transition-hang:active, .mf-transition-hang:focus, .mf-transition-hang:hover {
-	animation-name: mf-transition-hang-sink, mf-transition-hang;
+.as-transition-hang:active, .as-transition-hang:focus, .as-transition-hang:hover {
+	animation-name: as-transition-hang-sink, as-transition-hang;
 	animation-duration: .3s, 1.5s;
 	animation-delay: 0s, .3s;
 	animation-timing-function: ease-out, ease-in-out;
@@ -309,36 +309,36 @@
 	animation-direction: normal, alternate
 }
 
-.mf-transition-skew {
+.as-transition-skew {
 	transition-duration: .3s;
 	transition-property: transform
 }
 
-.mf-transition-skew:active, .mf-transition-skew:focus, .mf-transition-skew:hover {
+.as-transition-skew:active, .as-transition-skew:focus, .as-transition-skew:hover {
 	transform: skew(-10deg)
 }
 
-.mf-transition-skew-forward {
+.as-transition-skew-forward {
 	transition-duration: .3s;
 	transition-property: transform;
 	transform-origin: 0 100%
 }
 
-.mf-transition-skew-forward:active, .mf-transition-skew-forward:focus, .mf-transition-skew-forward:hover {
+.as-transition-skew-forward:active, .as-transition-skew-forward:focus, .as-transition-skew-forward:hover {
 	transform: skew(-10deg)
 }
 
-.mf-transition-skew-backward {
+.as-transition-skew-backward {
 	transition-duration: .3s;
 	transition-property: transform;
 	transform-origin: 0 100%
 }
 
-.mf-transition-skew-backward:active, .mf-transition-skew-backward:focus, .mf-transition-skew-backward:hover {
+.as-transition-skew-backward:active, .as-transition-skew-backward:focus, .as-transition-skew-backward:hover {
 	transform: skew(10deg)
 }
 
-@keyframes mf-transition-wobble-vertical {
+@keyframes as-transition-wobble-vertical {
 	16.65% {
 		transform: translateY(8px)
 	}
@@ -359,14 +359,14 @@
 	}
 }
 
-.mf-transition-wobble-vertical:active, .mf-transition-wobble-vertical:focus, .mf-transition-wobble-vertical:hover {
-	animation-name: mf-transition-wobble-vertical;
+.as-transition-wobble-vertical:active, .as-transition-wobble-vertical:focus, .as-transition-wobble-vertical:hover {
+	animation-name: as-transition-wobble-vertical;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-wobble-horizontal {
+@keyframes as-transition-wobble-horizontal {
 	16.65% {
 		transform: translateX(8px)
 	}
@@ -387,14 +387,14 @@
 	}
 }
 
-.mf-transition-wobble-horizontal:active, .mf-transition-wobble-horizontal:focus, .mf-transition-wobble-horizontal:hover {
-	animation-name: mf-transition-wobble-horizontal;
+.as-transition-wobble-horizontal:active, .as-transition-wobble-horizontal:focus, .as-transition-wobble-horizontal:hover {
+	animation-name: as-transition-wobble-horizontal;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-wobble-to-bottom-right {
+@keyframes as-transition-wobble-to-bottom-right {
 	16.65% {
 		transform: translate(8px, 8px)
 	}
@@ -415,14 +415,14 @@
 	}
 }
 
-.mf-transition-wobble-to-bottom-right:active, .mf-transition-wobble-to-bottom-right:focus, .mf-transition-wobble-to-bottom-right:hover {
-	animation-name: mf-transition-wobble-to-bottom-right;
+.as-transition-wobble-to-bottom-right:active, .as-transition-wobble-to-bottom-right:focus, .as-transition-wobble-to-bottom-right:hover {
+	animation-name: as-transition-wobble-to-bottom-right;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-wobble-to-top-right {
+@keyframes as-transition-wobble-to-top-right {
 	16.65% {
 		transform: translate(8px, -8px)
 	}
@@ -443,14 +443,14 @@
 	}
 }
 
-.mf-transition-wobble-to-top-right:active, .mf-transition-wobble-to-top-right:focus, .mf-transition-wobble-to-top-right:hover {
-	animation-name: mf-transition-wobble-to-top-right;
+.as-transition-wobble-to-top-right:active, .as-transition-wobble-to-top-right:focus, .as-transition-wobble-to-top-right:hover {
+	animation-name: as-transition-wobble-to-top-right;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-wobble-top {
+@keyframes as-transition-wobble-top {
 	16.65% {
 		transform: skew(-12deg)
 	}
@@ -471,18 +471,18 @@
 	}
 }
 
-.mf-transition-wobble-top {
+.as-transition-wobble-top {
 	transform-origin: 0 100%
 }
 
-.mf-transition-wobble-top:active, .mf-transition-wobble-top:focus, .mf-transition-wobble-top:hover {
-	animation-name: mf-transition-wobble-top;
+.as-transition-wobble-top:active, .as-transition-wobble-top:focus, .as-transition-wobble-top:hover {
+	animation-name: as-transition-wobble-top;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-wobble-bottom {
+@keyframes as-transition-wobble-bottom {
 	16.65% {
 		transform: skew(-12deg)
 	}
@@ -503,18 +503,18 @@
 	}
 }
 
-.mf-transition-wobble-bottom {
+.as-transition-wobble-bottom {
 	transform-origin: 100% 0
 }
 
-.mf-transition-wobble-bottom:active, .mf-transition-wobble-bottom:focus, .mf-transition-wobble-bottom:hover {
-	animation-name: mf-transition-wobble-bottom;
+.as-transition-wobble-bottom:active, .as-transition-wobble-bottom:focus, .as-transition-wobble-bottom:hover {
+	animation-name: as-transition-wobble-bottom;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-wobble-skew {
+@keyframes as-transition-wobble-skew {
 	16.65% {
 		transform: skew(-12deg)
 	}
@@ -535,14 +535,14 @@
 	}
 }
 
-.mf-transition-wobble-skew:active, .mf-transition-wobble-skew:focus, .mf-transition-wobble-skew:hover {
-	animation-name: mf-transition-wobble-skew;
+.as-transition-wobble-skew:active, .as-transition-wobble-skew:focus, .as-transition-wobble-skew:hover {
+	animation-name: as-transition-wobble-skew;
 	animation-duration: 1s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1
 }
 
-@keyframes mf-transition-buzz {
+@keyframes as-transition-buzz {
 	50% {
 		transform: translateX(3px) rotate(2deg)
 	}
@@ -551,14 +551,14 @@
 	}
 }
 
-.mf-transition-buzz:active, .mf-transition-buzz:focus, .mf-transition-buzz:hover {
-	animation-name: mf-transition-buzz;
+.as-transition-buzz:active, .as-transition-buzz:focus, .as-transition-buzz:hover {
+	animation-name: as-transition-buzz;
 	animation-duration: .15s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite
 }
 
-@keyframes mf-transition-buzz-out {
+@keyframes as-transition-buzz-out {
 	10% {
 		transform: translateX(3px) rotate(2deg)
 	}
@@ -591,26 +591,26 @@
 	}
 }
 
-.mf-transition-buzz-out:active, .mf-transition-buzz-out:focus, .mf-transition-buzz-out:hover {
-	animation-name: mf-transition-buzz-out;
+.as-transition-buzz-out:active, .as-transition-buzz-out:focus, .as-transition-buzz-out:hover {
+	animation-name: as-transition-buzz-out;
 	animation-duration: .75s;
 	animation-timing-function: linear;
 	animation-iteration-count: 1
 }
 
-.mf-effect-light-up {
+.as-effect-light-up {
 	transition: filter 0.3s ease-in-out;
 	&:hover {
 		filter: brightness( 100% ) contrast( 113% ) saturate( 159% ) blur( 0.2px ) hue-rotate( 0deg );
 	}
 }
 
-@keyframes mf-effect-flash {
+@keyframes as-effect-flash {
 	0% {left:-100%;}
 	100% {left:125%;}
 }
 
-.mf-effect-flash {
+.as-effect-flash {
 	position: relative;
 	overflow: hidden;
 	&:before {
@@ -627,13 +627,13 @@
 	}
 	&:hover {
 		&:before {
-			-webkit-animation: mf-effect-flash 1.3s;
-			animation: mf-effect-flash 1.3s;
+			-webkit-animation: as-effect-flash 1.3s;
+			animation: as-effect-flash 1.3s;
 		}
 	}
 }
 
-.mf-effect-unveil {
+.as-effect-unveil {
 	position: relative;
 	overflow: hidden;
 	img {
@@ -733,7 +733,7 @@
 	}
 }
 
-.mf-fade-in-opacity {
+.as-fade-in-opacity {
 	animation-name: fadeInOpacity;
 	animation-duration: .75s;
 	animation-timing-function: linear;

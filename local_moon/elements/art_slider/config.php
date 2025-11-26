@@ -12,7 +12,7 @@ class MoonElementArt_Slider extends MoonElement {
             'title' => 'Art Slider',
             'description' => 'Art Slider Widget of Moodle',
             'icon' => 'as-icon as-icon-spotlights',
-            'category' => 'utility,media',
+            'category' => 'media,utility',
             'element_type' => 'widget'
         ]);
     }
@@ -136,7 +136,6 @@ class MoonElementArt_Slider extends MoonElement {
                 'min'        => 1,
                 'max'        => 1200,
                 'step'       => 1,
-
                 'responsive' => true,
                 'postfix' => 'px',
             ],

@@ -244,6 +244,36 @@ $string['style'] = 'Style';
 $string['style_desc'] = 'Select the style for the element.';
 $string['color_hover'] = 'Color Hover';
 $string['color_hover_desc'] = 'Select the hover color for the element.';
+$string['meta_options'] = 'Meta Options';
+
+// Hover transition
+$string['scale_up'] = 'Scale Up';
+$string['scale_down'] = 'Scale Down';
+$string['bob'] = 'Bob';
+$string['pulse'] = 'Pulse';
+$string['pulse_grow'] = 'Pulse Grow';
+$string['pulse_shrink'] = 'Pulse Shrink';
+$string['push'] = 'Push';
+$string['pop'] = 'Pop';
+$string['bounce_in'] = 'Bounce In';
+$string['bounce_out'] = 'Bounce Out';
+$string['rotate'] = 'Rotate';
+$string['grow_rotate'] = 'Grow Rotate';
+$string['float'] = 'Float';
+$string['sink'] = 'Sink';
+$string['hang'] = 'Hang';
+$string['skew'] = 'Skew';
+$string['skew_forward'] = 'Skew Forward';
+$string['skew_backward'] = 'Skew Backward';
+$string['wobble_vertical'] = 'Wobble Vertical';
+$string['wobble_horizontal'] = 'Wobble Horizontal';
+$string['wobble_to_bottom_right'] = 'Wobble to Bottom Right';
+$string['wobble_to_top_right'] = 'Wobble to Top Right';
+$string['wobble_top'] = 'Wobble Top';
+$string['wobble_bottom'] = 'Wobble Bottom';
+$string['wobble_skew'] = 'Wobble Skew';
+$string['buzz'] = 'Buzz';
+$string['buzz_out'] = 'Buzz Out';
 
 // Font family
 $string['font_family'] = 'Font Family';
@@ -616,3 +646,6 @@ $string['autoplay'] = 'Autoplay';
 $string['controls'] = 'Controls';
 $string['interval'] = 'Interval';
 $string['indicators'] = 'Indicators';
+
+// Image
+$string['figure_caption'] = 'Figure Caption';

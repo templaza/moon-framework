@@ -17,9 +17,9 @@ class MoonElementHeading extends MoonElement {
     public function setFields(): void {
         $this->setFieldSet('general-settings');
 
-        $this->addField('widget_styles',  [
+        $this->addField('meta_options',  [
             "type" => "group",
-            "label" => "widget_styles",
+            "label" => "meta_options",
         ]);
 
         $this->addField('title', [
@@ -94,7 +94,7 @@ class MoonElementHeading extends MoonElement {
         ]);
 
         $this->addField('font_style', [
-            "group"      => "widget_styles",
+            "group"      => "general",
             "type"       => "typography",
             "attributes" => [
                 'options' => [
@@ -115,6 +115,62 @@ class MoonElementHeading extends MoonElement {
                 ],
                 'lang' => Font::font_properties(),
                 'value' => Font::$get_default_font_value
+            ],
+        ]);
+
+        $this->addField('title_heading_margin', [
+            "group" => "general",
+            "type"  => "spacing",
+            "label" => "margin",
+        ]);
+
+        $this->addField('meta_text', [
+            "group"       => "meta_options",
+            "type"        => "text",
+            "label"       => "meta",
+            "dynamic"     => true,
+        ]);
+
+        $this->addField('meta_font_style', [
+            "group"   => "meta_options",
+            "type"    => "typography",
+            "label"   => "font_style",
+            "attributes" => [
+                'options' => [
+                    "colorpicker" => false,
+                    'stylepicker' => false,
+                    'fontpicker' => true,
+                    'sizepicker' => true,
+                    'letterspacingpicker' => true,
+                    'lineheightpicker' => true,
+                    'weightpicker' => true,
+                    'transformpicker' => true,
+                    'columns' => 1,
+                    'preview' => false,
+                    'collapse' => false,
+                    'system_fonts' => Font::get_system_fonts(),
+                    'text_transform_options' => Font::text_transform(),
+                    'lang' => Font::font_properties(),
+                ],
+                'lang' => Font::font_properties(),
+                'value' => Font::$get_default_font_value,
+            ],
+        ]);
+
+        $this->addField('meta_heading_margin', [
+            "group" => "meta_options",
+            "type"  => "spacing",
+            "label" => "margin",
+        ]);
+
+        $this->addField('meta_position', [
+            "group"   => "meta_options",
+            "type"    => "list",
+            "label"   => "meta_position",
+            "default" => "before",
+            "options" => [
+                "before" => "before_title",
+                "after"  => "after_title",
             ],
         ]);
     }

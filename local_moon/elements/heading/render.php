@@ -14,7 +14,18 @@ $icon           = $params->get('icon', '');
 $icon_color     = Style::getColor($params->get('icon_color', ''));
 $style->child('.moon-icon')->addCss('color', $icon_color['light']);
 $style_dark->child('.moon-icon')->addCss('color', $icon_color['dark']);
+
+$title_heading_margin=  $params->get('title_heading_margin', '');
+
+// Meta
+$meta = $params->get('meta_text', '');
+$meta_font_style     = $params->get('meta_font_style', null);
+$meta_heading_margin=  $params->get('meta_heading_margin', '');
+$meta_position=  $params->get('meta_position', 'before');
 if (!empty($title)) {
+    if ($meta_position == 'before') {
+        echo '<div class="heading-meta">'.$meta.'</div>';
+    }
     if ($use_link) {
         echo '<a href="'.$link.'" title="'.$title.'">';
     }
@@ -22,7 +33,20 @@ if (!empty($title)) {
     if ($use_link) {
         echo '</a>';
     }
+    if ($meta_position == 'after') {
+        echo '<div class="heading-meta">'.$meta.'</div>';
+    }
 }
 if (!empty($font_style)) {
     Style::renderTypography('#'.$this->id.' .heading', $font_style, null, $this->isRoot);
+}
+if (!empty($title_heading_margin)) {
+    Style::setSpacingStyle($this->style->child('.heading'), $title_heading_margin, 'margin');
+}
+
+if (!empty($meta_font_style)) {
+    Style::renderTypography('#'.$this->id.' .heading-meta', $meta_font_style, null, $this->isRoot);
+}
+if (!empty($meta_heading_margin)) {
+    Style::setSpacingStyle($this->style->child('.heading-meta'), $meta_heading_margin, 'margin');
 }

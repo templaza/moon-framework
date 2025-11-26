@@ -146,6 +146,22 @@ $string['add_icon_desc'] = 'Add an icon to the element.';
 $string['icon'] = 'Icon';
 $string['utility'] = 'Utility';
 $string['media'] = 'Media';
+$string['mobile_gutter'] = 'Mobile Gutter';
+$string['mobile_gutter_desc'] = 'Mobile gutters are the padding between your columns in Mobile devices.';
+$string['small_gutter'] = 'Small Gutter';
+$string['small_gutter_desc'] = 'SM Gutters are the padding between your columns in Small devices';
+$string['medium_gutter'] = 'Medium Gutter';
+$string['medium_gutter_desc'] = 'MD Gutters are the padding between your columns in Medium devices';
+$string['large_gutter'] = 'Large Gutter';
+$string['large_gutter_desc'] = 'LG Gutters are the padding between your columns in Large devices';
+$string['xlarge_gutter'] = 'X-Large Gutter';
+$string['xlarge_gutter_desc'] = 'XL Gutters are the padding between your columns in X-Large devices';
+$string['xxlarge_gutter'] = '2X-Large Gutter';
+$string['xxlarge_gutter_desc'] = 'XXL Gutters are the padding between your columns in 2X-Large devices';
+$string['vertical_alignment'] = 'Vertical Alignment';
+$string['vertical_alignment_desc'] = 'Select the vertical alignment for the element.';
+$string['device_gutter_settings'] = 'Device Gutter Settings';
+$string['device_gutter_settings_desc'] = 'Define the gutters for each device.';
 
 // Design Options
 $string['spacing_settings'] = 'Spacing';

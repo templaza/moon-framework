@@ -162,6 +162,12 @@ $string['vertical_alignment'] = 'Vertical Alignment';
 $string['vertical_alignment_desc'] = 'Select the vertical alignment for the element.';
 $string['device_gutter_settings'] = 'Device Gutter Settings';
 $string['device_gutter_settings_desc'] = 'Define the gutters for each device.';
+$string['xsmall_order'] = 'X-Small Order';
+$string['small_order'] = 'Small Order';
+$string['medium_order'] = 'Medium Order';
+$string['large_order'] = 'Large Order';
+$string['xlarge_order'] = 'X-Large Order';
+$string['device_order'] = 'Device Order';
 
 // Design Options
 $string['spacing_settings'] = 'Spacing';

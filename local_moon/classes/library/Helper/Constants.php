@@ -145,7 +145,7 @@ class Constants
                     'device_settings'               => ['type' => 'group', 'label' => 'device_settings'],
                     'custom_settings'               => ['type' => 'group', 'label' => 'custom_settings'],
 
-                    'element_tag' => [
+                    'moon_element_tag' => [
                         "group" => "general",
                         "type" => "list",
                         "label" => "element_tag",

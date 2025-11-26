@@ -28,5 +28,26 @@ class MoonElementSection extends MoonElement {
                 'custom-container' => 'ASTROID_ELEMENT_LAYOUT_SECTION_LAYOUT_OPTIONS_CUSTOM',
             ],
         ]);
+
+        $this->setFieldSet('design-settings');
+        $this->addField('moon_element_tag', [
+            "group" => "general",
+            "type" => "list",
+            "label" => "element_tag",
+            "description" => "element_tag_desc",
+            'default' => 'section',
+            'options' => [
+                'div'     => 'div',
+                'section' => 'section',
+                'header'  => 'header',
+                'footer'  => 'footer',
+                'aside'   => 'aside',
+                'nav'     => 'nav',
+                'article' => 'article',
+                'address' => 'address',
+                'hgroup'  => 'hgroup',
+                'main'    => 'main',
+            ],
+        ]);
     }
 }

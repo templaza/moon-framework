@@ -117,9 +117,13 @@ $string['icon_color_desc'] = 'Select the icon color.';
 $string['text'] = 'Text';
 $string['icons'] = 'Icons';
 $string['meta'] = 'Meta';
+$string['use_link'] = 'Use Link';
+$string['use_link_desc'] = 'Enable or disable the link.';
 $string['link'] = 'Link';
 $string['link_text'] = 'Link Text';
+$string['link_text_desc'] = 'Add the link text.';
 $string['link_url'] = 'Link URL';
+$string['link_url_desc'] = 'Add the link URL.';
 $string['link_target'] = 'Link Target';
 $string['link_target_desc'] = 'Select the link target.';
 $string['link_open_in_new_tab'] = 'Open Link in New Tab';
@@ -136,6 +140,12 @@ $string['readmore'] = 'Read More';
 $string['description'] = 'Description';
 $string['gutter'] = 'Gutter';
 $string['gutter_desc'] = 'Set the gutter between the elements.';
+$string['theme_cache_cleared'] = 'Theme cache cleared successfully.';
+$string['add_icon'] = 'Add Icon';
+$string['add_icon_desc'] = 'Add an icon to the element.';
+$string['icon'] = 'Icon';
+$string['utility'] = 'Utility';
+$string['media'] = 'Media';
 
 // Design Options
 $string['spacing_settings'] = 'Spacing';
@@ -273,12 +283,38 @@ $string['divided_logo_width'] = 'Divided Logo Width';
 $string['divided_logo_width_desc'] = 'Set the divided logo width.';
 $string['odd_menu_items'] = 'Odd number menu item position';
 $string['odd_menu_items_desc'] = 'Select where you want to place the extra menu item in case of Odd number of menu items.';
+$string['header_breakpoint'] = 'Header Breakpoint';
+$string['header_breakpoint_desc'] = 'Moon includes five default breakpoints, sometimes referred to as grid tiers, for building responsively.';
+$string['header_block_1'] = 'Header Block 1';
+$string['header_block_1_desc'] = 'Select the content you want to display in the Header Block 1.';
+$string['block_1_position'] = 'Block 1 Region';
+$string['block_1_position_desc'] = 'Select the Region of the Header Block 1.';
+$string['block_1_custom'] = 'Block 1 Custom HTML';
+$string['block_1_custom_desc'] = 'Add custom HTML to the Header Block 1.';
+$string['header_block_2'] = 'Header Block 2';
+$string['header_block_2_desc'] = 'Select the content you want to display in the Header Block 2.';
+$string['block_2_position'] = 'Block 2 Region';
+$string['block_2_position_desc'] = 'Select the Region of the Header Block 2.';
+$string['block_2_custom'] = 'Block 2 Custom HTML';
+$string['block_2_custom_desc'] = 'Add custom HTML to the Header Block 2.';
+$string['header_block_3'] = 'Header Block 3';
+$string['header_block_3_desc'] = 'Select the content you want to display in the Header Block 3.';
+$string['block_3_position'] = 'Block 3 Region';
+$string['block_3_position_desc'] = 'Select the Region of the Header Block 3.';
+$string['block_3_custom'] = 'Block 3 Custom HTML';
+$string['block_3_custom_desc'] = 'Add custom HTML to the Header Block 3.';
+$string['blank'] = 'Blank';
+$string['region'] = 'Region';
 
 // Basic Settings
 $string['basic'] = 'Basic';
 $string['page_settings'] = 'Page Settings';
 $string['preloader_options'] = 'Preloader';
 $string['backtotop_options'] = 'Back to Top';
+
+// Logo settings
+$string['logo_options'] = 'Logo Options';
+$string['logo_options_desc'] = 'You can select a logo for desktop view, mobile view and sticky header.';
 
 // Page Settings
 $string['theme_layout'] = 'Theme Layout';

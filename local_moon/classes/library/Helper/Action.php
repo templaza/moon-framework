@@ -255,4 +255,10 @@ class Action extends Client {
 
         $this->response(json_encode($return), true);
     }
+
+    public function clearCache() : void
+    {
+        theme_reset_all_caches();
+        $this->response(['message' => Text::_('theme_cache_cleared')]);
+    }
 }

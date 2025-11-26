@@ -25,13 +25,10 @@ $document->addScriptOptions('astroid_lib', $config);
 $document->addScriptOptions('astroid_content', Settings::prepareManagerForm($theme->getFields()));
 // Get Language
 $document->addScriptOptions('astroid_lang', Settings::loadLanguage());
-// Use the framework classes via autoload
-//Framework::getDocument()->loadManagerAssets();
-//echo $OUTPUT->header();
 
 echo $OUTPUT->render_from_template('local_moon/manage', [
     'title' => get_string('pluginname', $theme->getName()) . ' - Moon Framework',
-    'favicon' => $OUTPUT->image_url('favicon', $theme->getName()),
+    'favicon' => $OUTPUT->image_url('favicon', 'theme'),
     'content' => 'This demo page proves the framework assets, template and classes load correctly.',
     'color_mode_theme' => 'light',
     'script_options' => json_encode($document->getScriptOptions()),
@@ -39,4 +36,3 @@ echo $OUTPUT->render_from_template('local_moon/manage', [
     'head_scripts' => '<script src="'. parse_url($CFG->wwwroot, PHP_URL_PATH) . '/local/moon/assets/bootstrap/js/bootstrap.bundle.min.js' .'"></script><script src="'. parse_url($CFG->wwwroot, PHP_URL_PATH) . '/local/moon/assets/tinymce/tinymce.min.js' .'"></script>',
     'body_scripts' => '<script src="'. parse_url($CFG->wwwroot, PHP_URL_PATH) . '/local/moon/assets/manage/index.js' .'"></script>',
 ]);
-//echo $OUTPUT->footer();

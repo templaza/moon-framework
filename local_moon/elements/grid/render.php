@@ -222,7 +222,7 @@ foreach ($grids->data as $key => $grid) {
     if ($grid->params->get('enable_background_image', 0)) {
         $image = $grid->params->get('background_image', '');
         if (!empty($image)) {
-            $element->style->child('#grid-' . $grid->id)->child('.card')->addCss('background-image', 'url(' . Uri::base(true) . '/' . Media::getPath() . '/' . $image . ')');
+            $element->style->child('#grid-' . $grid->id)->child('.card')->addCss('background-image', 'url(' . $image . ')');
             $element->style->child('#grid-' . $grid->id)->child('.card')->addCss('background-repeat', $grid->params->get('background_repeat', ''));
             $element->style->child('#grid-' . $grid->id)->child('.card')->addCss('background-size', $grid->params->get('background_size', ''));
             $element->style->child('#grid-' . $grid->id)->child('.card')->addCss('background-attachment', $grid->params->get('background_attchment', ''));

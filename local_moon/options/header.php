@@ -8,6 +8,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 use local_moon\library\Framework;
+use local_moon\library\Helper\Font;
 
 Framework::getTheme()->addFields(
     'header',
@@ -16,11 +17,8 @@ Framework::getTheme()->addFields(
         'icon' => 'as-icon as-icon-menu3',
         'order' => 2,
         'fields' => [
-            'header_element' => [
-                "type" => "group",
-                "label" => "header",
-                "description" => ""
-            ],
+            'header_element' => ["type" => "group", "label" => "header", "description" => ""],
+            'header_logo_options_element' => ["type" => "group", "label" => "logo_options", "description" => "logo_options_desc"],
 
             'header' => [
                 "group" => "header_element",
@@ -147,30 +145,30 @@ Framework::getTheme()->addFields(
             'header_block_1_type' => [
                 'group' => 'header_element',
                 'type' => 'list',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_1_TYPE_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_1_TYPE_DESC',
+                'label' => 'header_block_1',
+                'description' => 'header_block_1_desc',
                 'default' => 'blank',
                 'conditions' => "[header]==true",
                 'options' => [
-                    'blank'   => 'TPL_ASTROID_BLANK_OPTIONS',
-                    'position'=> 'TPL_ASTROID_MODULE_POSITION_LABEL',
-                    'custom'  => 'TPL_ASTROID_CUSTOM_HTML_OPTIONS',
+                    'blank'   => 'blank',
+                    'position'=> 'region',
+                    'custom'  => 'custom',
                 ],
             ],
 
             'header_block_1_position' => [
                 'group' => 'header_element',
                 'type' => 'regions',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_1_POSITION_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_1_POSITION_DESC',
+                'label' => 'block_1_position',
+                'description' => 'block_1_position_desc',
                 'conditions' => "[header]==true AND [header_block_1_type]=='position'",
             ],
 
             'header_block_1_custom' => [
                 'group' => 'header_element',
                 'type' => 'textarea',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_1_CUSTOM_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_1_CUSTOM_DESC',
+                'label' => 'block_1_custom',
+                'description' => 'block_1_custom_desc',
                 "attributes" => [
                     'filter' => 'raw',
                 ],
@@ -180,30 +178,30 @@ Framework::getTheme()->addFields(
             'header_block_2_type' => [
                 'group' => 'header_element',
                 'type' => 'list',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_2_TYPE_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_2_TYPE_DESC',
+                'label' => 'header_block_2',
+                'description' => 'header_block_2_desc',
                 'default' => 'blank',
                 'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]!='center') OR ([header_mode]=='horizontal') OR ([header_mode]=='sidebar'))",
                 'options' => [
-                    'blank'    => 'TPL_ASTROID_BLANK_OPTIONS',
-                    'position' => 'TPL_ASTROID_MODULE_POSITION_LABEL',
-                    'custom'   => 'TPL_ASTROID_CUSTOM_HTML_OPTIONS',
+                    'blank'    => 'blank',
+                    'position' => 'region',
+                    'custom'   => 'custom',
                 ],
             ],
 
             'header_block_2_position' => [
                 'group' => 'header_element',
                 'type' => 'regions',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_2_POSITION_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_2_POSITION_DESC',
+                'label' => 'block_2_position',
+                'description' => 'block_2_position_desc',
                 'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]!='center') OR ([header_mode]=='horizontal') OR ([header_mode]=='sidebar')) AND [header_block_2_type]=='position'",
             ],
 
             'header_block_2_custom' => [
                 'group' => 'header_element',
                 'type' => 'textarea',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_2_CUSTOM_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_2_CUSTOM_DESC',
+                'label' => 'block_2_custom',
+                'description' => 'block_2_custom_desc',
                 "attributes" => [
                     'filter' => 'raw',
                 ],
@@ -213,34 +211,280 @@ Framework::getTheme()->addFields(
             'header_block_3_type' => [
                 'group' => 'header_element',
                 'type' => 'list',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_3_TYPE_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_3_TYPE_DESC',
+                'label' => 'header_block_3',
+                'description' => 'header_block_3_desc',
                 'default' => 'blank',
                 'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]=='divided-logo-left') OR ([header_mode]=='sidebar' AND [header_sidebar_menu_mode]=='topbar'))",
                 'options' => [
-                    'blank'    => 'TPL_ASTROID_BLANK_OPTIONS',
-                    'position' => 'TPL_ASTROID_MODULE_POSITION_LABEL',
-                    'custom'   => 'TPL_ASTROID_CUSTOM_HTML_OPTIONS',
+                    'blank'    => 'blank',
+                    'position' => 'region',
+                    'custom'   => 'custom',
                 ],
             ],
 
             'header_block_3_position' => [
                 'group' => 'header_element',
                 'type' => 'regions',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_3_POSITION_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_3_POSITION_DESC',
+                'label' => 'block_3_position',
+                'description' => 'block_3_position_desc',
                 'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]=='divided-logo-left') OR ([header_mode]=='sidebar' AND [header_sidebar_menu_mode]=='topbar')) AND [header_block_3_type]=='position'",
             ],
 
             'header_block_3_custom' => [
                 'group' => 'header_element',
                 'type' => 'textarea',
-                'label' => 'TPL_ASTROID_HEADER_BLOCK_3_CUSTOM_LABEL',
-                'description' => 'TPL_ASTROID_HEADER_BLOCK_3_CUSTOM_DESC',
+                'label' => 'block_3_custom',
+                'description' => 'block_3_custom_desc',
                 "attributes" => [
                     'filter' => 'raw',
                 ],
                 'conditions' => "[header]==true AND (([header_mode]=='stacked' AND [header_stacked_menu_mode]=='divided-logo-left') OR ([header_mode]=='sidebar' AND [header_sidebar_menu_mode]=='topbar')) AND [header_block_3_type]=='custom'",
+            ],
+
+            // Head Breakpoints
+            'header_breakpoint' => [
+                'group'       => 'header_element',
+                'type'        => 'list',
+                'label'       => 'header_breakpoint',
+                'description' => 'header_breakpoint_desc',
+                'default'     => 'lg',
+                'conditions'  => "[header]==true AND [header_mode]!='sidebar'",
+                'options'     => [
+                    'sm'     => 'small',
+                    'md'     => 'medium',
+                    'lg'     => 'large',
+                    'xl'     => 'xlarge',
+                    'xxl'    => 'xxlarge',
+                    'always' => 'always',
+                ],
+            ],
+
+            // Logo options
+            'logo_type' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'radio',
+                'label'       => 'TPL_ASTROID_BASIC_LOGO_TYPE_LABEL',
+                'description' => 'TPL_ASTROID_BASIC_LOGO_TYPE_DESC',
+                'default'     => 'image',
+                'conditions'  => "[header]==true",
+                'options'     => [
+                    'text'  => 'TPL_ASTROID_BASIC_LOGO_TYPE_OPTIONS_TEXT',
+                    'image' => 'TPL_ASTROID_BASIC_LOGO_TYPE_OPTIONS_IMAGE',
+                    'none'  => 'ASTROID_NONE',
+                ],
+            ],
+
+            'logo_text' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'text',
+                'label'       => 'TPL_ASTROID_BASIC_LOGO_TEXT_LABEL',
+                'description' => 'TPL_ASTROID_BASIC_LOGO_TEXT_DESC',
+                'default'     => 'Astroid',
+                'conditions'  => "[header]==true AND [logo_type]=='text'",
+            ],
+
+            'tag_line' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'text',
+                'label'       => 'TPL_ASTROID_BASIC_TAG_LINE_LABEL',
+                'description' => 'TPL_ASTROID_BASIC_TAG_LINE_DESC',
+                'conditions'  => "[header]==true AND [logo_type]=='text'",
+            ],
+
+            // Logo Typography
+            'logo_typography' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'radio',
+                'label'       => 'TPL_ASTROID_TYPOGRAPHY_LOGO',
+                'description' => 'TPL_ASTROID_TYPOGRAPHY_OPTION_DESC',
+                'default'     => 'inherit',
+                'conditions'  => "[header]==1 AND [logo_type]=='text'",
+                'options'     => [
+                    'inherit' => 'JGLOBAL_INHERIT',
+                    'custom'  => 'TPL_ASTROID_OPTIONS_CUSTOM',
+                ],
+            ],
+
+            'logo_typography_options' => [
+                'group'             => 'header_logo_options_element',
+                'type'              => 'typography',
+                'conditions'        => "[logo_typography]=='custom' AND [header]==true AND [logo_type]=='text'",
+                "attributes" => [
+                    'options' => [
+                        "colorpicker" => true,
+                        'stylepicker' => false,
+                        'fontpicker' => true,
+                        'sizepicker' => true,
+                        'letterspacingpicker' => true,
+                        'lineheightpicker' => true,
+                        'weightpicker' => true,
+                        'transformpicker' => true,
+                        'columns' => 3,
+                        'preview' => false,
+                        'collapse' => true,
+                        'system_fonts' => Font::get_system_fonts(),
+                        'text_transform_options' => Font::text_transform(),
+                        'lang' => Font::font_properties(),
+                    ],
+                    'lang' => Font::font_properties(),
+                    'value' => Font::$get_default_font_value,
+                ],
+            ],
+
+            'logo_tag_line_typography' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'radio',
+                'label'       => 'TPL_ASTROID_TYPOGRAPHY_LOGO_TAG_LINE',
+                'description' => 'TPL_ASTROID_TYPOGRAPHY_OPTION_DESC',
+                'default'     => 'inherit',
+                'conditions'  => "[header]==true AND [logo_type]=='text'",
+                'options'     => [
+                    'inherit' => 'inherit',
+                    'custom'  => 'custom',
+                ],
+            ],
+
+            'logo_tag_line_typography_options' => [
+                'group'             => 'header_logo_options_element',
+                'type'              => 'typography',
+                'conditions'        => "[logo_tag_line_typography]=='custom' AND [header]==true AND [logo_type]=='text'",
+                "attributes" => [
+                    'options' => [
+                        "colorpicker" => true,
+                        'stylepicker' => false,
+                        'fontpicker' => true,
+                        'sizepicker' => true,
+                        'letterspacingpicker' => true,
+                        'lineheightpicker' => true,
+                        'weightpicker' => true,
+                        'transformpicker' => true,
+                        'columns' => 3,
+                        'preview' => false,
+                        'collapse' => true,
+                        'system_fonts' => Font::get_system_fonts(),
+                        'text_transform_options' => Font::text_transform(),
+                        'lang' => Font::font_properties(),
+                    ],
+                    'lang' => Font::font_properties(),
+                    'value' => Font::$get_default_font_value,
+                ],
+            ],
+
+            'logo_link_type' => [
+                'group'      => 'header_logo_options_element',
+                'type'       => 'radio',
+                'label'      => 'Logo Link',
+                'default'    => 'default',
+                'conditions' => "[header]==true AND [logo_type]!='none'",
+                'options'    => [
+                    'default' => 'default',
+                    'custom'  => 'custom',
+                    'none'    => 'none',
+                ],
+            ],
+
+            'logo_link_custom' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'text',
+                'label'       => 'Logo Link Url',
+                'default'     => '#',
+                'description' => '',
+                'conditions'  => "[header]==true AND [logo_type]!='none' AND [logo_link_type]=='custom'",
+            ],
+
+            'logo_link_target_blank' => [
+                'group'         => 'header_logo_options_element',
+                'type'          => 'radio',
+                'label'         => 'Open in new window',
+                "attributes" => [
+                    "role" => "switch"
+                ],
+                'default'       => '0',
+                'conditions'    => "[header]==true AND [logo_type]!='none' AND [logo_link_type]=='custom'",
+                'description'   => '',
+            ],
+
+            'default_logo' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'media',
+                'label'       => 'TPL_ASTROID_BASIC_DEFULT_LOGO_LABEL',
+                'description' => 'TPL_ASTROID_BASIC_DEFULT_LOGO_DESC',
+                'conditions'  => "[header]==true AND [logo_type]=='image'",
+            ],
+
+            'default_logo_dark' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'media',
+                'name'        => 'default_logo_dark',
+                'label'       => 'TPL_ASTROID_BASIC_DEFAULT_LOGO_DARK_LABEL',
+                'description' => 'TPL_ASTROID_BASIC_DEFAULT_LOGO_DARK_DESC',
+                'conditions'  => "[header]==true AND [logo_type]=='image' AND [astroid_color_mode_enable]=='1'",
+            ],
+
+            'default_logo_width' => [
+                'group'      => 'header_logo_options_element',
+                'type'       => 'text',
+                'name'       => 'default_logo_width',
+                'label'      => 'TPL_ASTROID_BASIC_DEFAULT_LOGO_WIDTH_LABEL',
+                'description'=> 'TPL_ASTROID_BASIC_DEFAULT_LOGO_WIDTH_DESC',
+                "attributes" => [
+                    'hint'       => '200px',
+                ],
+                'conditions' => "[header]==true AND [logo_type]=='image'",
+            ],
+
+            'default_logo_height' => [
+                'group'      => 'header_logo_options_element',
+                'type'       => 'text',
+                'name'       => 'default_logo_height',
+                'label'      => 'TPL_ASTROID_BASIC_DEFAULT_LOGO_HEIGHT_LABEL',
+                'description'=> 'TPL_ASTROID_BASIC_DEFAULT_LOGO_HEIGHT_DESC',
+                "attributes" => [
+                    'hint'       => '60px',
+                ],
+                'conditions' => "[header]==true AND [logo_type]=='image'",
+            ],
+
+            'mobile_logo' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'media',
+                'name'        => 'mobile_logo',
+                'label'       => 'TPL_ASTROID_BASIC_MOBILE_LOGO_LABEL',
+                'description' => 'TPL_ASTROID_BASIC_MOBILE_LOGO_DESC',
+                'conditions'  => "[header]==true AND [logo_type]=='image'",
+            ],
+
+            'mobile_logo_dark' => [
+                'group'       => 'header_logo_options_element',
+                'type'        => 'media',
+                'name'        => 'mobile_logo_dark',
+                'label'       => 'TPL_ASTROID_BASIC_MOBILE_LOGO_DARK_LABEL',
+                'description' => 'TPL_ASTROID_BASIC_MOBILE_LOGO_DARK_DESC',
+                'conditions'  => "[header]==true AND [logo_type]=='image' AND [astroid_color_mode_enable]=='1'",
+            ],
+
+            'mobile_logo_width' => [
+                'group'      => 'header_logo_options_element',
+                'type'       => 'text',
+                'name'       => 'mobile_logo_width',
+                'label'      => 'TPL_ASTROID_BASIC_MOBILE_LOGO_WIDTH_LABEL',
+                'description'=> 'TPL_ASTROID_BASIC_MOBILE_LOGO_WIDTH_DESC',
+                "attributes" => [
+                    'hint'       => '200px',
+                ],
+                'conditions' => "[header]==true AND [logo_type]=='image'",
+            ],
+
+            'mobile_logo_height' => [
+                'group'      => 'header_logo_options_element',
+                'type'       => 'text',
+                'name'       => 'mobile_logo_height',
+                'label'      => 'TPL_ASTROID_BASIC_MOBILE_LOGO_HEIGHT_LABEL',
+                'description'=> 'TPL_ASTROID_BASIC_MOBILE_MOBILE_LOGO_HEIGHT_DESC',
+                "attributes" => [
+                    'hint'       => '60px',
+                ],
+                'conditions' => "[header]==true AND [logo_type]=='image'",
             ],
         ]
     ]

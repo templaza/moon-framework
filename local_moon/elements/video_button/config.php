@@ -31,77 +31,120 @@ class MoonElementVideo_Button extends MoonElement {
             "dynamic" => true,
         ]);
         $this->addField('button_size', [
-            "group"   => "widget_styles",
-            "type"    => "list",
-            "label"   => "button_size",
-            "default" => "",
-            "options" => [
-                ""       => "default",
-                "btn-lg" => "lg",
-                "btn-sm" => "sm",
-                "custom" => "custom",
-            ],
-        ]);
-
-        $this->addField('button_font_style', [
             "group"      => "widget_styles",
-            "conditions" => "[button_size]=='custom'",
-            "label"      => "font_style",
-            "type"       => "typography",
+            "type"       => "range",
             "attributes" => [
-                'options' => [
-                    "colorpicker" => true,
-                    'stylepicker' => false,
-                    'fontpicker' => true,
-                    'sizepicker' => true,
-                    'letterspacingpicker' => true,
-                    'lineheightpicker' => true,
-                    'weightpicker' => true,
-                    'transformpicker' => true,
-                    'columns' => 1,
-                    'preview' => false,
-                    'collapse' => true,
-                    'system_fonts' => Font::get_system_fonts(),
-                    'text_transform_options' => Font::text_transform(),
-                    'lang' => Font::font_properties(),
-                ],
-                'lang' => Font::font_properties(),
-                'value' => Font::$get_default_font_value,
+                "min"     => 1,
+                "max"     => 300,
+                "step"    => 1,
+                "postfix" => "px",
             ],
+            "default" => 24,
+            "label"   => "button_size",
         ]);
 
-        $this->addField('btn_padding', [
+        $this->addField('ripple_color', [
+            "group" => "widget_styles",
+            "type"  => "color",
+            "label" => "ripple_color",
+        ]);
+
+        $this->addField('width', [
             "group"      => "widget_styles",
-            "conditions" => "[button_size]=='custom'",
-            "type"       => "spacing",
-            "label"      => "padding",
+            "type"       => "range",
+            "attributes" => [
+                "min"     => 10,
+                "max"     => 500,
+                "step"    => 1,
+                "postfix" => "px",
+            ],
+            "default" => 150,
+            "label"   => "width",
         ]);
 
-        $this->addField('btn_border_radius', [
-            "group"   => "widget_styles",
-            "type"    => "list",
-            "label"   => "border_radius",
-            "default" => "",
+        $this->addField('height', [
+            "group"      => "widget_styles",
+            "type"       => "range",
+            "attributes" => [
+                "min"     => 10,
+                "max"     => 500,
+                "step"    => 1,
+                "postfix" => "px",
+            ],
+            "default" => 150,
+            "label"   => "height",
+        ]);
+
+        $this->addField('color_hover_toggle', [
+            "group"      => "widget_styles",
+            "type"       => "radio",
+            "attributes" => [
+                "width" => "full",
+            ],
+            "default" => "color",
             "options" => [
-                ""             => "rounded",
-                "rounded-0"    => "square",
-                "rounded-pill" => "circle",
+                "color" => "color",
+                "hover" => "color_hover",
             ],
         ]);
 
-        $this->addField('gutter', [
-            "conditions" => "[button_group]==0",
+        $this->addField('color', [
             "group"      => "widget_styles",
-            "type"       => "list",
-            "label"      => "gutter",
-            "default"    => "lg",
-            "options"    => [
-                "sm"  => "sm",
-                "md"  => "md",
-                "lg"  => "lg",
-                "xl"  => "xl",
-                "xxl" => "xxl",
+            "type"       => "color",
+            "label"      => "color",
+            "conditions" => "[color_hover_toggle]=='color'",
+        ]);
+
+        $this->addField('color_hover', [
+            "group"      => "widget_styles",
+            "type"       => "color",
+            "label"      => "color_hover",
+            "conditions" => "[color_hover_toggle]=='hover'",
+        ]);
+
+        $this->addField('background_color', [
+            "group"      => "widget_styles",
+            "type"       => "color",
+            "label"      => "background_color",
+            "conditions" => "[color_hover_toggle]=='color'",
+        ]);
+
+        $this->addField('background_color_hover', [
+            "group"      => "widget_styles",
+            "type"       => "color",
+            "label"      => "background_color_hover",
+            "conditions" => "[color_hover_toggle]=='hover'",
+        ]);
+
+        $this->addField('use_border', [
+            "group"      => "widget_styles",
+            "type"       => "radio",
+            "attributes" => [
+                "role" => "switch"
             ],
+            "default" => "0",
+            "label"   => "use_border",
+        ]);
+
+        $this->addField('border_width', [
+            "group"      => "widget_styles",
+            "type"       => "range",
+            "attributes" => [
+                "min"     => 1,
+                "max"     => 50,
+                "step"    => 1,
+                "postfix" => "px",
+            ],
+            "default"    => 1,
+            "label"      => "border_width",
+            "conditions" => "[use_border]==1",
+        ]);
+
+        $this->addField('border_color', [
+            "group"      => "widget_styles",
+            "type"       => "color",
+            "label"      => "border_color",
+            "conditions" => "[use_border]==1",
         ]);
     }
 }

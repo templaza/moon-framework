@@ -268,7 +268,7 @@ class BaseElement
                 $this->style_dark->addCss('background-color', $background_color['dark']);
                 $image = $this->params->get('background_image', '');
                 if (!empty($image)) {
-                    $this->style->addCss('background-image', 'url(' . Uri::base(true) . '/' . Media::getPath() . '/' . $image . ')');
+                    $this->style->addCss('background-image', 'url(' . $image . ')');
                     $this->style->addCss('background-repeat', $this->params->get('background_repeat', ''));
                     $this->style->addCss('background-size', $this->params->get('background_size', ''));
                     $this->style->addCss('background-attachment', $this->params->get('background_attachment', ''));
@@ -280,8 +280,8 @@ class BaseElement
                 $video = $this->params->get('background_video', '');
                 $poster = $this->params->get('background_image', '');
                 if (!empty($video)) {
-                    $this->addAttribute('data-as-video-bg', Uri::base(true) . '/' . Media::getPath() . '/' . $video);
-                    $this->addAttribute('data-as-video-poster', Uri::base(true) . '/' . Media::getPath() . '/' . $poster);
+                    $this->addAttribute('data-as-video-bg', $video);
+                    $this->addAttribute('data-as-video-poster', $poster);
                     Framework::getDocument()->loadVideoBG();
                     $this->addOverlayColor();
                 }
@@ -336,7 +336,7 @@ class BaseElement
                             $overlay_style_dark->addCss('background-color', $background_image_overlay_color['dark']);
                             $overlay_style_dark->render();
                         }
-                        $overlay_style->addCss('background-image', 'url(' . Uri::root() . Media::getPath() . '/' . $background_image_overlay_pattern . ')');
+                        $overlay_style->addCss('background-image', 'url(' . $background_image_overlay_pattern . ')');
                         $overlay_style->render();
                     }
                     break;

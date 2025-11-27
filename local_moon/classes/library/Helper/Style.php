@@ -410,7 +410,7 @@ class Style
                     $style_dark->addCss('background-color', $background_color['dark']);
                     $image = $obj_params->get($prefix . 'background_image', '');
                     if (!empty($image)) {
-                        $style->addCss('background-image', 'url(' . Uri::base(true) . '/' . Helper\Media::getPath() . '/' . $image . ')');
+                        $style->addCss('background-image', 'url(' . $image . ')');
                         $style->addCss('background-repeat', $obj_params->get($prefix . 'background_repeat', ''));
                         $style->addCss('background-size', $obj_params->get($prefix . 'background_size', ''));
                         $style->addCss('background-attachment', $obj_params->get($prefix . 'background_attachment', ''));
@@ -475,7 +475,7 @@ class Style
                             $overlay_style_dark->addCss('background-color', $background_image_overlay_color['dark']);
                             $overlay_style_dark->render();
                         }
-                        $overlay_style->addCss('background-image', 'url(' . Uri::root() . Helper\Media::getPath() . '/' . $background_image_overlay_pattern . ')');
+                        $overlay_style->addCss('background-image', 'url(' . $background_image_overlay_pattern . ')');
                         $overlay_style->render();
                     }
                     break;

@@ -11,7 +11,7 @@ class MoonElementButton extends MoonElement {
             'name' => 'button',
             'title' => 'Button',
             'description' => 'Button Widget of Moodle',
-            'icon' => 'as-icon as-icon-profile',
+            'icon' => 'as-icon as-icon-toggle-on',
             'category' => 'utility',
             'element_type' => 'widget'
         ]);
@@ -259,11 +259,11 @@ class MoonElementButton extends MoonElement {
             "label"      => "gutter",
             "default"    => "lg",
             "options"    => [
-                "sm"  => "ASTROID_SM",
-                "md"  => "ASTROID_MD",
-                "lg"  => "ASTROID_LG",
-                "xl"  => "ASTROID_XL",
-                "xxl" => "ASTROID_XXL",
+                "sm"  => "sm",
+                "md"  => "md",
+                "lg"  => "lg",
+                "xl"  => "xl",
+                "xxl" => "xxl",
             ],
         ]);
     }

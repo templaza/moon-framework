@@ -11,6 +11,7 @@ defined('MOODLE_INTERNAL') || die();
 use local_moon\library\Helper\Utilities;
 use local_moon\library\Helper\Style;
 use local_moon\library\Helper\Media;
+use local_moon\library\Helper\Constants;
 
 /**
  * Main Theme Framework class
@@ -113,15 +114,13 @@ class Document {
         self::$_layout_paths[] = $path;
     }
 
-    public function addScriptDeclaration($content, $position = 'head', $type = 'text/javascript'): void
+    public function addScriptDeclaration($content): void
     {
         if (empty($content)) {
             return;
         }
-        $script = [];
-        $script['content'] = $content;
-        $script['type'] = $type;
-        $this->_scripts[$position][] = $script;
+        global $PAGE;
+        $PAGE->requires->js_init_code($content);
     }
 
     public function addStyleDeclaration($content, $device = 'global'): void
@@ -503,6 +502,16 @@ class Document {
             $PAGE->requires->css('/local/moon/assets/art_slider/css/base.min.css');
             $PAGE->requires->js('/local/moon/assets/art_slider/js/index.min.js');
             $this->_is_loaded['art_slider'] = true;
+        }
+    }
+
+    public function loadFancyBox(): void
+    {
+        if (!isset($this->_is_loaded['fancybox'])) {
+            global $PAGE;
+            $PAGE->requires->css("/local/moon/assets/fancybox/fancybox.css");
+            $PAGE->requires->js('/local/moon/assets/fancybox/fancybox.umd.js', true);
+            $this->_is_loaded['fancybox'] = true;
         }
     }
 }

@@ -168,6 +168,14 @@ $string['medium_order'] = 'Medium Order';
 $string['large_order'] = 'Large Order';
 $string['xlarge_order'] = 'X-Large Order';
 $string['device_order'] = 'Device Order';
+$string['xxs'] = '2X-Small';
+$string['xs'] = 'X-Small';
+$string['sm'] = 'Small';
+$string['md'] = 'Medium';
+$string['lg'] = 'Large';
+$string['xl'] = 'X-Large';
+$string['xxl'] = '2X-Large';
+$string['widget_styles'] = 'Widget Styles';
 
 // Design Options
 $string['spacing_settings'] = 'Spacing';
@@ -674,3 +682,7 @@ $string['figure_caption'] = 'Figure Caption';
 
 // Button
 $string['buttons'] = 'Buttons';
+$string['button_group'] = 'Button Group';
+$string['button_size'] = 'Button Size';
+$string['icon_position'] = 'Icon Position';
+$string['button_outline'] = 'Outline Button';

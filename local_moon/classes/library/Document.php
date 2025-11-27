@@ -514,4 +514,16 @@ class Document {
             $this->_is_loaded['fancybox'] = true;
         }
     }
+
+    public function loadMasonry($selector = ''): void
+    {
+        global $PAGE;
+        if (!isset($this->_is_loaded['masonry'])) {
+            $PAGE->requires->js('/local/moon/assets/masonry/masonry.pkgd.min.js', true);
+            $this->_is_loaded['masonry'] = true;
+        }
+        if (!empty($selector)) {
+            $this->addScriptDeclaration('window.addEventListener(\'load\', () => {new Masonry( \''.$selector.'\', {itemSelector: \''.$selector.' > div\',percentPosition: true}); document.querySelectorAll(\''.$selector.'\').forEach(element => element.classList.remove("as-loading")); });');
+        }
+    }
 }

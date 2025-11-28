@@ -23,6 +23,7 @@ class BaseElement
     public array $options = [];
     public string $role = '';
     public bool $isRoot = false;
+    public bool $has_maxwidth = false;
     public function __construct($data, $devices, $options = array(), $role = '')
     {
         $this->_data    = $data;
@@ -105,6 +106,7 @@ class BaseElement
                 $content            .=  '<div class="'.$block_align_class.'"><div class="'.$class_maxwidth.'">' . "<{$this->_tag}{$this->_attrbs()}>" . $this->content . "</{$this->_tag}>" . '</div></div>';
             } else {
                 $content            .=  "<{$this->_tag}{$this->_attrbs()}>".'<div class="'.$class_maxwidth.'">'. $this->content .'</div>'."</{$this->_tag}>";
+                $this->has_maxwidth = true;
             }
         } else {
             $content                .=  "<{$this->_tag}{$this->_attrbs()}>" . $this->content . "</{$this->_tag}>";
@@ -244,10 +246,10 @@ class BaseElement
     {
         $border = json_decode($this->params->get('border_style', ''), true);
         if (!empty($border)) {
-            $this->style->addBorder($border, 'global', $this->isRoot);
+            $this->style->child('>[class*=as-width]')->addBorder($border, 'global', $this->isRoot);
         }
         $border_radius = $this->params->get('border_radius', '');
-        $this->style->addResponsiveCSS('border-radius', $border_radius, 'px');
+        $this->style->child('>[class*=as-width]')->addResponsiveCSS('border-radius', $border_radius, 'px');
     }
 
     protected function _background(): void

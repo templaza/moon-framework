@@ -83,7 +83,6 @@ class BaseElement
 //                return '';
 //            }
 //        }
-        $this->_styles();
         $max_width                  =   $this->params->get('max_width','');
         $max_width_breakpoint       =   $this->params->get('max_width_breakpoint','');
         if ($max_width) {
@@ -111,6 +110,7 @@ class BaseElement
         } else {
             $content                .=  "<{$this->_tag}{$this->_attrbs()}>" . $this->content . "</{$this->_tag}>";
         }
+        $this->_styles();
         return $content;
     }
 
@@ -246,10 +246,19 @@ class BaseElement
     {
         $border = json_decode($this->params->get('border_style', ''), true);
         if (!empty($border)) {
-            $this->style->child('>[class*=as-width]')->addBorder($border, 'global', $this->isRoot);
+            if ($this->has_maxwidth) {
+                $this->style->child('>[class*=as-width]')->addBorder($border, 'global', $this->isRoot);
+            } else {
+                $this->style->addBorder($border, 'global', $this->isRoot);
+            }
+
         }
         $border_radius = $this->params->get('border_radius', '');
-        $this->style->child('>[class*=as-width]')->addResponsiveCSS('border-radius', $border_radius, 'px');
+        if ($this->has_maxwidth) {
+            $this->style->child('>[class*=as-width]')->addResponsiveCSS('border-radius', $border_radius, 'px');
+        } else {
+            $this->style->addResponsiveCSS('border-radius', $border_radius, 'px');
+        }
     }
 
     protected function _background(): void

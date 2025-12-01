@@ -21,42 +21,42 @@ class MoonElementGrid extends MoonElement {
 
         $this->addField('grid_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_GRID_OPTIONS_LABEL',
+            'label' => 'grid_options',
         ]);
 
         $this->addField('card_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_CARD_OPTIONS_LABEL',
+            'label' => 'card_options',
         ]);
 
         $this->addField('icon_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_ICON_OPTIONS_LABEL',
+            'label' => 'icon_options',
         ]);
 
         $this->addField('image_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_IMAGE_OPTIONS_LABEL',
+            'label' => 'image_options',
         ]);
 
         $this->addField('title_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_TITLE_OPTIONS_LABEL',
+            'label' => 'title_options',
         ]);
 
         $this->addField('meta_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_META_OPTIONS_LABEL',
+            'label' => 'meta_options',
         ]);
 
         $this->addField('content_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_CONTENT_OPTIONS_LABEL',
+            'label' => 'content_options',
         ]);
 
         $this->addField('readmore_options', [
             'type'  => 'group',
-            'label' => 'ASTROID_WIDGET_READMORE_OPTIONS_LABEL',
+            'label' => 'readmore_options',
         ]);
         $repeater_options = [
             'general-settings' => [
@@ -64,24 +64,24 @@ class MoonElementGrid extends MoonElement {
                 'fields' => [
                     'type' => [
                         'type' => 'list',
-                        'label' => 'ASTROID_WIDGET_MEDIA_TYPE',
+                        'label' => 'media_type',
                         'default' => '',
                         'options' => [
-                            ''      => 'ASTROID_NONE',
-                            'icon'  => 'TPL_ASTROID_BASIC_ICON_LABEL',
-                            'image' => 'ASTROID_IMAGE',
+                            ''      => 'none',
+                            'icon'  => 'icon',
+                            'image' => 'image',
                         ],
                     ],
 
                     'icon_type' => [
                         'conditions' => "[type]=='icon'",
                         'type' => 'list',
-                        'label' => 'ASTROID_WIDGET_ICON_TYPE',
+                        'label' => 'icon_type',
                         'default' => 'fontawesome',
                         'options' => [
-                            'fontawesome' => 'TPL_ASTROID_FONTAWESOME',
-                            'astroid'     => 'TPL_ASTROID_ASTROID_ICONS',
-                            'custom'      => 'ASTROID_WIDGET_CUSTOM',
+                            'fontawesome' => 'fontawesome',
+                            'astroid'     => 'astroid_icon',
+                            'custom'      => 'custom',
                         ],
                     ],
 
@@ -91,7 +91,7 @@ class MoonElementGrid extends MoonElement {
                         "attributes" => [
                             'source' => 'fontawesome',
                         ],
-                        'label' => 'ASTROID_WIDGET_ICON_LABEL',
+                        'label' => 'icon',
                     ],
 
                     'as_icon' => [
@@ -100,13 +100,13 @@ class MoonElementGrid extends MoonElement {
                         "attributes" => [
                             'source' => 'astroid',
                         ],
-                        'label' => 'ASTROID_WIDGET_ICON_LABEL',
+                        'label' => 'icon',
                     ],
 
                     'custom_icon' => [
                         'conditions' => "[type]=='icon' AND [icon_type]=='custom'",
                         'type' => 'text',
-                        'label' => 'ASTROID_WIDGET_CUSTOM_ICON_CLASS',
+                        'label' => 'icon_class',
                         'dynamic' => true,
                     ],
 
@@ -119,25 +119,25 @@ class MoonElementGrid extends MoonElement {
 
                     'title' => [
                         'type' => 'text',
-                        'label' => 'JGLOBAL_TITLE',
+                        'label' => 'title',
                         'dynamic' => true,
                     ],
 
                     'meta' => [
                         'type' => 'text',
-                        'label' => 'ASTROID_WIDGET_META',
+                        'label' => 'meta',
                         'dynamic' => true,
                     ],
 
                     'description' => [
                         'type' => 'editor',
-                        'label' => 'ASTROID_SHORTCUT_DESCRIPTION_LABEL',
+                        'label' => 'description',
                         'dynamic' => true,
                     ],
 
                     'link' => [
                         'type' => 'text',
-                        'label' => 'ASTROID_WIDGET_LINK_LABEL',
+                        'label' => 'link_url',
                         'hint' => 'https://astroidframe.work',
                         'dynamic' => true,
                     ],
@@ -145,7 +145,7 @@ class MoonElementGrid extends MoonElement {
                     'link_title' => [
                         'conditions' => "[link]!=''",
                         'type' => 'text',
-                        'label' => 'ASTROID_WIDGET_LINK_TEXT_LABEL',
+                        'label' => 'link_text',
                         'hint' => 'View More',
                         'dynamic' => true,
                     ],
@@ -153,7 +153,7 @@ class MoonElementGrid extends MoonElement {
                     'link_target' => [
                         'conditions' => "[link]!=''",
                         'type' => 'list',
-                        'label' => 'ASTROID_WIDGET_LINK_TARGET_LABEL',
+                        'label' => 'link_target',
                         'default' => '',
                         'options' => [
                             ''         => 'Default',
@@ -169,64 +169,64 @@ class MoonElementGrid extends MoonElement {
                             "role" => "switch"
                         ],
                         'default' => '0',
-                        'label' => 'ASTROID_WIDGET_ENABLE_BACKGROUND_IMAGE',
+                        'label' => 'enable_background_image',
                     ],
 
                     'background_image' => [
                         'conditions' => "[enable_background_image]==1",
                         'type' => 'media',
-                        'label' => 'TPL_ASTROID_BACKGROUND_IMAGE_LABEL',
+                        'label' => 'background_image',
                     ],
 
                     'background_repeat' => [
                         'conditions' => "[enable_background_image]==1",
                         'type' => 'list',
-                        'label' => 'TPL_ASTROID_BACKGROUND_REPEAT_LABEL',
+                        'label' => 'background_repeat',
                         'options' => [
-                            '' => 'JGLOBAL_INHERIT',
-                            'no-repeat' => 'TPL_ASTROID_BACKGROUND_NO_REPEAT_LABEL',
-                            'repeat-x'  => 'TPL_ASTROID_BACKGROUND_REPEAT_HORIZONTALLY_LABEL',
-                            'repeat-y'  => 'TPL_ASTROID_BACKGROUND_REPEAT_VERTICAL_LABEL',
+                            '' => 'inherit',
+                            'no-repeat' => 'no_repeat',
+                            'repeat-x'  => 'repeat_x',
+                            'repeat-y'  => 'repeat_y',
                         ],
                     ],
 
                     'background_size' => [
                         'conditions' => "[enable_background_image]==1",
                         'type' => 'list',
-                        'label' => 'ASTROID_BACKGROUND_SIZE',
+                        'label' => 'background_size',
                         'options' => [
-                            '' => 'JGLOBAL_INHERIT',
-                            'cover' => 'ASTROID_BACKGROUND_SIZE_COVER',
-                            'contain' => 'ASTROID_BACKGROUND_SIZE_CONTAIN',
+                            '' => 'inherit',
+                            'cover' => 'cover',
+                            'contain' => 'contain',
                         ],
                     ],
 
-                    'background_attchment' => [
+                    'background_attachment' => [
                         'conditions' => "[enable_background_image]==1",
                         'type' => 'list',
-                        'label' => 'ASTROID_BACKGROUND_ATTCHMENT',
+                        'label' => 'background_attachment',
                         'options' => [
-                            '' => 'JGLOBAL_INHERIT',
-                            'scroll' => 'ASTROID_BACKGROUND_ATTCHMENT_SCROLL',
-                            'fixed'  => 'ASTROID_BACKGROUND_ATTCHMENT_FIXED',
+                            '' => 'inherit',
+                            'scroll' => 'scroll',
+                            'fixed'  => 'fixed',
                         ],
                     ],
 
                     'background_position' => [
                         'conditions' => "[enable_background_image]==1",
                         'type' => 'list',
-                        'label' => 'ASTROID_BACKGROUND_POSITION_LABEL',
+                        'label' => 'background_position',
                         'options' => [
-                            '' => 'JGLOBAL_INHERIT',
-                            'left top'     => 'ASTROID_BACKGROUND_POSITION_LEFT_TOP',
-                            'left center'  => 'ASTROID_BACKGROUND_POSITION_LEFT_CENTER',
-                            'left bottom'  => 'ASTROID_BACKGROUND_POSITION_LEFT_BOTTOM',
-                            'right top'    => 'ASTROID_BACKGROUND_POSITION_RIGHT_TOP',
-                            'right center' => 'ASTROID_BACKGROUND_POSITION_RIGHT_CENTER',
-                            'right bottom' => 'ASTROID_BACKGROUND_POSITION_RIGHT_BOTTOM',
-                            'center top'   => 'ASTROID_BACKGROUND_POSITION_CENTER_TOP',
-                            'center center'=> 'ASTROID_BACKGROUND_POSITION_CENTER_CENTER',
-                            'center bottom'=> 'ASTROID_BACKGROUND_POSITION_CENTER_BOTTOM',
+                            '' => 'inherit',
+                            "left top" => "left_top",
+                            "left center" => "left_center",
+                            "left bottom" => "left_bottom",
+                            "right top" => "right_top",
+                            "right center" => "right_center",
+                            "right bottom" => "right_bottom",
+                            "center top" => "center_top",
+                            "center center" => "center_center",
+                            "center bottom" => "center_bottom",
                         ],
                     ],
                 ]
@@ -236,7 +236,7 @@ class MoonElementGrid extends MoonElement {
         $this->addField('grids',  [
             "group" => "general",
             "type" => "subform",
-            "label" => "ASTROID_WIDGET_GRIDS_LABEL",
+            "label" => "grids",
             "attributes" => [
                 'form'    =>  $repeater->renderJson('subform')
             ],
@@ -250,126 +250,125 @@ class MoonElementGrid extends MoonElement {
             ],
             "default" => "lg",
             "options" => [
-                "xxl" => "ASTROID_WIDGET_XXL_ICON",
-                "xl"  => "ASTROID_WIDGET_XL_ICON",
-                "lg"  => "ASTROID_WIDGET_LG_ICON",
-                "md"  => "ASTROID_WIDGET_MD_ICON",
-                "sm"  => "ASTROID_WIDGET_SM_ICON",
-                "xs"  => "ASTROID_WIDGET_XS_ICON",
+                'xxl' => 'xxl_icon',
+                'xl'  => 'xl_icon',
+                'lg'  => 'lg_icon',
+                'md'  => 'md_icon',
+                'sm'  => 'sm_icon',
+                'xs'  => 'xs_icon',
             ],
         ]);
 
         $this->addField('xxl_column', [
             "group"      => "grid_options",
             "type"       => "list",
-            "name"       => "xxl_column",
-            "label"      => "ASTROID_WIDGET_XXL_COLUMN",
+            "label"      => "xxl_column",
             "default"    => "",
             "conditions" => "[column_responsive]=='xxl'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
-                "1" => "ASTROID_WIDGET_1_COLUMN",
-                "2" => "ASTROID_WIDGET_2_COLUMNS",
-                "3" => "ASTROID_WIDGET_3_COLUMNS",
-                "4" => "ASTROID_WIDGET_4_COLUMNS",
-                "5" => "ASTROID_WIDGET_5_COLUMNS",
-                "6" => "ASTROID_WIDGET_6_COLUMNS",
+                ""  => "inherit",
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
             ],
         ]);
 
         $this->addField('xl_column', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_XL_COLUMN",
+            "label"      => "xl_column",
             "default"    => "",
             "conditions" => "[column_responsive]=='xl'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
-                "1" => "ASTROID_WIDGET_1_COLUMN",
-                "2" => "ASTROID_WIDGET_2_COLUMNS",
-                "3" => "ASTROID_WIDGET_3_COLUMNS",
-                "4" => "ASTROID_WIDGET_4_COLUMNS",
-                "5" => "ASTROID_WIDGET_5_COLUMNS",
-                "6" => "ASTROID_WIDGET_6_COLUMNS",
+                ""  => "inherit",
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
             ],
         ]);
 
         $this->addField('lg_column', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_LG_COLUMN",
+            "label"      => "lg_column",
             "default"    => "3",
             "conditions" => "[column_responsive]=='lg'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
-                "1" => "ASTROID_WIDGET_1_COLUMN",
-                "2" => "ASTROID_WIDGET_2_COLUMNS",
-                "3" => "ASTROID_WIDGET_3_COLUMNS",
-                "4" => "ASTROID_WIDGET_4_COLUMNS",
-                "5" => "ASTROID_WIDGET_5_COLUMNS",
-                "6" => "ASTROID_WIDGET_6_COLUMNS",
+                ""  => "inherit",
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
             ],
         ]);
 
         $this->addField('md_column', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_MD_COLUMN",
+            "label"      => "md_column",
             "default"    => "1",
             "conditions" => "[column_responsive]=='md'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
-                "1" => "ASTROID_WIDGET_1_COLUMN",
-                "2" => "ASTROID_WIDGET_2_COLUMNS",
-                "3" => "ASTROID_WIDGET_3_COLUMNS",
-                "4" => "ASTROID_WIDGET_4_COLUMNS",
-                "5" => "ASTROID_WIDGET_5_COLUMNS",
-                "6" => "ASTROID_WIDGET_6_COLUMNS",
+                ""  => "inherit",
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
             ],
         ]);
 
         $this->addField('sm_column', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_SM_COLUMN",
+            "label"      => "sm_column",
             "default"    => "1",
             "conditions" => "[column_responsive]=='sm'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
-                "1" => "ASTROID_WIDGET_1_COLUMN",
-                "2" => "ASTROID_WIDGET_2_COLUMNS",
-                "3" => "ASTROID_WIDGET_3_COLUMNS",
-                "4" => "ASTROID_WIDGET_4_COLUMNS",
-                "5" => "ASTROID_WIDGET_5_COLUMNS",
-                "6" => "ASTROID_WIDGET_6_COLUMNS",
+                ""  => "inherit",
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
             ],
         ]);
 
         $this->addField('xs_column', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_XS_COLUMN",
+            "label"      => "xs_column",
             "default"    => "1",
             "conditions" => "[column_responsive]=='xs'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
-                "1" => "ASTROID_WIDGET_1_COLUMN",
-                "2" => "ASTROID_WIDGET_2_COLUMNS",
-                "3" => "ASTROID_WIDGET_3_COLUMNS",
-                "4" => "ASTROID_WIDGET_4_COLUMNS",
-                "5" => "ASTROID_WIDGET_5_COLUMNS",
-                "6" => "ASTROID_WIDGET_6_COLUMNS",
+                ""  => "inherit",
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
             ],
         ]);
 
         $this->addField('row_gutter_xxl', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROW_GUTTER_XXL_LABEL",
+            "label"      => "row_gutter_xxl",
             "default"    => "",
             "conditions" => "[column_responsive]=='xxl'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -382,11 +381,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('row_gutter_xl', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROW_GUTTER_XL_LABEL",
+            "label"      => "row_gutter_xl",
             "default"    => "",
             "conditions" => "[column_responsive]=='xl'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -399,11 +398,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('row_gutter_lg', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROW_GUTTER_LG_LABEL",
+            "label"      => "row_gutter_lg",
             "default"    => "4",
             "conditions" => "[column_responsive]=='lg'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -416,11 +415,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('row_gutter_md', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROW_GUTTER_MD_LABEL",
+            "label"      => "row_gutter_md",
             "default"    => "3",
             "conditions" => "[column_responsive]=='md'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -433,11 +432,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('row_gutter_sm', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROW_GUTTER_SM_LABEL",
+            "label"      => "row_gutter_sm",
             "default"    => "3",
             "conditions" => "[column_responsive]=='sm'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -450,7 +449,7 @@ class MoonElementGrid extends MoonElement {
         $this->addField('row_gutter', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROW_GUTTER_LABEL",
+            "label"      => "row_gutter_xs",
             "default"    => "3",
             "conditions" => "[column_responsive]=='xs'",
             "options"    => [
@@ -466,11 +465,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('column_gutter_xxl', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_COLUMN_GUTTER_XXL_LABEL",
+            "label"      => "column_gutter_xxl",
             "default"    => "",
             "conditions" => "[column_responsive]=='xxl'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -483,11 +482,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('column_gutter_xl', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_COLUMN_GUTTER_XL_LABEL",
+            "label"      => "column_gutter_xl",
             "default"    => "",
             "conditions" => "[column_responsive]=='xl'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -500,11 +499,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('column_gutter_lg', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_COLUMN_GUTTER_LG_LABEL",
+            "label"      => "column_gutter_lg",
             "default"    => "4",
             "conditions" => "[column_responsive]=='lg'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -517,11 +516,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('column_gutter_md', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_COLUMN_GUTTER_MD_LABEL",
+            "label"      => "column_gutter_md",
             "default"    => "3",
             "conditions" => "[column_responsive]=='md'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -534,11 +533,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('column_gutter_sm', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_COLUMN_GUTTER_SM_LABEL",
+            "label"      => "column_gutter_sm",
             "default"    => "3",
             "conditions" => "[column_responsive]=='sm'",
             "options"    => [
-                ""  => "JGLOBAL_INHERIT",
+                ""  => "inherit",
                 "0" => "Collapse",
                 "1" => "X-Small",
                 "2" => "Small",
@@ -551,7 +550,7 @@ class MoonElementGrid extends MoonElement {
         $this->addField('column_gutter', [
             "group"      => "grid_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_COLUMN_GUTTER_LABEL",
+            "label"      => "column_gutter_xs",
             "default"    => "3",
             "conditions" => "[column_responsive]=='xs'",
             "options"    => [
@@ -571,13 +570,13 @@ class MoonElementGrid extends MoonElement {
             "attributes" => [
                 "role" => "switch"
             ],
-            "label"   => "ASTROID_USE_MASONRY",
+            "label"   => "use_masonry",
         ]);
 
         $this->addField('card_style', [
             "group"   => "card_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_CARD_STYLE_LABEL",
+            "label"   => "card_style",
             "default" => "",
             "options" => [
                 ""          => "default",
@@ -590,69 +589,69 @@ class MoonElementGrid extends MoonElement {
                 "light"     => "Light",
                 "dark"      => "Dark",
                 "none"      => "None",
-                "custom"    => "ASTROID_WIDGET_CUSTOM",
+                "custom"    => "custom",
             ],
         ]);
 
         $this->addField('text_color', [
             "group"      => "card_options",
             "type"       => "color",
-            "label"      => "TPL_ASTROID_TEXT_COLOR_LABEL",
+            "label"      => "color",
             "conditions" => "[card_style]=='custom'",
         ]);
 
         $this->addField('bg_color', [
             "group"      => "card_options",
             "type"       => "color",
-            "label"      => "TPL_ASTROID_BACKGROUND_COLOR_LABEL",
+            "label"      => "background_color",
             "conditions" => "[card_style]=='custom'",
         ]);
 
         $this->addField('card_border', [
             "group"      => "card_options",
             "type"       => "border",
-            "label"      => "ASTROID_WIDGET_BORDER_LABEL",
+            "label"      => "border",
             "conditions" => "[card_style]=='custom'",
         ]);
 
         $this->addField('card_size', [
             "group"   => "card_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_CARD_SIZE_LABEL",
+            "label"   => "card_size",
             "default" => "",
             "options" => [
-                "none"   => "ASTROID_NONE",
-                ""       => "TPL_ASTROID_DEFAULT",
-                "small"  => "ASTROID_SMALL",
-                "large"  => "ASTROID_LARGE",
-                "custom" => "ASTROID_WIDGET_CUSTOM",
+                "none"   => "none",
+                ""       => "default",
+                "small"  => "small",
+                "large"  => "large",
+                "custom" => "custom",
             ],
         ]);
 
         $this->addField('card_padding', [
             "group"      => "card_options",
             "type"       => "spacing",
-            "label"      => "ASTROID_WIDGET_PADDING_LABEL",
+            "label"      => "padding",
             "conditions" => "[card_size]=='custom'",
         ]);
 
         $this->addField('card_border_radius', [
             "group"   => "card_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_CARD_BORDER_RADIUS_LABEL",
+            "label"   => "border_radius",
             "default" => "",
             "options" => [
-                ""       => "TPL_ASTROID_ICON_STYLE_ROUNDED",
-                "0"      => "TPL_ASTROID_ICON_STYLE_SQUARE",
-                "circle" => "TPL_ASTROID_ICON_STYLE_CIRCLE",
-                "pill"   => "TPL_ASTROID_ICON_STYLE_PILL",
+                ""       => "rounded",
+                "0"      => "squared",
+                "circle" => "circle",
+                "pill"   => "pill",
             ],
         ]);
 
         $this->addField('card_rounded_size', [
             "group"      => "card_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROUNDED_SIZE_LABEL",
+            "label"      => "rounded_size",
             "default"    => "3",
             "conditions" => "[card_border_radius]==''",
             "options"    => [
@@ -667,14 +666,14 @@ class MoonElementGrid extends MoonElement {
         $this->addField('media_position', [
             "group"   => "card_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_MEDIA_POSITION_LABEL",
+            "label"   => "media_position",
             "default" => "inside",
             "options" => [
-                "top"    => "ASTROID_TOP",
-                "left"   => "ASTROID_LEFT",
-                "bottom" => "ASTROID_BOTTOM",
-                "right"  => "ASTROID_RIGHT",
-                "inside" => "ASTROID_INSIDE",
+                "top"    => "top",
+                "left"   => "left",
+                "bottom" => "bottom",
+                "right"  => "right",
+                "inside" => "inside",
             ],
         ]);
 
@@ -687,12 +686,12 @@ class MoonElementGrid extends MoonElement {
             "default" => "lg",
             "conditions" => "[media_position]=='left' OR [media_position]=='right'",
             "options" => [
-                "xxl" => "ASTROID_WIDGET_XXL_ICON",
-                "xl"  => "ASTROID_WIDGET_XL_ICON",
-                "lg"  => "ASTROID_WIDGET_LG_ICON",
-                "md"  => "ASTROID_WIDGET_MD_ICON",
-                "sm"  => "ASTROID_WIDGET_SM_ICON",
-                "xs"  => "ASTROID_WIDGET_XS_ICON",
+                "xxl" => "xxl_icon",
+                "xl"  => "xl_icon",
+                "lg"  => "lg_icon",
+                "md"  => "md_icon",
+                "sm"  => "sm_icon",
+                "xs"  => "xs_icon",
             ],
         ]);
 
@@ -700,11 +699,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('xxl_column_media', [
             "group"      => "card_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_XXL_COLUMN_IMAGE_WIDTH",
+            "label"      => "xxl_column_media_width",
             "default"    => "",
             "conditions" => "[media_column_responsive]=='xxl' AND ([media_position]=='left' OR [media_position]=='right')",
             "options"    => [
-                ""     => "JGLOBAL_INHERIT",
+                ""     => "inherit",
                 "12"   => "1/1",
                 "6"    => "1/2",
                 "4"    => "1/3",
@@ -722,11 +721,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('xl_column_media', [
             "group"      => "card_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_XL_COLUMN_IMAGE_WIDTH",
+            "label"      => "xl_column_media_width",
             "default"    => "",
             "conditions" => "[media_column_responsive]=='xl' AND ([media_position]=='left' OR [media_position]=='right')",
             "options"    => [
-                ""     => "JGLOBAL_INHERIT",
+                ""     => "inherit",
                 "12"   => "1/1",
                 "6"    => "1/2",
                 "4"    => "1/3",
@@ -744,11 +743,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('lg_column_media', [
             "group"      => "card_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_LG_COLUMN_IMAGE_WIDTH",
+            "label"      => "lg_column_media_width",
             "default"    => "4",
             "conditions" => "[media_column_responsive]=='lg' AND ([media_position]=='left' OR [media_position]=='right')",
             "options"    => [
-                ""     => "JGLOBAL_INHERIT",
+                ""     => "inherit",
                 "12"   => "1/1",
                 "6"    => "1/2",
                 "4"    => "1/3",
@@ -766,11 +765,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('md_column_media', [
             "group"      => "card_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_MD_COLUMN_IMAGE_WIDTH",
+            "label"      => "md_column_media_width",
             "default"    => "12",
             "conditions" => "[media_column_responsive]=='md' AND ([media_position]=='left' OR [media_position]=='right')",
             "options"    => [
-                ""     => "JGLOBAL_INHERIT",
+                ""     => "inherit",
                 "12"   => "1/1",
                 "6"    => "1/2",
                 "4"    => "1/3",
@@ -788,11 +787,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('sm_column_media', [
             "group"      => "card_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_SM_COLUMN_IMAGE_WIDTH",
+            "label"      => "sm_column_media_width",
             "default"    => "12",
             "conditions" => "[media_column_responsive]=='sm' AND ([media_position]=='left' OR [media_position]=='right')",
             "options"    => [
-                ""     => "JGLOBAL_INHERIT",
+                ""     => "inherit",
                 "12"   => "1/1",
                 "6"    => "1/2",
                 "4"    => "1/3",
@@ -810,11 +809,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('xs_column_media', [
             "group"      => "card_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_XS_COLUMN_IMAGE_WIDTH",
+            "label"      => "xs_column_media_width",
             "default"    => "12",
             "conditions" => "[media_column_responsive]=='xs' AND ([media_position]=='left' OR [media_position]=='right')",
             "options"    => [
-                ""     => "JGLOBAL_INHERIT",
+                ""     => "inherit",
                 "12"   => "1/1",
                 "6"    => "1/2",
                 "4"    => "1/3",
@@ -836,7 +835,7 @@ class MoonElementGrid extends MoonElement {
             "attributes" => [
                 "role" => "switch"
             ],
-            "label"      => "ASTROID_WIDGET_VERTICAL_MIDDLE",
+            "label"      => "vertical_middle",
             "conditions" => "[media_position]=='left' OR [media_position]=='right'",
         ]);
 
@@ -847,13 +846,13 @@ class MoonElementGrid extends MoonElement {
             "attributes" => [
                 "role" => "switch"
             ],
-            "label"   => "ASTROID_WIDGET_ENABLE_GRID_MATCH",
+            "label"   => "enable_grid_match",
         ]);
 
         $this->addField('card_hover_transition', [
             "group"   => "card_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_HOVER_TRANSITION_LABEL",
+            "label"   => "hover_transition",
             "default" => "",
             "options" => Constants::$hover_transition,
         ]);
@@ -861,36 +860,36 @@ class MoonElementGrid extends MoonElement {
         $this->addField('card_box_shadow', [
             "group"   => "card_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_BOX_SHADOW_LABEL",
+            "label"   => "box_shadow",
             "default" => "",
             "options" => [
-                ""             => "TPL_ASTROID_DEFAULT",
-                "shadow-none"  => "ASTROID_WIDGET_SHADOW_NONE",
-                "shadow-sm"    => "ASTROID_WIDGET_SHADOW_SMALL",
-                "shadow"       => "ASTROID_WIDGET_SHADOW_REGULAR",
-                "shadow-lg"    => "ASTROID_WIDGET_SHADOW_LARGE",
+                ""             => "default",
+                "shadow-none"  => "none",
+                "shadow-sm"    => "sm",
+                "shadow"       => "md",
+                "shadow-lg"    => "lg",
             ],
         ]);
 
         $this->addField('card_box_shadow_hover', [
             "group"   => "card_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_BOX_SHADOW_HOVER_LABEL",
+            "label"   => "box_shadow_hover",
             "default" => "",
             "options" => [
-                ""                    => "TPL_ASTROID_DEFAULT",
-                "shadow-hover-none"   => "ASTROID_WIDGET_SHADOW_NONE",
-                "shadow-hover-sm"     => "ASTROID_WIDGET_SHADOW_SMALL",
-                "shadow-hover"        => "ASTROID_WIDGET_SHADOW_REGULAR",
-                "shadow-hover-lg"     => "ASTROID_WIDGET_SHADOW_LARGE",
-                "shadow-hover-popout" => "ASTROID_WIDGET_SHADOW_POPUP",
+                ""                    => "default",
+                "shadow-hover-none"   => "none",
+                "shadow-hover-sm"     => "sm",
+                "shadow-hover"        => "md",
+                "shadow-hover-lg"     => "lg",
+                "shadow-hover-popout" => "popout",
             ],
         ]);
 
         $this->addField('icon_size', [
             "group"   => "icon_options",
             "type"    => "range",
-            "label"   => "TPL_ASTROID_BASIC_ICON_SIZE_LABEL",
+            "label"   => "icon_size",
             "attributes" => [
                 "min"     => 1,
                 "max"     => 300,
@@ -903,13 +902,13 @@ class MoonElementGrid extends MoonElement {
         $this->addField('icon_color', [
             "group" => "icon_options",
             "type"  => "color",
-            "label" => "TPL_ASTROID_COLOR",
+            "label" => "color",
         ]);
 
         $this->addField('icon_color_hover', [
             "group" => "icon_options",
             "type"  => "color",
-            "label" => "TPL_ASTROID_COLOR_HOVER",
+            "label" => "color_hover",
         ]);
 
         $this->addField('enable_icon_link', [
@@ -919,17 +918,17 @@ class MoonElementGrid extends MoonElement {
             "attributes" => [
                 "role" => "switch"
             ],
-            "label"   => "ASTROID_WIDGET_ENABLE_ICON_LINK",
+            "label"   => "enable_icon_link",
         ]);
 
         $this->addField('layout', [
             "group"   => "image_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_CHOOSE_LAYOUT_LABEL",
+            "label"   => "choose_layout",
             "default" => "classic",
             "options" => [
-                "classic" => "ASTROID_WIDGET_LAYOUT_CLASSIC_LABEL",
-                "overlay" => "ASTROID_WIDGET_LAYOUT_IMG_OVERLAY_LABEL",
+                "classic" => "classic",
+                "overlay" => "overlay",
             ],
         ]);
 
@@ -940,7 +939,7 @@ class MoonElementGrid extends MoonElement {
             "attributes" => [
                 "role" => "switch"
             ],
-            "label"   => "ASTROID_WIDGET_IMAGE_FULLWIDTH",
+            "label"   => "image_fullwidth",
         ]);
 
         $this->addField('enable_image_cover', [
@@ -950,13 +949,13 @@ class MoonElementGrid extends MoonElement {
             "attributes" => [
                 "role" => "switch"
             ],
-            "label"   => "ASTROID_WIDGET_ENABLE_IMAGE_COVER",
+            "label"   => "enable_image_cover",
         ]);
 
         $this->addField('min_height', [
             "group"      => "image_options",
             "type"       => "range",
-            "label"      => "ASTROID_WIDGET_MIN_HEIGHT",
+            "label"      => "min_height",
             "attributes" => [
                 "min"        => 1,
                 "max"        => 600,
@@ -974,46 +973,46 @@ class MoonElementGrid extends MoonElement {
                 "width"   => "full",
             ],
             "default"    => "color",
-            "label"      => "ASTROID_WIDGET_OVERLAY_COLOR",
+            "label"      => "overlay_color",
             "conditions" => "[enable_image_cover]==1",
             "options"    => [
-                ""         => "ASTROID_NONE",
-                "color"    => "TPL_ASTROID_COLOR",
-                "gradient" => "ASTROID_WIDGET_OVERLAY_GRADIENT",
+                ""         => "none",
+                "color"    => "color",
+                "gradient" => "gradient",
             ],
         ]);
 
         $this->addField('overlay_color', [
             "group"      => "image_options",
             "type"       => "color",
-            "label"      => "ASTROID_WIDGET_OVERLAY_COLOR",
+            "label"      => "overlay_color",
             "conditions" => "[enable_image_cover]==1 AND [overlay_type]=='color'",
         ]);
 
         $this->addField('overlay_gradient', [
             "group"      => "image_options",
             "type"       => "gradient",
-            "label"      => "ASTROID_WIDGET_OVERLAY_GRADIENT",
+            "label"      => "overlay_gradient",
             "conditions" => "[enable_image_cover]==1 AND [overlay_type]=='gradient'",
         ]);
 
         $this->addField('image_border_radius', [
             "group"   => "image_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_BORDER_RADIUS_LABEL",
+            "label"   => "border_radius",
             "default" => "0",
             "options" => [
-                "rounded" => "TPL_ASTROID_ICON_STYLE_ROUNDED",
-                "0"       => "TPL_ASTROID_ICON_STYLE_SQUARE",
-                "circle"  => "TPL_ASTROID_ICON_STYLE_CIRCLE",
-                "pill"    => "TPL_ASTROID_ICON_STYLE_PILL",
+                "rounded" => "rounded",
+                "0"       => "square",
+                "circle"  => "circle",
+                "pill"    => "pill",
             ],
         ]);
 
         $this->addField('image_rounded_size', [
             "group"      => "image_options",
             "type"       => "list",
-            "label"      => "ASTROID_WIDGET_ROUNDED_SIZE_LABEL",
+            "label"      => "rounded_size",
             "default"    => "3",
             "conditions" => "[image_border_radius]=='rounded'",
             "options"    => [
@@ -1028,20 +1027,20 @@ class MoonElementGrid extends MoonElement {
         $this->addField('hover_effect', [
             "group"   => "image_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_HOVER_EFFECT_LABEL",
+            "label"   => "hover_effect",
             "default" => "",
             "options" => [
-                ""        => "TPL_ASTROID_DEFAULT",
-                "light-up" => "ASTROID_WIDGET_EFFECT_LIGHT_UP",
-                "flash"    => "ASTROID_WIDGET_EFFECT_FLASH",
-                "unveil"   => "ASTROID_WIDGET_EFFECT_UNVEIL",
+                ""        => "default",
+                "light-up" => "light_up",
+                "flash"    => "flash",
+                "unveil"   => "unveil",
             ],
         ]);
 
         $this->addField('hover_transition', [
             "group"   => "image_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_HOVER_TRANSITION_LABEL",
+            "label"   => "hover_transition",
             "default" => "",
             "options" => Constants::$hover_transition,
         ]);
@@ -1049,7 +1048,7 @@ class MoonElementGrid extends MoonElement {
         $this->addField('title_html_element', [
             "group"   => "title_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_HTML_ELEMENT_LABEL",
+            "label"   => "html_element",
             "default" => "h3",
             "options" => [
                 "h1" => "h1",
@@ -1065,11 +1064,11 @@ class MoonElementGrid extends MoonElement {
         $this->addField('title_font_style', [
             "group"   => "title_options",
             "type"    => "typography",
-            "label"   => "ASTROID_WIDGET_FONT_STYLES_LABEL",
+            "label"   => "font_style",
             "attributes" => [
                 'options' => [
-                    "colorpicker" => false,
-                    'stylepicker' => false,
+                    "colorpicker" => true,
+                    'stylepicker' => true,
                     'fontpicker' => true,
                     'sizepicker' => true,
                     'letterspacingpicker' => true,
@@ -1078,7 +1077,7 @@ class MoonElementGrid extends MoonElement {
                     'transformpicker' => true,
                     'columns' => 1,
                     'preview' => false,
-                    'collapse' => false,
+                    'collapse' => true,
                     'system_fonts' => Font::get_system_fonts(),
                     'text_transform_options' => Font::text_transform(),
                     'lang' => Font::font_properties(),
@@ -1091,17 +1090,17 @@ class MoonElementGrid extends MoonElement {
         $this->addField('title_heading_margin', [
             "group" => "title_options",
             "type"  => "spacing",
-            "label" => "ASTROID_WIDGET_MARGIN_LABEL",
+            "label" => "margin",
         ]);
 
         $this->addField('meta_font_style', [
             "group"   => "meta_options",
             "type"    => "typography",
-            "label"   => "ASTROID_WIDGET_FONT_STYLES_LABEL",
+            "label"   => "font_style",
             "attributes" => [
                 'options' => [
-                    "colorpicker" => false,
-                    'stylepicker' => false,
+                    "colorpicker" => true,
+                    'stylepicker' => true,
                     'fontpicker' => true,
                     'sizepicker' => true,
                     'letterspacingpicker' => true,
@@ -1110,7 +1109,7 @@ class MoonElementGrid extends MoonElement {
                     'transformpicker' => true,
                     'columns' => 1,
                     'preview' => false,
-                    'collapse' => false,
+                    'collapse' => true,
                     'system_fonts' => Font::get_system_fonts(),
                     'text_transform_options' => Font::text_transform(),
                     'lang' => Font::font_properties(),
@@ -1123,28 +1122,28 @@ class MoonElementGrid extends MoonElement {
         $this->addField('meta_heading_margin', [
             "group" => "meta_options",
             "type"  => "spacing",
-            "label" => "ASTROID_WIDGET_MARGIN_LABEL",
+            "label" => "margin",
         ]);
 
         $this->addField('meta_position', [
             "group"   => "meta_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_META_POSITION_LABEL",
+            "label"   => "meta_position",
             "default" => "before",
             "options" => [
-                "before" => "ASTROID_BEFORE_TITLE",
-                "after"  => "ASTROID_AFTER_TITLE",
+                "before" => "before_title",
+                "after"  => "after_title",
             ],
         ]);
 
         $this->addField('content_font_style', [
             "group"   => "content_options",
             "type"    => "typography",
-            "label"   => "ASTROID_WIDGET_FONT_STYLES_LABEL",
+            "label"   => "font_style",
             "attributes" => [
                 'options' => [
-                    "colorpicker" => false,
-                    'stylepicker' => false,
+                    "colorpicker" => true,
+                    'stylepicker' => true,
                     'fontpicker' => true,
                     'sizepicker' => true,
                     'letterspacingpicker' => true,
@@ -1153,7 +1152,7 @@ class MoonElementGrid extends MoonElement {
                     'transformpicker' => true,
                     'columns' => 1,
                     'preview' => false,
-                    'collapse' => false,
+                    'collapse' => true,
                     'system_fonts' => Font::get_system_fonts(),
                     'text_transform_options' => Font::text_transform(),
                     'lang' => Font::font_properties(),
@@ -1166,7 +1165,7 @@ class MoonElementGrid extends MoonElement {
         $this->addField('button_style', [
             "group"   => "readmore_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_GLOBAL_STYLES_LABEL",
+            "label"   => "style",
             "name"    => "button_style",
             "default" => "primary",
             "options" => [
@@ -1190,13 +1189,13 @@ class MoonElementGrid extends MoonElement {
             "attributes" => [
                 "role" => "switch"
             ],
-            "label"   => "ASTROID_WIDGET_BUTTON_OUTLINE_LABEL",
+            "label"   => "button_outline",
         ]);
 
         $this->addField('button_size', [
             "group"   => "readmore_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_BUTTON_SIZE_LABEL",
+            "label"   => "button_size",
             "default" => "",
             "options" => [
                 ""       => "Default",
@@ -1208,7 +1207,7 @@ class MoonElementGrid extends MoonElement {
         $this->addField('btn_border_radius', [
             "group"   => "readmore_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_GLOBAL_BORDER_RADIUS_LABEL",
+            "label"   => "border_radius",
             "default" => "",
             "options" => [
                 ""             => "Rounded",
@@ -1220,15 +1219,15 @@ class MoonElementGrid extends MoonElement {
         $this->addField('button_margin_top', [
             "group"   => "readmore_options",
             "type"    => "list",
-            "label"   => "ASTROID_WIDGET_BUTTON_MARGIN_TOP",
+            "label"   => "margin_top",
             "default" => "",
             "options" => [
-                ""  => "JNONE",
-                "1" => "J1",
-                "2" => "J2",
-                "3" => "J3",
-                "4" => "J4",
-                "5" => "J5",
+                ""  => "none",
+                "1" => "1",
+                "2" => "2",
+                "3" => "3",
+                "4" => "4",
+                "5" => "5",
             ],
         ]);
     }

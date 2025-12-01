@@ -137,8 +137,8 @@ class MoonElementHeading extends MoonElement {
             "label"   => "font_style",
             "attributes" => [
                 'options' => [
-                    "colorpicker" => false,
-                    'stylepicker' => false,
+                    "colorpicker" => true,
+                    'stylepicker' => true,
                     'fontpicker' => true,
                     'sizepicker' => true,
                     'letterspacingpicker' => true,
@@ -147,7 +147,7 @@ class MoonElementHeading extends MoonElement {
                     'transformpicker' => true,
                     'columns' => 1,
                     'preview' => false,
-                    'collapse' => false,
+                    'collapse' => true,
                     'system_fonts' => Font::get_system_fonts(),
                     'text_transform_options' => Font::text_transform(),
                     'lang' => Font::font_properties(),

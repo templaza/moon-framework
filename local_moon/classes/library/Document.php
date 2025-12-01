@@ -526,4 +526,17 @@ class Document {
             $this->addScriptDeclaration('window.addEventListener(\'load\', () => {new Masonry( \''.$selector.'\', {itemSelector: \''.$selector.' > div\',percentPosition: true}); document.querySelectorAll(\''.$selector.'\').forEach(element => element.classList.remove("as-loading")); });');
         }
     }
+
+    public function loadSwiper($obj = '', $config = ''): void
+    {
+        global $PAGE;
+        if (!isset($this->_is_loaded['swiper'])) {
+            $PAGE->requires->css("/local/moon/assets/swiper/swiper-bundle.min.css");
+            $PAGE->requires->js('/local/moon/assets/swiper/swiper-bundle.min.js', true);
+            $this->_is_loaded['swiper'] = true;
+        }
+        if (!empty($obj) && !empty($config)) {
+            $this->addStyleDeclaration('window.addEventListener(\'load\', function(){ const swiper = new Swiper(\'' . $obj . '\', {' . $config . '}); document.querySelectorAll(\'' . $obj . '\').forEach(function(el){ el.classList.remove(\'as-loading\'); }); });');
+        }
+    }
 }

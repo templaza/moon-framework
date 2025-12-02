@@ -72,33 +72,39 @@ class Constants
         ];
     }
 
-    public static function getLayouts()
+    public static array $layouts = [
+        'base',
+        'standard',
+        'course',
+        'coursecategory',
+        'incourse',
+        'frontpage',
+        'admin',
+        'mycourses',
+        'mydashboard',
+        'mypublic',
+        'login',
+        'popup',
+        'frametop',
+        'embedded',
+        'maintenance',
+        'print',
+        'redirect',
+        'report',
+        'secure',
+        'custom',
+    ];
+
+    public static function getLayouts(): array
     {
-        return [
-            'base' => Text::_('base'),
-            'standard' => Text::_('standard'),
-            'course' => Text::_('course'),
-            'coursecategory' => Text::_('coursecategory'),
-            'incourse' => Text::_('incourse'),
-            'frontpage' => Text::_('frontpage'),
-            'admin' => Text::_('admin'),
-            'mycourses' => Text::_('mycourses'),
-            'mydashboard' => Text::_('mydashboard'),
-            'mypublic' => Text::_('mypublic'),
-            'login' => Text::_('login'),
-            'popup' => Text::_('popup'),
-            'frametop' => Text::_('frametop'),
-            'embedded' => Text::_('embedded'),
-            'maintenance' => Text::_('maintenance'),
-            'print' => Text::_('print'),
-            'redirect' => Text::_('redirect'),
-            'report' => Text::_('report'),
-            'secure' => Text::_('secure'),
-            'custom' => Text::_('custom'),
-        ];
+        $return = [];
+        foreach (self::$layouts as $layout) {
+            $return[$layout] = Text::_($layout);
+        }
+        return $return;
     }
 
-    public static function getDefaultLayout()
+    public static function getDefaultLayout(): false|string
     {
         global $CFG;
         $path = $CFG->dirroot . '/local/moon/assets/json/layouts/default.json';

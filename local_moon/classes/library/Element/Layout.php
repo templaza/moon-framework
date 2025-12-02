@@ -16,7 +16,7 @@ defined('MOODLE_INTERNAL') || die;
 
 class Layout
 {
-    public static function render($role = '')
+    public static function render($role = ''): string
     {
         $template = Framework::getTheme();
         $layout = $template->getLayout();
@@ -147,11 +147,15 @@ class Layout
                 return [];
             }
         } else {
+            $default = Framework::getTheme()->getParams()->get('layout', '');
             if (Media::exists($filename . '.json', '/', $type, 0)) {
                 $json = Media::data($filename . '.json', '/', $type, 0);
                 return \json_decode($json, true);
             } elseif (file_exists(Path::clean($CFG->dirroot . "/theme/{$template}/params/{$type}/" . $filename . '.json'))){
                 $layout_path = Path::clean($CFG->dirroot . "/theme/{$template}/params/{$type}/" . $filename . '.json');
+            } elseif (Media::exists($default . '.json', '/', $type, 0)) {
+                $json = Media::data($default . '.json', '/', $type, 0);
+                return \json_decode($json, true);
             } else {
                 return [];
             }

@@ -10,8 +10,6 @@ defined('MOODLE_INTERNAL') || die;
 
 use context_system;
 use local_moon\library\Framework;
-use local_moon\library\Helper\Form;
-use local_moon\library\Helper\Registry;
 class Utilities
 {
     public static function getThemeConfigs($theme = ''): array|null
@@ -40,7 +38,20 @@ class Utilities
     {
         $layouts = self::getLayoutsByType('theme_' . $theme);
         $configs = self::getThemeConfigs($theme);
+        $default = get_config('theme_'. $theme, 'layout');
         $return = [];
+        if (!empty($default)) {
+            foreach (Constants::$layouts as $layout) {
+                if ($layout !== 'custom') {
+                    $return[$layout] = [
+                        'file' => 'default.php',
+                        'regions' => $configs['regions'],
+                        'defaultregion' => $configs['defaultregion'],
+                    ];
+                }
+            }
+        }
+
         foreach ($layouts as $name => $layout) {
             if (empty($layout['layout']) || $layout['layout'] === 'custom') {
                 $return[pathinfo($name, PATHINFO_FILENAME)] = [

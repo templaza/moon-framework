@@ -39,9 +39,9 @@ class Layout
         return $content;
     }
 
-    public static function renderSublayout($source, $template = '', $type = 'layouts', $options = array(), $role = '')
+    public static function renderSublayout($source, $type = 'layouts', $options = array(), $role = ''): string
     {
-        $sublayout  = self::getDataLayout($source, $template, $type);
+        $sublayout  = self::getDataLayout($source, $type);
         if (!isset($sublayout['data']) || !$sublayout['data']) {
             return '';
         }

@@ -536,7 +536,7 @@ class Document {
             $this->_is_loaded['swiper'] = true;
         }
         if (!empty($obj) && !empty($config)) {
-            $this->addStyleDeclaration('window.addEventListener(\'load\', function(){ const swiper = new Swiper(\'' . $obj . '\', {' . $config . '}); document.querySelectorAll(\'' . $obj . '\').forEach(function(el){ el.classList.remove(\'as-loading\'); }); });');
+            $this->addScriptDeclaration('const swiper = new Swiper(\''.$obj.'\', {'.$config.'});');
         }
     }
 }

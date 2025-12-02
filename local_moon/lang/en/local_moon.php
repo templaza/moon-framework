@@ -754,3 +754,4 @@ $string['sm_column_avatar_width'] = 'Avatar Width in Small Screen';
 $string['xs_column_avatar_width'] = 'Avatar Width in Extra Small Screen';
 $string['enable_rating'] = 'Enable Rating';
 $string['rating_color'] = 'Rating Color';
+$string['slides_per_group'] = 'Slides Per Group';

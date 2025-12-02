@@ -259,7 +259,7 @@ class MoonElementTestimonials extends MoonElement {
         $this->addField('row_gutter_xxl', [
             'group'      => 'grid_options',
             'type'       => 'list',
-            'label'      => 'ASTROID_WIDGET_ROW_GUTTER_XXL_LABEL',
+            'label'      => 'row_gutter_xxl',
             'default'    => '',
             'conditions' => "[column_responsive]=='xxl'",
             'options'    => [
@@ -276,7 +276,7 @@ class MoonElementTestimonials extends MoonElement {
         $this->addField('row_gutter_xl', [
             'group'      => 'grid_options',
             'type'       => 'list',
-            'label'      => 'row_gutter_xxl',
+            'label'      => 'row_gutter_xl',
             'default'    => '',
             'conditions' => "[column_responsive]=='xl'",
             'options'    => [
@@ -293,7 +293,7 @@ class MoonElementTestimonials extends MoonElement {
         $this->addField('row_gutter_lg', [
             'group'      => 'grid_options',
             'type'       => 'list',
-            'label'      => 'row_gutter_xl',
+            'label'      => 'row_gutter_lg',
             'default'    => '4',
             'conditions' => "[column_responsive]=='lg'",
             'options'    => [
@@ -310,7 +310,7 @@ class MoonElementTestimonials extends MoonElement {
         $this->addField('row_gutter_md', [
             'group'      => 'grid_options',
             'type'       => 'list',
-            'label'      => 'row_gutter_lg',
+            'label'      => 'row_gutter_md',
             'default'    => '3',
             'conditions' => "[column_responsive]=='md'",
             'options'    => [
@@ -327,7 +327,7 @@ class MoonElementTestimonials extends MoonElement {
         $this->addField('row_gutter_sm', [
             'group'      => 'grid_options',
             'type'       => 'list',
-            'label'      => 'row_gutter_md',
+            'label'      => 'row_gutter_sm',
             'default'    => '3',
             'conditions' => "[column_responsive]=='sm'",
             'options'    => [
@@ -344,7 +344,7 @@ class MoonElementTestimonials extends MoonElement {
         $this->addField('row_gutter', [
             'group'      => 'grid_options',
             'type'       => 'list',
-            'label'      => 'row_gutter',
+            'label'      => 'row_gutter_xs',
             'default'    => '3',
             'conditions' => "[column_responsive]=='xs'",
             'options'    => [
@@ -491,11 +491,11 @@ class MoonElementTestimonials extends MoonElement {
             'label'   => 'card_size',
             'default' => '',
             'options' => [
-                'none'   => 'ASTROID_NONE',
+                'none'   => 'none',
                 ''       => 'default',
-                'small'  => 'ASTROID_SMALL',
-                'large'  => 'ASTROID_LARGE',
-                'custom' => 'ASTROID_WIDGET_CUSTOM',
+                'small'  => 'sm',
+                'large'  => 'lg',
+                'custom' => 'custom',
             ],
         ]);
 
@@ -749,12 +749,25 @@ class MoonElementTestimonials extends MoonElement {
             'attributes' => ["role" => "switch"],
         ]);
 
-        $this->addField('nav_position', [
+        $this->addField('direction', [
+            'group'   => 'slider_options',
+            'type'    => 'list',
+            'label'   => 'direction',
+            'default' => '',
+            'options' => [
+                ''    => 'inherit',
+                'ltr' => 'LTR',
+                'rtl' => 'RTL',
+            ],
+            'conditions' => "[enable_slider]==1",
+        ]);
+
+        $this->addField('slider_scrollbar', [
             'group'      => 'slider_options',
             'type'       => 'list',
-            'label'      => 'nav_position',
+            'label'      => 'slider_scrollbar',
             'default'    => '',
-            'conditions' => "[enable_slider]==1 AND [slider_nav]==1",
+            'conditions' => "[enable_slider]==1",
             'options'    => [
                 ''          => 'inside',
                 'nav-outside' => 'outside',
@@ -784,111 +797,129 @@ class MoonElementTestimonials extends MoonElement {
             ],
         ]);
 
+        $this->addField('slidesPerGroup_responsive', [
+            'group'   => 'slider_options',
+            'type'    => 'radio',
+            "attributes" => [
+                'width'   => 'full',
+            ],
+            'default' => 'lg',
+            'options' => [
+                'xxl' => 'xxl_icon',
+                'xl'  => 'xl_icon',
+                'lg'  => 'lg_icon',
+                'md'  => 'md_icon',
+                'sm'  => 'sm_icon',
+                'xs'  => 'xs_icon',
+            ],
+            'conditions'  => "[enable_slider]==1",
+        ]);
+
         $this->addField('xxl_slidesPerGroup', [
             'group'   => 'slider_options',
             'type'    => 'list',
-            'label'   => 'ASTROID_WIDGET_SLIDES_PER_GROUP',
+            'label'   => 'slides_per_group',
             'default' => '',
-            'ngShow'  => "[enable_slider]==1 AND [column_responsive]=='xxl'",
+            'conditions'  => "[enable_slider]==1 AND [slidesPerGroup_responsive]=='xxl'",
             'options' => [
-                ''     => 'JGLOBAL_INHERIT',
-                '1'    => 'ASTROID_WIDGET_1_COLUMN',
-                '2'    => 'ASTROID_WIDGET_2_COLUMNS',
-                '3'    => 'ASTROID_WIDGET_3_COLUMNS',
-                '4'    => 'ASTROID_WIDGET_4_COLUMNS',
-                '5'    => 'ASTROID_WIDGET_5_COLUMNS',
-                '6'    => 'ASTROID_WIDGET_6_COLUMNS',
-                'auto' => 'ASTROID_WIDGET_AUTO_COLUMNS',
+                ''  => 'inherit',
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
+                'auto' => 'auto',
             ],
         ]);
 
         $this->addField('xl_slidesPerGroup', [
             'group'   => 'slider_options',
             'type'    => 'list',
-            'label'   => 'ASTROID_WIDGET_SLIDES_PER_GROUP',
+            'label'   => 'slides_per_group',
             'default' => '',
-            'ngShow'  => "[enable_slider]==1 AND [column_responsive]=='xl'",
+            'conditions'  => "[enable_slider]==1 AND [slidesPerGroup_responsive]=='xl'",
             'options' => [
-                ''     => 'JGLOBAL_INHERIT',
-                '1'    => 'ASTROID_WIDGET_1_COLUMN',
-                '2'    => 'ASTROID_WIDGET_2_COLUMNS',
-                '3'    => 'ASTROID_WIDGET_3_COLUMNS',
-                '4'    => 'ASTROID_WIDGET_4_COLUMNS',
-                '5'    => 'ASTROID_WIDGET_5_COLUMNS',
-                '6'    => 'ASTROID_WIDGET_6_COLUMNS',
-                'auto' => 'ASTROID_WIDGET_AUTO_COLUMNS',
+                ''  => 'inherit',
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
+                'auto' => 'auto',
             ],
         ]);
 
         $this->addField('lg_slidesPerGroup', [
             'group'   => 'slider_options',
             'type'    => 'list',
-            'label'   => 'ASTROID_WIDGET_SLIDES_PER_GROUP',
+            'label'   => 'slides_per_group',
             'default' => '3',
-            'ngShow'  => "[enable_slider]==1 AND [column_responsive]=='lg'",
+            'conditions'  => "[enable_slider]==1 AND [slidesPerGroup_responsive]=='lg'",
             'options' => [
-                ''     => 'JGLOBAL_INHERIT',
-                '1'    => 'ASTROID_WIDGET_1_COLUMN',
-                '2'    => 'ASTROID_WIDGET_2_COLUMNS',
-                '3'    => 'ASTROID_WIDGET_3_COLUMNS',
-                '4'    => 'ASTROID_WIDGET_4_COLUMNS',
-                '5'    => 'ASTROID_WIDGET_5_COLUMNS',
-                '6'    => 'ASTROID_WIDGET_6_COLUMNS',
-                'auto' => 'ASTROID_WIDGET_AUTO_COLUMNS',
+                ''  => 'inherit',
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
+                'auto' => 'auto',
             ],
         ]);
 
         $this->addField('md_slidesPerGroup', [
             'group'   => 'slider_options',
             'type'    => 'list',
-            'label'   => 'ASTROID_WIDGET_SLIDES_PER_GROUP',
+            'label'   => 'slides_per_group',
             'default' => '1',
-            'ngShow'  => "[enable_slider]==1 AND [column_responsive]=='md'",
+            'conditions'  => "[enable_slider]==1 AND [slidesPerGroup_responsive]=='md'",
             'options' => [
-                ''     => 'JGLOBAL_INHERIT',
-                '1'    => 'ASTROID_WIDGET_1_COLUMN',
-                '2'    => 'ASTROID_WIDGET_2_COLUMNS',
-                '3'    => 'ASTROID_WIDGET_3_COLUMNS',
-                '4'    => 'ASTROID_WIDGET_4_COLUMNS',
-                '5'    => 'ASTROID_WIDGET_5_COLUMNS',
-                '6'    => 'ASTROID_WIDGET_6_COLUMNS',
-                'auto' => 'ASTROID_WIDGET_AUTO_COLUMNS',
+                ''  => 'inherit',
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
+                'auto' => 'auto',
             ],
         ]);
 
         $this->addField('sm_slidesPerGroup', [
             'group'   => 'slider_options',
             'type'    => 'list',
-            'label'   => 'ASTROID_WIDGET_SLIDES_PER_GROUP',
+            'label'   => 'slides_per_group',
             'default' => '1',
-            'ngShow'  => "[column_responsive]=='sm'",
+            'conditions'  => "[enable_slider]==1 AND [slidesPerGroup_responsive]=='sm'",
             'options' => [
-                ''     => 'JGLOBAL_INHERIT',
-                '1'    => 'ASTROID_WIDGET_1_COLUMN',
-                '2'    => 'ASTROID_WIDGET_2_COLUMNS',
-                '3'    => 'ASTROID_WIDGET_3_COLUMNS',
-                '4'    => 'ASTROID_WIDGET_4_COLUMNS',
-                '5'    => 'ASTROID_WIDGET_5_COLUMNS',
-                '6'    => 'ASTROID_WIDGET_6_COLUMNS',
-                'auto' => 'ASTROID_WIDGET_AUTO_COLUMNS',
+                ''  => 'inherit',
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
+                'auto' => 'auto',
             ],
         ]);
 
         $this->addField('xs_slidesPerGroup', [
             'group'   => 'slider_options',
             'type'    => 'list',
-            'label'   => 'ASTROID_WIDGET_SLIDES_PER_GROUP',
+            'label'   => 'slides_per_group',
             'default' => '1',
-            'ngShow'  => "[column_responsive]=='xs'",
+            'conditions'  => "[enable_slider]==1 AND [slidesPerGroup_responsive]=='xs'",
             'options' => [
-                ''     => 'JGLOBAL_INHERIT',
-                '1'    => 'ASTROID_WIDGET_1_COLUMN',
-                '2'    => 'ASTROID_WIDGET_2_COLUMNS',
-                '3'    => 'ASTROID_WIDGET_3_COLUMNS',
-                '4'    => 'ASTROID_WIDGET_4_COLUMNS',
-                '5'    => 'ASTROID_WIDGET_5_COLUMNS',
-                '6'    => 'ASTROID_WIDGET_6_COLUMNS',
-                'auto' => 'ASTROID_WIDGET_AUTO_COLUMNS',
+                ''  => 'inherit',
+                '1' => 'one_column',
+                '2' => 'two_columns',
+                '3' => 'three_columns',
+                '4' => 'four_columns',
+                '5' => 'five_columns',
+                '6' => 'six_columns',
+                'auto' => 'auto',
             ],
         ]);
 

@@ -1026,8 +1026,26 @@ class MoonElementTestimonials extends MoonElement {
             'group' => 'name_options',
             'type'  => 'typography',
             'label' => 'font_style',
-            'columns' => 1,
-            'preview' => false,
+            "attributes" => [
+                'options' => [
+                    "colorpicker" => true,
+                    'stylepicker' => true,
+                    'fontpicker' => true,
+                    'sizepicker' => true,
+                    'letterspacingpicker' => true,
+                    'lineheightpicker' => true,
+                    'weightpicker' => true,
+                    'transformpicker' => true,
+                    'columns' => 1,
+                    'preview' => false,
+                    'collapse' => true,
+                    'system_fonts' => Font::get_system_fonts(),
+                    'text_transform_options' => Font::text_transform(),
+                    'lang' => Font::font_properties(),
+                ],
+                'lang' => Font::font_properties(),
+                'value' => Font::$get_default_font_value,
+            ],
         ]);
 
         $this->addField('title_heading_margin', [
@@ -1040,8 +1058,26 @@ class MoonElementTestimonials extends MoonElement {
             'group'   => 'designation_options',
             'type'    => 'typography',
             'label'   => 'font_style',
-            'columns' => 1,
-            'preview' => false,
+            "attributes" => [
+                'options' => [
+                    "colorpicker" => true,
+                    'stylepicker' => true,
+                    'fontpicker' => true,
+                    'sizepicker' => true,
+                    'letterspacingpicker' => true,
+                    'lineheightpicker' => true,
+                    'weightpicker' => true,
+                    'transformpicker' => true,
+                    'columns' => 1,
+                    'preview' => false,
+                    'collapse' => true,
+                    'system_fonts' => Font::get_system_fonts(),
+                    'text_transform_options' => Font::text_transform(),
+                    'lang' => Font::font_properties(),
+                ],
+                'lang' => Font::font_properties(),
+                'value' => Font::$get_default_font_value,
+            ],
         ]);
 
         $this->addField('designation_heading_margin', [
@@ -1065,8 +1101,26 @@ class MoonElementTestimonials extends MoonElement {
             'group'   => 'content_options',
             'type'    => 'typography',
             'label'   => 'font_style',
-            'columns' => 1,
-            'preview' => false,
+            "attributes" => [
+                'options' => [
+                    "colorpicker" => true,
+                    'stylepicker' => true,
+                    'fontpicker' => true,
+                    'sizepicker' => true,
+                    'letterspacingpicker' => true,
+                    'lineheightpicker' => true,
+                    'weightpicker' => true,
+                    'transformpicker' => true,
+                    'columns' => 1,
+                    'preview' => false,
+                    'collapse' => true,
+                    'system_fonts' => Font::get_system_fonts(),
+                    'text_transform_options' => Font::text_transform(),
+                    'lang' => Font::font_properties(),
+                ],
+                'lang' => Font::font_properties(),
+                'value' => Font::$get_default_font_value,
+            ],
         ]);
 
         $this->addField('content_margin', [

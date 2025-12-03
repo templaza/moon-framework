@@ -238,6 +238,7 @@ class BaseElement
         $this->_marginPadding();
         $this->_sticky();
         $this->_typography();
+        $this->addCustomCSS();
         $this->style->render();
         $this->style_dark->render();
     }
@@ -413,5 +414,17 @@ class BaseElement
         $this->addAttribute('data-animation-loop', $this->params->get('animation_loop', 0));
         $this->addAttribute('data-animation-stagger', $this->params->get('animation_stagger', 200));
         $document->loadAnimation();
+    }
+
+    public function addCustomCSS(): void
+    {
+        $custom_css = $this->params->get('custom_css', '');
+        if (!empty($custom_css)) {
+            $scss = new \ScssPhp\ScssPhp\Compiler();
+            $css = $scss->compileString('#' . $this->id .'{'.$custom_css.'}')->getCss();
+            if (!empty($css)) {
+                Framework::getDocument()->addStyleDeclaration($css);
+            }
+        }
     }
 }

@@ -157,18 +157,20 @@ foreach ($grids->data as $key => $grid) {
             $media      =   '<a href="'. $grid->params->get('link', '') . '"'.$link_target.' class="'.($media_position == 'bottom' ? 'order-2 ' : '').'">'. $media .'</a>';
         }
     } elseif ($grid->params->get('type', '') == 'icon') {
+        $media = '<div class="moon-icon-wrapper">';
         switch ($grid->params->get('icon_type', '')) {
             case 'fontawesome':
-                $media  =   '<i class="moon-icon '. ($media_position == 'bottom' ? 'order-2 ' : '') .$grid->params->get('fa_icon', '').'"></i>';
+                $media  .=   '<i class="moon-icon '. ($media_position == 'bottom' ? 'order-2 ' : '') .$grid->params->get('fa_icon', '').'"></i>';
                 break;
             case 'astroid':
-                $media  =   '<i class="moon-icon '. ($media_position == 'bottom' ? 'order-2 ' : '') .$grid->params->get('as_icon', '').'"></i>';
+                $media  .=   '<i class="moon-icon '. ($media_position == 'bottom' ? 'order-2 ' : '') .$grid->params->get('as_icon', '').'"></i>';
                 $document->loadASIcon();
                 break;
             default:
-                $media  =   '<i class="moon-icon '. ($media_position == 'bottom' ? 'order-2 ' : '') .$grid->params->get('custom_icon', '').'"></i>';
+                $media  .=   '<i class="moon-icon '. ($media_position == 'bottom' ? 'order-2 ' : '') .$grid->params->get('custom_icon', '').'"></i>';
                 break;
         }
+        $media .= '</div>';
         if ( !empty($grid->params->get('link', '')) && !empty($params->get('enable_icon_link', 0)) ) {
             $media      =   '<a href="'. $grid->params->get('link', '') . '"'.$link_target.' class="'.($media_position == 'bottom' ? 'order-2 ' : '').'">'. $media .'</a>';
         }

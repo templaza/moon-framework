@@ -725,76 +725,83 @@ class MoonElementTestimonials extends MoonElement {
         $this->addField('slider_autoplay', [
             'group'      => 'slider_options',
             'type'       => 'radio',
+            'attributes' => ['role' => 'switch'],
             'default'    => '0',
             'label'      => 'autoplay',
             'conditions' => "[enable_slider]==1",
-            'attributes' => ["role" => "switch"],
         ]);
 
         $this->addField('interval', [
             'group'      => 'slider_options',
             'type'       => 'range',
-            'label'      => 'interval',
-            'default'    => '3',
             'conditions' => "[enable_slider]==1 AND [slider_autoplay]==1",
-            'attributes' => ['min' => 1, 'max' => 10, 'step' => 1, 'postfix' => 'seconds'],
+            'attributes' => [
+                'min'        => 0,
+                'max'        => 10,
+                'step'       => 1,
+                'postfix'    => 'seconds',
+            ],
+            'default'    => 3,
+            'label'      => 'interval',
+        ]);
+
+        $this->addField('speed', [
+            'group'      => 'slider_options',
+            'type'       => 'range',
+            'attributes' => [
+                'min'        => 0,
+                'max'        => 10,
+                'step'       => 0.5,
+                'postfix'    => 'seconds',
+            ],
+            'default'    => 1,
+            'label'      => 'speed',
+            'conditions' => "[enable_slider]==1",
+        ]);
+
+        $this->addField('freemode', [
+            'group'      => 'slider_options',
+            'type'       => 'radio',
+            'attributes' => ['role' => 'switch'],
+            'default'    => '0',
+            'label'      => 'freemode',
+            'conditions' => "[enable_slider]==1",
+        ]);
+
+        $this->addField('loop', [
+            'group'      => 'slider_options',
+            'type'       => 'radio',
+            'attributes' => ['role' => 'switch'],
+            'default'    => '0',
+            'label'      => 'loop',
+            'conditions' => "[enable_slider]==1",
         ]);
 
         $this->addField('slider_nav', [
             'group'      => 'slider_options',
             'type'       => 'radio',
+            'attributes' => ['role' => 'switch'],
             'default'    => '1',
             'label'      => 'navigation',
             'conditions' => "[enable_slider]==1",
-            'attributes' => ["role" => "switch"],
-        ]);
-
-        $this->addField('direction', [
-            'group'   => 'slider_options',
-            'type'    => 'list',
-            'label'   => 'direction',
-            'default' => '',
-            'options' => [
-                ''    => 'inherit',
-                'ltr' => 'LTR',
-                'rtl' => 'RTL',
-            ],
-            'conditions' => "[enable_slider]==1",
-        ]);
-
-        $this->addField('slider_scrollbar', [
-            'group'      => 'slider_options',
-            'type'       => 'list',
-            'label'      => 'slider_scrollbar',
-            'default'    => '',
-            'conditions' => "[enable_slider]==1",
-            'options'    => [
-                ''          => 'inside',
-                'nav-outside' => 'outside',
-            ],
         ]);
 
         $this->addField('slider_dotnav', [
             'group'      => 'slider_options',
             'type'       => 'radio',
+            'attributes' => ['role' => 'switch'],
             'default'    => '0',
-            'label'      => 'dot_nav',
+            'label'      => 'dot_navigation',
             'conditions' => "[enable_slider]==1",
-            'attributes' => ["role" => "switch"],
         ]);
 
-        $this->addField('dot_alignment', [
+        $this->addField('slider_scrollbar', [
             'group'      => 'slider_options',
-            'type'       => 'list',
-            'label'      => 'dot_alignment',
-            'default'    => '',
-            'conditions' => "[enable_slider]==1 AND [slider_dotnav]==1",
-            'options'    => [
-                ''       => 'inherit',
-                'left'   => 'left',
-                'center' => 'center',
-                'right'  => 'right',
-            ],
+            'type'       => 'radio',
+            'attributes' => ['role' => 'switch'],
+            'default'    => '0',
+            'label'      => 'scrollbar',
+            'conditions' => "[enable_slider]==1",
         ]);
 
         $this->addField('slidesPerGroup_responsive', [

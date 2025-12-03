@@ -238,7 +238,7 @@ class BaseElement
         $this->_marginPadding();
         $this->_sticky();
         $this->_typography();
-        $this->addCustomCSS();
+        $this->_customCss();
         $this->style->render();
         $this->style_dark->render();
     }
@@ -416,7 +416,7 @@ class BaseElement
         $document->loadAnimation();
     }
 
-    public function addCustomCSS(): void
+    public function _customCss(): void
     {
         $custom_css = $this->params->get('custom_css', '');
         if (!empty($custom_css)) {

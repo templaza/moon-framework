@@ -724,6 +724,11 @@ $string['outside'] = 'Outside';
 $string['dot_nav'] = 'Dot Navigation';
 $string['dot_alignment'] = 'Dot Alignment';
 $string['avatar_position'] = 'Avatar Position';
+$string['speed'] = 'Speed';
+$string['freemode'] = 'Free Mode';
+$string['loop'] = 'Loop';
+$string['scrollbar'] = 'Scrollbar';
+$string['dot_navigation'] = 'Dot Navigation';
 
 // Image
 $string['figure_caption'] = 'Figure Caption';

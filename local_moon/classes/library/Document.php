@@ -536,7 +536,7 @@ class Document {
             $this->_is_loaded['swiper'] = true;
         }
         if (!empty($obj) && !empty($config)) {
-            $this->addScriptDeclaration('const swiper = new Swiper(\''.$obj.'\', {'.$config.'});');
+            $this->addScriptDeclaration('new Swiper(\''.$obj.'\', {'.$config.'});');
         }
     }
 }

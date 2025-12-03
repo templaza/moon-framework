@@ -80,79 +80,6 @@ if (count($slide_responsive)) {
     $slide_settings[]       =   'breakpoints: {'.implode(',', $slide_responsive).'}';
 }
 
-//$xxl_column         =   $params->get('xxl_column', '');
-//if ($xxl_column) {
-//    $slide_settings[]=  'slidesToShow: ' . $xxl_column;
-//    $row_column_cls .=  ' row-cols-xxl-' . $xxl_column;
-//}
-//
-//$xl_column          =   $params->get('xl_column', '');
-//if ($xl_column) {
-//    $row_column_cls .=  ' row-cols-xl-' . $xl_column;
-//    if (!count($slide_settings)) {
-//        $slide_settings[]       =  'slidesToShow: ' . $xl_column;
-//    } else {
-//        $slide_responsive[]     =   '{breakpoint: 1400,settings: {slidesToShow: ' . $xl_column.'}}';
-//    }
-//}
-//
-//$lg_column          =   $params->get('lg_column', 3);
-//if ($lg_column) {
-//    $row_column_cls .=  ' row-cols-lg-' . $lg_column;
-//    if (!count($slide_settings)) {
-//        $slide_settings[]       =  'slidesToShow: ' . $lg_column;
-//    } else {
-//        $slide_responsive[]     =   '{breakpoint: 1200,settings: {slidesToShow: ' . $lg_column.'}}';
-//    }
-//}
-//
-//$md_column          =   $params->get('md_column', 1);
-//if ($md_column) {
-//    $row_column_cls .=  ' row-cols-md-' . $md_column;
-//    if (!count($slide_settings)) {
-//        $slide_settings[]       =  'slidesToShow: ' . $md_column;
-//    } else {
-//        $slide_responsive[]     =   '{breakpoint: 992,settings: {slidesToShow: ' . $md_column.'}}';
-//    }
-//}
-//
-//$sm_column          =   $params->get('sm_column', 1);
-//if ($sm_column) {
-//    $row_column_cls .=  ' row-cols-sm-' . $sm_column;
-//    if (!count($slide_settings)) {
-//        $slide_settings[]       =  'slidesToShow: ' . $sm_column;
-//    } else {
-//        $slide_responsive[]     =   '{breakpoint: 768,settings: {slidesToShow: ' . $sm_column.'}}';
-//    }
-//}
-//
-//$xs_column          =   $params->get('xs_column', 1);
-//if ($xs_column) {
-//    $row_column_cls .=  ' row-cols-' . $xs_column;
-//    if (!count($slide_settings)) {
-//        $slide_settings[]       =  'slidesToShow: ' . $xs_column;
-//    } else {
-//        $slide_responsive[]     =   '{breakpoint: 576,settings: {slidesToShow: ' . $xs_column.'}}';
-//    }
-//}
-
-//if ($slider_autoplay) {
-//    $slide_settings[]       =   'autoplay: true';
-//    $slide_settings[]       =   'autoplaySpeed: '. ($interval * 1000);
-//}
-//
-//if ($slider_dotnav) {
-//    $slide_settings[]       =   'dots: true';
-//}
-//
-//if (!$slider_nav) {
-//    $slide_settings[]       =   'arrows: false';
-//}
-//
-//if (count($slide_responsive)) {
-//    $slide_settings[]       =  'responsive: ['.implode(',', $slide_responsive).']';
-//}
-
 $responsive_key     =   ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
 $gutter_cls         =   '';
 foreach ($responsive_key as $key) {
@@ -276,7 +203,7 @@ foreach ($testimonials->getData() as $key => $testimonial) {
         $media      .=  '</div>';
     }
 
-    echo '<div id="testimonial-'. $testimonial -> id .'"><div class="card' . $card_style . $box_shadow . $box_shadow_hover .$bd_radius . $card_hover_transition . ($enable_grid_match ? ' h-100' : '') . '">';
+    echo '<div id="testimonial-'. $testimonial -> id .'" class="swiper-slide"><div class="card' . $card_style . $box_shadow . $box_shadow_hover .$bd_radius . $card_hover_transition . ($enable_grid_match ? ' h-100' : '') . '">';
     if ($avatar_position == 'left' || $avatar_position == 'right') {
         echo '<div class="row g-0">';
         echo '<div class="'.$avatar_width_cls.'">';
@@ -354,9 +281,6 @@ $document = Framework::getDocument();
 
 if ($enable_slider) {
     $document->loadSwiper('#'.$element->id.' .swiper', implode(',', $slide_settings));
-//    $wa->registerAndUseStyle('slick.css', 'astroid/slick.min.css');
-//    $wa->registerAndUseScript('slick.js', 'astroid/slick.min.js', ['relative' => true, 'version' => 'auto'], [], ['jquery']);
-//    echo '<script type="text/javascript">jQuery(document).ready(function(){jQuery(\'#'.$element->id.' .astroid-slick\').slick({'.implode(',', $slide_settings).'})});</script>';
 } elseif ($use_masonry) {
     $document->loadMasonry('#'. $element->id .' .as-masonry');
 }

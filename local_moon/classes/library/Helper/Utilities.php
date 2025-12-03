@@ -45,13 +45,15 @@ class Utilities
                 if ($layout !== 'custom') {
                     $return[$layout] = [
                         'file' => 'default.php',
-                        'regions' => $configs['regions'],
-                        'defaultregion' => $configs['defaultregion'],
+                        'regions' => $configs['layouts'][$layout]['regions'] ?? $configs['regions'],
+                        'defaultregion' => $configs['layouts'][$layout]['defaultregion'] ?? $configs['defaultregion'],
                     ];
+                    if (isset($configs['layouts'][$layout]['options'])) {
+                        $return[$layout]['options'] = $configs['layouts'][$layout]['options'];
+                    }
                 }
             }
         }
-
         foreach ($layouts as $name => $layout) {
             if (empty($layout['layout']) || $layout['layout'] === 'custom') {
                 $return[pathinfo($name, PATHINFO_FILENAME)] = [
@@ -65,6 +67,9 @@ class Utilities
                     'regions' => $configs['layouts'][$layout['layout']]['regions'],
                     'defaultregion' => $configs['layouts'][$layout['layout']]['defaultregion'],
                 ];
+                if (isset($configs['layouts'][$layout['layout']]['options'])) {
+                    $return[$layout['layout']]['options'] = $configs['layouts'][$layout['layout']]['options'];
+                }
             } else {
                 $return[$layout['layout']] = [
                     'file' => 'default.php',

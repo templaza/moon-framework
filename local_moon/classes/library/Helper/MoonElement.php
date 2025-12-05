@@ -9,7 +9,6 @@
 
 namespace local_moon\library\Helper;
 defined('MOODLE_INTERNAL') || die;
-use local_moon\library\Helper\Constants;
 class MoonElement {
     public string $name = '';
     public string $title = '';

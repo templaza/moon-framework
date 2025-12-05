@@ -264,7 +264,11 @@ class Style
         $style      = new Style($selector, '', $onFile);
         $style_dark = new Style($selector, 'dark', $onFile);
         if (isset($border['border_width'])) {
-            self::setSpacingStyle($style, $border['border_width'], 'border');
+            if (Utilities::isJsonString($border['border_width'])) {
+                self::setSpacingStyle($style, $border['border_width'], 'border');
+            } else {
+                $style->addCss('border-width', $border['border_width']. 'px', $device);
+            }
         }
         if (isset($border['border_style'])) {
             $style->addCss('border-style', $border['border_style'], $device);

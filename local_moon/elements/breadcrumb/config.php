@@ -14,4 +14,16 @@ class MoonElementBreadcrumb extends MoonElement {
             'multiple' => false,
         ]);
     }
+    public function setFields(): void {
+        $this->setFieldSet('general-settings');
+        $this->addField('show_heading', [
+            "group"   => "general",
+            "type"    => "radio",
+            "default" => "1",
+            "attributes" => [
+                "role" => "switch"
+            ],
+            "label"   => "show_heading",
+        ]);
+    }
 }

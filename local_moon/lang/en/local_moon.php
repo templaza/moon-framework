@@ -276,6 +276,7 @@ $string['style_desc'] = 'Select the style for the element.';
 $string['color_hover'] = 'Color Hover';
 $string['color_hover_desc'] = 'Select the hover color for the element.';
 $string['meta_options'] = 'Meta Options';
+$string['show_heading'] = 'Show Heading';
 
 // Hover transition
 $string['scale_up'] = 'Scale Up';
@@ -709,7 +710,6 @@ $string['social_brands'] = 'Social Brands';
 $string['social_search'] = 'Search Brand';
 $string['add_profile'] = 'Add Profile';
 $string['add_custom_profile'] = 'Add Custom Profile';
-
 
 // Slideshow
 $string['slideshow'] = 'Slideshow';

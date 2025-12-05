@@ -1023,9 +1023,9 @@ class MoonElementTestimonials extends MoonElement {
         ]);
 
         $this->addField('title_font_style', [
-            'group' => 'name_options',
-            'type'  => 'typography',
-            'label' => 'font_style',
+            "group"   => "name_options",
+            "type"    => "typography",
+            "label"   => "font_style",
             "attributes" => [
                 'options' => [
                     "colorpicker" => true,

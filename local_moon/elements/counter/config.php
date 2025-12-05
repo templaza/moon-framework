@@ -49,11 +49,10 @@ class MoonElementCounter extends MoonElement {
                 'fields' => [
                     'title' => [
                         "type"    => "text",
-                        "label"   => "title",
-                        "class"   => "form-control",
+                        "label"   => "number",
                         "dynamic" => true,
                     ],
-                    'description' => [
+                    'animation' => [
                         "type"    => "editor",
                         "label"   => "description",
                         "dynamic" => true,

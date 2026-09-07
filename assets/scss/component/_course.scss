@@ -1,3 +1,18 @@
 #frontpage-available-course-list .coursebox, #frontpage-course-list .coursebox, .course-search-result .coursebox, .course-section .section-item, .page-mycourses .block_myoverview .block-cards {
   border-color: var(--bs-border-color);
 }
+.courseindex .courseindex-item {
+  color: var(--mf-offcanvas-link-color);
+  &:hover, &:focus {
+    color: var(--mf-offcanvas-link-hover-color);
+    .courseindex-link, .courseindex-chevron {
+      color: var(--mf-offcanvas-link-hover-color);
+    }
+  }
+  .courseindex-link, .courseindex-chevron {
+    color: var(--mf-offcanvas-link-color);
+    &:hover, &:focus {
+      color: var(--mf-offcanvas-link-hover-color);
+    }
+  }
+}
